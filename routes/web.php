@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\UserController;
 
 
 use App\Http\Controllers\Teacher\DashboardController;
+use App\Http\Controllers\Teacher\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,7 +49,12 @@ Route::get('logout', [Test::class, 'logout']);
 Route::get('dashboard', [Test::class, 'dashboard']);
 
 Route::group(array('prefix' => 'teacher'), function() {
-Route::get('/dashboard', [DashboardController::class, 'index']);    
+Route::get('/dashboard', [DashboardController::class, 'index']); 
+Route::get('/course/create', [CourseController::class, 'create']);
+Route::post('/course/create', [CourseController::class, 'create']);  
+Route::get('/course/edit', [CourseController::class, 'edit']);   
+Route::post('/course/edit', [CourseController::class, 'edit']);
+
 });
 
 
