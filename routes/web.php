@@ -1,7 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Test;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserAuthController;
+use App\Http\Controllers\CmsController;
+
+
+// use App\Http\Controllers\Test;
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\EmailTemplateController;
@@ -19,13 +24,26 @@ use App\Http\Controllers\Admin\UserController;
 |
 */
 
+Route::get('', [HomeController::class, 'index'])->name('index');
+Route::get('my-cart', [HomeController::class, 'my_cart'])->name('mycart');
 
-Route::get('register', [Test::class, 'register']);
-Route::post('save', [Test::class, 'save']);
-Route::post('auth_login', [Test::class, 'auth_login']);
-Route::get('/', function () {
-    return view('login');
-});
+Route::get('signup', [UserAuthController::class, 'signup_index'])->name('signup.index');
+Route::get('login', [UserAuthController::class, 'login_index'])->name('login.index');
+Route::get('forgot-password', [UserAuthController::class, 'forgot_password'])->name('forgot_password.index');
+
+
+Route::get('terms', [CmsController::class, 'terms'])->name('terms.index');
+Route::get('privacy-policy', [CmsController::class, 'privacy_policy'])->name('privacy_policy.index');
+Route::get('faqs', [CmsController::class, 'faqs'])->name('faqs.index');
+
+
+
+// Route::get('register', [Test::class, 'register']);
+// Route::post('save', [Test::class, 'save']);
+// Route::post('auth_login', [Test::class, 'auth_login']);
+// Route::get('/', function () {
+//     return view('login');
+// });
 
 
 Route::get('logout', [Test::class, 'logout']);

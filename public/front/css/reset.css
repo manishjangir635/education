@@ -1,0 +1,687 @@
+:root {
+    /* Colors */
+    --bg-grey: #F8F8F8;
+    --bg-lightgrey: #F5F7F9;
+    --bg-darkgrey: #B5BBC7;
+    --bg-skyblue: #438FFE;
+    --bg-darkblue: #160E4D;
+    --bg-yellow: #E9983A;
+    --bg-red: #EA1C26;
+    --bg-dgreen: #234D0E;
+    --bg-dred: #4D0E14;
+
+    /* Text Color */
+    --text-black: #000000;
+    --text-darkblue: #160E4D;
+    --text-grey: #F8F8F8;
+    --text-darkgrey: #B5BBC7;
+    --text-skyblue: #438FFE;
+    --text-yellow: #E9983A;
+    --text-red: #EA1C26;
+
+    --font-playfair: 'Playfair Display Bold';
+
+    /* Font Sizes */
+    --font-14: 14px;
+    --font-16: 16px;
+
+    /* Font Weight */
+    --font-thin: 100;
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-bold: 600;
+    --font-black: 800;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--bg-skyblue);
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.form-control:focus,
+.form-select:focus {
+    box-shadow: none;
+    border-color: var(--bg-darkgrey);
+}
+
+body {
+    height: 100%;
+    font-family: 'Heebo';
+    background: var(--bg-lightgrey);
+}
+
+/* --- Font Family --- */
+
+@font-face {
+    font-family: 'Heebo';
+    src: url('../fonts/Heebo-Bold.woff2') format('woff2'),
+        url('../fonts/Heebo-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Heebo';
+    src: url('../fonts/Heebo-ExtraBold.woff2') format('woff2'),
+        url('../fonts/Heebo-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Heebo';
+    src: url('../fonts/Heebo-Black.woff2') format('woff2'),
+        url('../fonts/Heebo-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Heebo';
+    src: url('../fonts/Heebo-Medium.woff2') format('woff2'),
+        url('../fonts/Heebo-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Heebo';
+    src: url('../fonts/Heebo-Light.woff2') format('woff2'),
+        url('../fonts/Heebo-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Heebo';
+    src: url('../fonts/Heebo-Regular.woff2') format('woff2'),
+        url('../fonts/Heebo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Heebo';
+    src: url('../fonts/Heebo-Thin.woff2') format('woff2'),
+        url('../fonts/Heebo-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/Playfair Display Bold'), url('../fonts/PlayfairDisplay-Bold.woff') format('woff');
+}
+
+/* --- Font Family --- */
+
+
+/* --- Btn Css --- */
+
+.theme-btn {
+    background: var(--bg-skyblue);
+    color: var(--bs-white);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: all 0.3s ease-in;
+    border-radius: 0;
+    border: none;
+    outline: none;
+    z-index: 9;
+}
+
+.theme-btn:hover {
+    background: var(--bg-darkblue);
+    color: var(--bs-white);
+}
+
+.theme-btn2 {
+    background: var(--bg-darkblue);
+    color: var(--bs-white);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: all 0.3s ease-in;
+    border-radius: 0;
+    border: none;
+    outline: none;
+}
+
+.theme-btn2:hover {
+    background: var(--bg-skyblue);
+    color: var(--bs-white);
+}
+
+.border-btn {
+    border: 1px solid var(--bg-skyblue);
+    display: inline-flex;
+    padding: 10px 20px;
+    color: var(--bg-skyblue);
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in;
+}
+
+.border-btn:hover {
+    border-color: var(--bg-skyblue);
+    color: var(--bs-white);
+    background: var(--bg-skyblue);
+}
+.link-text{
+    color: var(--text-darkblue);
+    transition: all 0.3s ease-in;
+}
+.link-text:hover{
+    color: var(--text-skyblue);
+}
+.buy-btn{
+    border: 1px solid var(--bg-darkgrey);
+    color: var(--bg-darkblue);
+    font-size: 16px;
+    font-weight: var(--font-bold);
+    text-transform: capitalize;
+    padding: 10px 15px;
+    display: inline-flex;
+    transition: all 0.3s ease-in;
+}
+.buy-btn:hover{
+    background: var(--bg-darkblue);
+    border-color: var(--bg-darkblue);
+    color: var(--bs-white);
+}
+/* --- Btn Css --- */
+
+/* --- Font Size --- */
+.font-10 {
+    font-size: 10px;
+}
+
+.font-12 {
+    font-size: 12px;
+}
+
+.font-14 {
+    font-size: 14px;
+}
+
+.font-16 {
+    font-size: 16px;
+}
+
+.font-18 {
+    font-size: 18px;
+}
+
+.font-20 {
+    font-size: 20px;
+}
+
+.font-22 {
+    font-size: 22px;
+}
+
+.font-24 {
+    font-size: 24px;
+}
+
+.font-26 {
+    font-size: 26px;
+}
+
+.font-28 {
+    font-size: 28px;
+}
+
+.font-30 {
+    font-size: 30px;
+}
+
+.font-32 {
+    font-size: 32px;
+}
+
+.font-34 {
+    font-size: 34px;
+}
+
+.font-36 {
+    font-size: 36px;
+}
+
+.font-40 {
+    font-size: 40px;
+}
+
+.font-42 {
+    font-size: 42px;
+}
+
+.font-44 {
+    font-size: 44px;
+}
+
+.font-48 {
+    font-size: 48px;
+}
+
+.font-50 {
+    font-size: 50px;
+}
+.font-60 {
+    font-size: 60px;
+}
+
+/* --- Font Size End --- */
+
+/* --- Font-Weight --- */
+
+.font-thin {
+    font-weight: 100;
+}
+
+.font-light {
+    font-weight: 300;
+}
+
+.font-regular {
+    font-weight: 400;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-bold {
+    font-weight: 600;
+}
+
+.font-black {
+    font-weight: 800;
+}
+
+/* --- Font Weight End --- */
+
+.playfair {
+    font-family: 'Playfair Display Bold';
+}
+
+/* -- Padding Top --*/
+.pt-10 {
+    padding-top: 10px;
+}
+
+.pt-20 {
+    padding-top: 20px;
+}
+
+.pt-30 {
+    padding-top: 30px;
+}
+
+.pt-40 {
+    padding-top: 40px;
+}
+
+.pt-50 {
+    padding-top: 50px;
+}
+
+.pt-60 {
+    padding-top: 60px;
+}
+
+.pt-100 {
+    padding-top: 100px;
+}
+
+/* -- End --*/
+
+/* -- Padding Bottom --*/
+.pb-10 {
+    padding-bottom: 10px;
+}
+
+.pb-20 {
+    padding-bottom: 20px;
+}
+
+.pb-30 {
+    padding-bottom: 30px;
+}
+
+.pb-40 {
+    padding-bottom: 40px;
+}
+
+.pb-50 {
+    padding-bottom: 50px;
+}
+
+.pb-60 {
+    padding-bottom: 60px;
+}
+
+.pb-100 {
+    padding-bottom: 100px;
+}
+
+/* --- End --- */
+
+/* -- Padding Laft --*/
+.pl-10 {
+    padding-left: 10px;
+}
+
+.pl-20 {
+    padding-left: 20px;
+}
+
+.pl-30 {
+    padding-left: 30px;
+}
+
+.pl-40 {
+    padding-left: 40px;
+}
+
+.pl-50 {
+    padding-left: 50px;
+}
+
+.pl-60 {
+    padding-left: 60px;
+}
+
+/* --- End --- */
+
+/* -- Padding Right --*/
+.pr-10 {
+    padding-right: 10px;
+}
+
+.pr-20 {
+    padding-right: 20px;
+}
+
+.pr-30 {
+    padding-right: 30px;
+}
+
+.pr-40 {
+    padding-right: 40px;
+}
+
+.pr-50 {
+    padding-right: 50px;
+}
+
+.pr-60 {
+    padding-right: 60px;
+}
+
+/* --- End --- */
+
+/* -- Margin Top --*/
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.mt-60 {
+    margin-top: 60px;
+}
+
+.mt-80 {
+    margin-top: 80px;
+}
+
+/* --- End --- */
+
+/* -- Margin Bottom --*/
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.mb-60 {
+    margin-bottom: 60px;
+}
+
+.mb-80 {
+    margin-bottom: 80px;
+}
+
+.mb-100 {
+    margin-bottom: 100px;
+}
+
+/* --- End --- */
+/* -- Margin Left --*/
+.ml-60 {
+    margin-left: 60px;
+}
+
+.ml-n1 {
+    margin-left: -15px;
+}
+
+.mx-n2 {
+    margin: 0 -15px;
+}
+
+/* --- End --- */
+
+/* --- Background Color ---*/
+.bg-darkblue {
+    background: var(--bg-darkblue);
+}
+
+.bg-skyblue {
+    background: var(--bg-skyblue);
+}
+
+.bg-yellow {
+    background: var(--bg-yellow);
+}
+
+.bg-red {
+    background: var(--bg-red);
+}
+
+.bg-dgreen {
+    background: var(--bg-dgreen);
+}
+
+.bg-dred {
+    background: var(--bg-dred);
+}
+
+.bg-gray {
+    background: var(--bg-grey);
+}
+
+.bg-darkgray {
+    background: var(--bg-darkgrey);
+}
+
+.bg-lightgrey {
+    background: var(--bg-lightgrey);
+}
+
+/* --- Background Color ---*/
+
+/* --- Text Color ---*/
+
+.text-darkblue {
+    color: var(--text-darkblue);
+}
+
+.text-gray {
+    color: var(--text-grey);
+}
+
+.text-dgray {
+    color: var(--text-darkgrey);
+}
+
+.text-lgray {
+    color: var(--bg-lightgrey);
+}
+
+.text-black {
+    color: var(--text-black);
+}
+
+.text-yellow {
+    color: var(--text-yellow);
+}
+
+.text-skyblue {
+    color: var(--text-skyblue);
+}
+
+/* --- Text Color ---*/
+
+
+/* -- Border Css -- */
+.border1 {
+    border: 1px solid var(--bg-darkgrey);
+}
+
+.border-left1 {
+    border-left: 1px solid var(--bg-darkgrey);
+}
+
+.border-right1 {
+    border-right: 1px solid var(--bg-darkgrey);
+}
+
+.border-top1 {
+    border-top: 1px solid var(--bg-darkgrey);
+}
+
+.border-bottom1 {
+    border-bottom: 1px solid var(--bg-darkgrey);
+}
+
+/* -- Border Css -- */
+
+
+/* -- Heading Css -- */
+.heading-block {
+    text-align: center;
+    margin: 0 20px;
+    position: relative;
+}
+
+.main-heading {
+    font-size: 44px;
+    font-family: 'Playfair Display Bold';
+    font-weight: bold;
+    color: var(--bg-darkblue);
+    margin-bottom: 15px;
+}
+
+.heading-block a.border-btn {
+    position: absolute;
+    right: 0;
+    top: 5px;
+}
+
+/* -- Heading Css -- */
+
+.ui-block {
+    background: var(--bs-white);
+    border: 1px solid var(--bg-darkgrey);
+    box-shadow: 0 12px 44px rgba(0, 0, 0, 0.03);
+}
+.mw-80{
+    max-width: 80%;
+}
+.mw-50{
+    max-width: 50%;
+}
+.line-60{
+    line-height: 60px;
+}
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #B5BBC7 #F5F7F9;
+}
+
+html ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+html ::-webkit-scrollbar-track {
+    background-color: #F5F7F9;
+}
+
+html ::-webkit-scrollbar-thumb {
+    background-color: #B5BBC7;
+}
+
+html ::-webkit-scrollbar-track {
+    border-radius: 0px;
+}
