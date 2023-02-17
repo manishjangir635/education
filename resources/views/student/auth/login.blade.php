@@ -1,4 +1,4 @@
-@extends('front.layouts.master')
+@extends('student.layouts.master')
 @section('content')
 
     <section class="content-block pt-100 pb-100">

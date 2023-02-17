@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 class CmsController extends Controller
 {
     public function terms(){
-        return view('front.cms.terms');
+        return view('terms');
     }
     public function privacy_policy(){
-        return view('front.cms.privacy-policy');
+        return view('privacy-policy');
     }
     public function faqs(){
-        return view('front.cms.faqs');
+        return view('faqs');
     }
 }

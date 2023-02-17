@@ -1,5 +1,6 @@
-@extends('front.layouts.master')
+@extends('student.layouts.master')
 @section('content')
+
     <section class="banner">
         <div class="banner">
             <div class="swiper-wrapper">
