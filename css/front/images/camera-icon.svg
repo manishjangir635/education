@@ -1,0 +1,6 @@
+<svg id="camera-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <path id="Path_32374" data-name="Path 32374" d="M0,0H24V24H0Z" fill="none"/>
+  <circle id="Ellipse_590" data-name="Ellipse 590" cx="3" cy="3" r="3" transform="translate(9 10)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/>
+  <path id="Path_32375" data-name="Path 32375" d="M5,7H6A2,2,0,0,0,8,5,1,1,0,0,1,9,4h3m9,6v8a2,2,0,0,1-2,2H5a2,2,0,0,1-2-2V9A2,2,0,0,1,5,7" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/>
+  <line id="Line_42" data-name="Line 42" x2="6" transform="translate(15 6)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"/>
+</svg>

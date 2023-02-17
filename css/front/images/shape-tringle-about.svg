@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="184.777" height="195.138" viewBox="0 0 184.777 195.138">
+  <defs>
+    <filter id="shape-tringle-about" x="0" y="0" width="184.777" height="195.138" filterUnits="userSpaceOnUse">
+      <feOffset dx="5" dy="5" input="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood flood-opacity="0.071"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#shape-tringle-about)">
+    <path id="shape-tringle-about-2" data-name="shape-tringle-about" d="M1323.688,1678.762V1868.9H1143.911Z" transform="translate(-1143.91 -1678.76)" fill="#3f51b5"/>
+  </g>
+</svg>

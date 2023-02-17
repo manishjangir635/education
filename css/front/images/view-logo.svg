@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <g id="view-logo" transform="translate(-900 -340)">
+    <circle id="logo-view" cx="60" cy="60" r="60" transform="translate(900 340)" fill="#f3f3f3"/>
+    <g id="Layer_20" data-name="Layer 20" transform="translate(928 367.998)">
+      <path id="Path_32376" data-name="Path 32376" d="M47,48H62l-4,7,4,7H47Z" fill="#b52f28"/>
+      <path id="Path_32377" data-name="Path 32377" d="M17,48H2l4,7L2,62H17Z" fill="#b52f28"/>
+      <rect id="Rectangle_17973" data-name="Rectangle 17973" width="44" height="15" rx="2" transform="translate(10 40)" fill="#d23f34"/>
+      <path id="Path_32378" data-name="Path 32378" d="M13,46H51v2H13Z" fill="#f2f2f2"/>
+      <path id="Path_32379" data-name="Path 32379" d="M13,50H51v2H13Z" fill="#f2f2f2"/>
+      <path id="Path_32380" data-name="Path 32380" d="M55,25a6.994,6.994,0,0,0-3.549-6.089,2.959,2.959,0,0,1-1.392-3.359,7,7,0,0,0-8.611-8.611,2.959,2.959,0,0,1-3.359-1.392,7,7,0,0,0-12.178,0,2.959,2.959,0,0,1-3.359,1.392,7,7,0,0,0-8.611,8.611,2.959,2.959,0,0,1-1.392,3.359,7,7,0,0,0,0,12.178,2.959,2.959,0,0,1,1.392,3.359,7,7,0,0,0,8.611,8.611,2.959,2.959,0,0,1,3.359,1.392,7,7,0,0,0,12.178,0,2.959,2.959,0,0,1,3.359-1.392,7,7,0,0,0,8.611-8.611,2.959,2.959,0,0,1,1.392-3.359A6.994,6.994,0,0,0,55,25Z" fill="#f0ae42"/>
+      <circle id="Ellipse_3390" data-name="Ellipse 3390" cx="15" cy="15" r="15" transform="translate(17 10)" fill="#f9d266"/>
+      <path id="Path_32381" data-name="Path 32381" d="M44,23a14.957,14.957,0,0,0-5.243-11.379A14.987,14.987,0,0,0,22.243,36.379,14.979,14.979,0,0,0,44,23Z" fill="#fce797"/>
+      <path id="Path_32382" data-name="Path 32382" d="M32,29l7,5-3-7,7-5H35l-3-8-3,8H21l7,5-3,7Z" fill="#f6b940"/>
+    </g>
+  </g>
+</svg>

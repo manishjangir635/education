@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="155" height="50" viewBox="0 0 155 50">
+  <g id="app-store-btn" transform="translate(-1230 -80)">
+    <g id="Rectangle_111" data-name="Rectangle 111" transform="translate(1230 80)" fill="none" stroke="#fff" stroke-width="1">
+      <rect width="155" height="50" rx="5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="154" height="49" rx="4.5" fill="none"/>
+    </g>
+    <g id="Group_264" data-name="Group 264" transform="translate(8.612)">
+      <text id="Available_on_the" data-name="Available on the" transform="translate(1277 100)" fill="#fff" font-size="10" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">Available on the</tspan><tspan font-size="16" font-family="Montserrat-Bold, Montserrat" font-weight="700"><tspan x="0" y="16">App Store</tspan></tspan></text>
+      <g id="_104475_apple_apps_appstore_icon" data-name="104475_apple_apps_appstore_icon" transform="translate(1236.793 85.865)">
+        <path id="Path_379" data-name="Path 379" d="M16.655,24.049l2.126-3.7a.585.585,0,0,0-.214-.794l-1.513-.865a.58.58,0,0,0-.792.213l-2.319,4.038h0L11.39,27.384h0L9.258,31.1a.579.579,0,0,0,.214.791l1.512.869a.585.585,0,0,0,.794-.213l2.963-5.161h0Z" transform="translate(-2.737 -5.067)" fill="#fff"/>
+        <path id="Path_380" data-name="Path 380" d="M46.892,27.1h-5.1c.6,1.125,1.158,2.185,1.55,2.934.271.518.486.927.562,1.065a1.854,1.854,0,0,1,.174.449h2.818a.526.526,0,0,0,.526-.525v-3.4A.526.526,0,0,0,46.892,27.1Z" transform="translate(-18.823 -9.485)" fill="#fff"/>
+        <path id="Path_381" data-name="Path 381" d="M25.012,27.1l-2.554,4.448h6.93c-.5-.993-1.169-2.413-2.065-4.448Z" transform="translate(-9.3 -9.485)" fill="#fff"/>
+        <path id="Path_382" data-name="Path 382" d="M10,27.1H4.12a.525.525,0,0,0-.525.525v3.4a.525.525,0,0,0,.525.525H7.442Z" transform="translate(0 -9.485)" fill="#fff"/>
+        <path id="Path_383" data-name="Path 383" d="M9.493,46.764,7.981,45.9a.355.355,0,0,0-.57.288L7.15,48.461c-.036.317.15.43.414.251l1.953-1.331A.336.336,0,0,0,9.493,46.764Z" transform="translate(-1.74 -18.407)" fill="#fff"/>
+        <path id="Path_384" data-name="Path 384" d="M35.573,21.819c-.009-.015-.02-.036-.031-.057h0c-.14-.26-.493-.936-.955-1.814-.005-.012-.011-.022-.017-.034-.035-.068-.071-.136-.108-.2l-.081-.151c-.022-.044-.046-.088-.069-.133l-.124-.235-.039-.074c-.047-.09-.095-.179-.143-.271-.014-.026-.027-.052-.042-.079-1.065-2.014-2.4-4.493-3.228-5.8-1.445-2.284-3.374-6.092-3.913-5.821-.754.375,1.581,5.209,2.353,7.025s3.79,8.775,4.394,9.079a1.162,1.162,0,0,0,1.243-.033C35.219,23.052,35.943,22.493,35.573,21.819Z" transform="translate(-11.388 0)" fill="#fff"/>
+        <path id="Path_385" data-name="Path 385" d="M44.861,41.3l-.72-1.382a.641.641,0,0,0-.853-.284l-.868.447a.571.571,0,0,0-.214.828l.911,1.439a.655.655,0,0,0,.881.216l.62-.372A.685.685,0,0,0,44.861,41.3Z" transform="translate(-18.98 -15.442)" fill="#fff"/>
+        <path id="Path_386" data-name="Path 386" d="M46.66,46.606a1.051,1.051,0,0,0-.114,1.605c.65.918,2.1.959,2.3,1.569C48.843,49.78,49.3,45.118,46.66,46.606Z" transform="translate(-21.002 -18.645)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>
