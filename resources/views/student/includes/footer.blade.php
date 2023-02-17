@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-6 text-center text-md-start">
-                    <a href="index.html"><img src="{{asset('public/front/images/f-logo.svg')}}" alt="logo" width="202" height="86"></a>
+                    <a href="index.html"><img src="{{asset('public/student/images/f-logo.svg')}}" alt="logo" width="202" height="86"></a>
                 </div>
                 <div class="col-sm-12 col-md-6 align-self-end">
                     <ul class="f-link">
@@ -27,15 +27,15 @@
                     </div>
                     <div class="col-sm-12 col-md-4">
                         <ul class="social-link">
-                            <li><a href="javascript:viod(0);"><img src="{{asset('public/front/images/facebook.svg')}}" width="21" height="22"></a>
+                            <li><a href="javascript:viod(0);"><img src="{{asset('public/student/images/facebook.svg')}}" width="21" height="22"></a>
                             </li>
-                            <li><a href="javascript:viod(0);"><img src="{{asset('public/front/images/twitter.svg')}}" width="21" height="22"></a>
+                            <li><a href="javascript:viod(0);"><img src="{{asset('public/student/images/twitter.svg')}}" width="21" height="22"></a>
                             </li>
-                            <li><a href="javascript:viod(0);"><img src="{{asset('public/front/images/youtube.svg')}}" width="21" height="22"></a>
+                            <li><a href="javascript:viod(0);"><img src="{{asset('public/student/images/youtube.svg')}}" width="21" height="22"></a>
                             </li>
-                            <li><a href="javascript:viod(0);"><img src="{{asset('public/front/images/telegram.svg')}}" width="21" height="22"></a>
+                            <li><a href="javascript:viod(0);"><img src="{{asset('public/student/images/telegram.svg')}}" width="21" height="22"></a>
                             </li>
-                            <li><a href="javascript:viod(0);"><img src="{{asset('public/front/images/instagram.svg')}}" width="21"
+                            <li><a href="javascript:viod(0);"><img src="{{asset('public/student/images/instagram.svg')}}" width="21"
                                         height="22"></a></li>
                         </ul>
                     </div>
@@ -45,11 +45,11 @@
     </footer>
     <!-- Footer -->
 
-    <script src="{{asset('public/front/js/jquery-3.6.0.min.js')}}"></script>
-    <script src="{{asset('public/front/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('public/front/js/swiper-bundle.min.js')}}"></script>
-    <script src="{{asset('public/front/js/bvselect.js')}}"></script>
-    <script src="{{asset('public/front/js/custom.js')}}"></script>
+    <script src="{{asset('public/student/js/jquery-3.6.0.min.js')}}"></script>
+    <script src="{{asset('public/student/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('public/student/js/swiper-bundle.min.js')}}"></script>
+    <script src="{{asset('public/student/js/bvselect.js')}}"></script>
+    <script src="{{asset('public/student/js/custom.js')}}"></script>
 </body>
 
 

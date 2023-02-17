@@ -11,7 +11,7 @@
                         <li class="list-group-item">
                             <div class="cart-list-item">
                                 <div class="course-thumb">
-                                    <img src="{{asset('public/front/images/cart-thumb.jpg')}}" alt="thumb" width="200" height="130">
+                                    <img src="{{asset('public/student/images/cart-thumb.jpg')}}" alt="thumb" width="200" height="130">
                                 </div>
                                 <div class="course-detail">
                                     <h3 class="font-18 font-bold text-darkblue mb-10">Homeopathy AND Flu Viruses</h3>
@@ -28,7 +28,7 @@
                                     </h5>
                                 </div>
                                 <div class="course-price">
-                                    <div class="font-26 font-bold text-skyblue mb-1">₹449 <sup><img src="{{asset('public/front/images/price-tag.svg')}}"></sup></div>
+                                    <div class="font-26 font-bold text-skyblue mb-1">₹449 <sup><img src="{{asset('public/student/images/price-tag.svg')}}"></sup></div>
                                     <del class="d-block font-18 text-dgray font-regular mb-1">₹799</del>
                                 </div>
                             </div>
@@ -43,7 +43,7 @@
                         <li class="list-group-item">
                             <div class="cart-list-item">
                                 <div class="course-thumb">
-                                    <img src="{{asset('public/front/images/cart-thumb.jpg')}}" alt="thumb" width="200" height="130">
+                                    <img src="{{asset('public/student/images/cart-thumb.jpg')}}" alt="thumb" width="200" height="130">
                                 </div>
                                 <div class="course-detail">
                                     <h3 class="font-18 font-bold text-darkblue mb-10">Homeopathy AND Flu Viruses</h3>
@@ -60,7 +60,7 @@
                                     </h5>
                                 </div>
                                 <div class="course-price">
-                                    <div class="font-26 font-bold text-skyblue mb-1">₹449 <sup><img src="{{asset('public/front/images/price-tag.svg')}}"></sup></div>
+                                    <div class="font-26 font-bold text-skyblue mb-1">₹449 <sup><img src="{{asset('public/student/images/price-tag.svg')}}"></sup></div>
                                     <del class="d-block font-18 text-dgray font-regular mb-1">₹799</del>
                                 </div>
                             </div>
@@ -75,7 +75,7 @@
                         <li class="list-group-item">
                             <div class="cart-list-item">
                                 <div class="course-thumb">
-                                    <img src="{{asset('public/front/images/cart-thumb.jpg')}}" alt="thumb" width="200" height="130">
+                                    <img src="{{asset('public/student/images/cart-thumb.jpg')}}" alt="thumb" width="200" height="130">
                                 </div>
                                 <div class="course-detail">
                                     <h3 class="font-18 font-bold text-darkblue mb-10">Homeopathy AND Flu Viruses</h3>
@@ -92,7 +92,7 @@
                                     </h5>
                                 </div>
                                 <div class="course-price">
-                                    <div class="font-26 font-bold text-skyblue mb-1">₹449 <sup><img src="{{asset('public/front/images/price-tag.svg')}}"></sup></div>
+                                    <div class="font-26 font-bold text-skyblue mb-1">₹449 <sup><img src="{{asset('public/student/images/price-tag.svg')}}"></sup></div>
                                     <del class="d-block font-18 text-dgray font-regular mb-1">₹799</del>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@
 
                     <div class="d-flex align-items-center font-18 text-dgray font-regular mb-1">
                         <a class="font-bold text-darkblue" href="javascript:void(0);">
-                            <img class="me-2" src="{{asset('public/front/images/close-icon.svg')}}" alt="close icon" width="18" height="18">
+                            <img class="me-2" src="{{asset('public/student/images/close-icon.svg')}}" alt="close icon" width="18" height="18">
                         </a>
                         <strong>FT2MT92322</strong> is applied
                     </div>
@@ -133,7 +133,7 @@
                         <li class="list-group-item">
                             <div class="cart-list-item">
                                 <div class="course-thumb">
-                                    <img src="{{asset('public/front/images/cart-thumb.jpg ')}}" alt="thumb" width="200" height="130">
+                                    <img src="{{asset('public/student/images/cart-thumb.jpg ')}}" alt="thumb" width="200" height="130">
                                 </div>
                                 <div class="course-detail">
                                     <h3 class="font-18 font-bold text-darkblue mb-10">Homeopathy AND Flu Viruses</h3>
@@ -150,7 +150,7 @@
                                     </h5>
                                 </div>
                                 <div class="course-price">
-                                    <div class="font-26 font-bold text-skyblue mb-1">₹449 <sup><img src="{{asset('public/front/images/price-tag.svg')}}"></sup></div>
+                                    <div class="font-26 font-bold text-skyblue mb-1">₹449 <sup><img src="{{asset('public/student/images/price-tag.svg')}}"></sup></div>
                                     <del class="d-block font-18 text-dgray font-regular mb-1">₹799</del>
                                 </div>
                             </div>

@@ -13,6 +13,8 @@ use App\Http\Controllers\Admin\EmailTemplateController;
 use App\Http\Controllers\Admin\UserController;
 
 
+use App\Http\Controllers\Teacher\DashboardController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,8 +39,22 @@ Route::get('privacy-policy', [CmsController::class, 'privacy_policy'])->name('pr
 Route::get('faqs', [CmsController::class, 'faqs'])->name('faqs.index');
 
 
+
+
+
+
+
 Route::get('logout', [Test::class, 'logout']);
 Route::get('dashboard', [Test::class, 'dashboard']);
+
+Route::group(array('prefix' => 'teacher'), function() {
+Route::get('/dashboard', [DashboardController::class, 'index']);    
+});
+
+
+
+
+
 Route::group(array('prefix' => 'admin'), function() {
 	Route::group(array('middleware' => 'App\Http\Middleware\GuestAdmin', 'namespace' => 'admin'), function () {
         Route::get('/', [AdminLoginController::class, 'login']);
