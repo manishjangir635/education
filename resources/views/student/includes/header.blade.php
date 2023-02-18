@@ -72,7 +72,7 @@
                         <li><a class="drop-item" href="{{route('my_redemption_coupons.index')}}">My Redemption
                                 coupons</a></li>
                         <li><a class="drop-item" href="{{route('refer_and_earn.index')}}">Refer and earn</a></li>
-                        <li><a class="drop-item" href="teacher-dashboard.html">Teacher Dashboard</a>
+                        <li><a class="drop-item" href="{{route('teacher.dashboard')}}">Teacher Dashboard</a>
                         </li>
                         <li class="dropdown-divider my-2 mx-n2"></li>
                         <li><a class="drop-item" href="javascript:void(0);">Log out</a></li>

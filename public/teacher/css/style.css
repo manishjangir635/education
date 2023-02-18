@@ -9,6 +9,21 @@ header {
     z-index: 9;
 }
 
+
+.error{
+    background: #eb3434;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.success{
+    background: #eb3434;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
 header .notification {
     height: 20px;
     width: 20px;
