@@ -54,14 +54,14 @@
                                 </div>
                                 <div class="col-sm-12 col-md-12 col-lg-2 col-xl-2 align-self-center">
                                     <div class="card-item">
-                                        <a href="javascript:void(0);" class="themeBtn">Publish course</a>  
+                                        <a href="javascript:void(0);" class="themeBtn">Publish course</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 @foreach($course_list as $course)
                 <div class="card mb-20">
                     <div class="d-md-flex">
@@ -132,7 +132,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-12 col-lg-2 col-xl-2 align-self-center">
                                     <div class="card-item">
-                                        <a href="javascript:void(0);" class="themeBtn">Publish course</a>  
+                                        <a href="javascript:void(0);" class="themeBtn">Publish course</a>
                                     </div>
                                 </div>
                             </div>
@@ -140,12 +140,12 @@
                     </div>
                 </div>
                 @endforeach
-              
+
 
             </div>
             <div class="text-center my-3 my-md-5">
                 <i class="font-40 text-darkblue bi bi-question-circle-fill"></i>
-                <h3 class="font-28 text-skyblue font-bold my-2"><a class="text-skyblue" href="faq.html">Help and Support</a></h3>
+                <h3 class="font-28 text-skyblue font-bold my-2"><a class="text-skyblue" href="{{route('faqs.index')}}">Help and Support</a></h3>
                 <p class="mb-0 font-18 font-regular text-darkblue">Browse our help center or contact our support team.
                 </p>
             </div>

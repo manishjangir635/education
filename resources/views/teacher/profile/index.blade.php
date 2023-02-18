@@ -1,7 +1,9 @@
-<div class="left-menu">
+@extends('teacher.layouts.master')
+@section('content')
+        <div class="left-menu">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a href="{{route('teacher.dashboard')}}" class="nav-link active" aria-current="page" title="Teacher Dashboard"
+                    <a href="index.html" class="nav-link active" aria-current="page" title="Teacher Dashboard"
                         data-bs-toggle="tooltip" data-bs-placement="right">
                         <svg width="48" height="48" viewBox="0 0 48 48">
                             <g data-name="Group 16224" transform="translate(15933.904 4540)">
@@ -13,7 +15,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('teacher_students.index')}}" class="nav-link" aria-current="page" title="Students" data-bs-toggle="tooltip"
+                    <a href="students.html" class="nav-link" aria-current="page" title="Students" data-bs-toggle="tooltip"
                         data-bs-placement="right">
                         <svg width="48" height="48" viewBox="0 0 48 48">
                             <g data-name="Group 16226" transform="translate(15930.414 4334.922)">
@@ -42,7 +44,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('revenue_report.index')}}" class="nav-link" aria-current="page" title="Performance" data-bs-toggle="tooltip"
+                    <a href="revenue-report.html" class="nav-link" aria-current="page" title="Performance" data-bs-toggle="tooltip"
                         data-bs-placement="right">
                         <svg width="48" height="48" viewBox="0 0 48 48">
                             <g transform="translate(15931.627 4234.362)">
@@ -65,7 +67,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('teacher_reviews.index')}}" class="nav-link" aria-current="page" title="Ratings and Reviews" data-bs-toggle="tooltip"
+                    <a href="reviews.html" class="nav-link" aria-current="page" title="Ratings and Reviews" data-bs-toggle="tooltip"
                         data-bs-placement="right">
                         <svg width="48" height="48" viewBox="0 0 48 48">
                             <g transform="translate(15932 4123)">
@@ -82,7 +84,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('teacher_messages.index')}}" class="nav-link" aria-current="page" title="Communication" data-bs-toggle="tooltip"
+                    <a href="messages.html" class="nav-link" aria-current="page" title="Communication" data-bs-toggle="tooltip"
                         data-bs-placement="right">
                         <svg width="48" height="48" viewBox="0 0 48 48">
                             <g transform="translate(15929 4017)">
@@ -95,3 +97,71 @@
                 </li>
             </ul>
         </div>
+        <div class="content">
+            <div class="row">
+                <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-9">
+                    <h3 class="font-16 font-regular text-dgray">Teacher</h3>
+                    <h1 class="playfair font-28 font-bold text-darkblue">Taha khan</h1>
+                    <h3 class="font-16 font-regular text-dgray">Doctor, Content creator, Nutritionist, Certified trainer
+                        in, Gold Medalist</h3>
+                    <h4 class="font-18 font-bold text-darkblue mt-3">Doctor</h4>
+                    <h3 class="font-16 font-regular text-dgray">MD (Hom)</h3>
+                    <div class="row my-3 my-md-5">
+                        <div class="col-6 col-sm-3 col-md-3 col-xl-2">
+                            <h3 class="font-16 font-regular text-dgray">Total Students</h3>
+                            <h4 class="font-24 font-bold text-darkblue">134</h4>
+                        </div>
+                        <div class="col-6 col-sm-3 col-md-3 col-xl-2">
+                            <h3 class="font-16 font-regular text-dgray">Reviews</h3>
+                            <h4 class="font-24 font-bold text-darkblue">160</h4>
+                        </div>
+                    </div>
+                    <h3 class="font-24 font-bold text-darkblue">About me</h3>
+                    <div class="w-75 mb-30">
+                        <p class="font-16 font-medium text-darkblue mb-0">Hi! My name is Dr. Taha Khan, and I have
+                            completed my BHMS from National Institute of Homoeopathy (Govt. of India) in 2013, and did
+                            my MD from D.N.De Homoeopathic Medical College and Hospital (Govt. of WB) between 2014-17.
+                        </p>
+                        <p class="font-16 font-medium text-darkblue">I have been teaching and preparing students for
+                            medical exams for more than 7 years now. I am also the founder of Pulse Coaching Institute,
+                            which has been preparing students for the MD entrance exam.</p>
+                    </div>
+                    <h3 class="font-24 font-bold text-darkblue">My courses</h3>
+                    <div class="my-courses">
+                        <div class="card mt-20">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="thumbBlock">
+                                        <img src="{{url('/')}}/public/teacher/images/v-thumb1.jpg" class="img-fluid w-100" alt="img">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <a href="javascript:void(0);"
+                                        class="mt-2 md-md-3 font-18 font-black text-darkblue line-clamp">Part-time BHMS
+                                        Academy -
+                                        Materia Medica for BHMS and</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-3 mt-4 mt-md-0 position-relative">
+                    <a href="edit-profile.html" class="themeBtn position-absolute top-0 end-0">Edit Profile</a>
+                    <div class="profile-block">
+                        <div class="avatar-upload">
+                            <div id="img-preview"><img src="{{url('/')}}/public/teacher/images/profile-img.png"></div>
+                            <input type="file" id="choose-file" name="choose-file" accept="image/*" />
+                            <label for="choose-file"><i class="bi bi-camera-fill"></i></label>
+                        </div>
+                        <div class="socialLink mt-4">
+                            <a href="javascript:void(0);"><i class="bi bi-facebook"></i> Facebook</a>
+                            <a href="javascript:void(0);"><i class="bi bi-youtube"></i> You Tube</a>
+                            <a href="javascript:void(0);"><i class="bi bi-linkedin"></i> Linkedin</a>
+                            <a href="javascript:void(0);"><i class="bi bi-globe"></i> Website</a>
+                            <a href="javascript:void(0);"><i class="bi bi-twitter"></i>  Twitter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+@endsection

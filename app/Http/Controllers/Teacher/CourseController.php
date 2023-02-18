@@ -9,14 +9,14 @@ use Auth;
 
 class CourseController extends Controller
 {
-    
+
     public function create(Request $request){
 
         if ($request->isMethod('post')) {
-            
+
             $data=$request->all();
             extract($data);
-            $course=new Course();    
+            $course=new Course();
             $course->title=$title;
             $course->category=$category;
             $course->image='default.jpg';
@@ -29,22 +29,22 @@ class CourseController extends Controller
             $categories=$this->get_categories();
             return view('teacher/course/create',compact('categories'));
         }
-       
+
     }
 
     public function edit(Request $request , $type, $id){
-       
+
         $course_detail=Course::with(['section_list'])->find($id);
-       
-       
+
+
         if ($request->isMethod('post')) {
-            
+
             $data=$request->all();
-            extract($data);    
-            
-            if ($request->file()) 
+            extract($data);
+
+            if ($request->file())
             {
-              $file = $request->file('image');                   
+              $file = $request->file('image');
               if ($file)
               {
                 if(file_exists(public_path() .'public/teacher/image/'.$course_detail->image))
@@ -59,11 +59,9 @@ class CourseController extends Controller
               }
             }
 
-
-
-            if ($request->file()) 
+            if ($request->file())
             {
-              $file = $request->file('preview_video');                   
+              $file = $request->file('preview_video');
               if ($file)
               {
                 if(file_exists(public_path() .'public/teacher/image/'.$course_detail->preview_video))
@@ -78,8 +76,6 @@ class CourseController extends Controller
               }
             }
 
-
-
             $course_detail->title=$title;
             $course_detail->subtitle=$subtitle;
             $course_detail->description=$description;
@@ -90,8 +86,8 @@ class CourseController extends Controller
 
             return view('teacher/course/'.$type.'_edit',compact('course_detail'));
         }
-       
-        
+
+
     }
 
 
@@ -99,8 +95,8 @@ class CourseController extends Controller
     public function create_section(Request $request,$course_id){
 
         $data=$request->all();
-        extract($data);  
-        
+        extract($data);
+
         $section=new Section();
         $section->course_id=$course_id;
         $section->title=$title;
@@ -114,8 +110,8 @@ class CourseController extends Controller
     public function create_lecture(Request $request,$section_id){
 
         $data=$request->all();
-        extract($data);  
-        
+        extract($data);
+
         $Lecture=new Lecture();
         $Lecture->section_id=$section_id;
         $Lecture->title=$title;
@@ -124,5 +120,5 @@ class CourseController extends Controller
         return redirect()->back();
 
     }
-  
+
 }
