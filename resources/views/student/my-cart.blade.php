@@ -1,6 +1,6 @@
 @extends('student.layouts.master')
 @section('content')
-
+sfsfs
 
 <section class="content-block bg-white pt-60 pb-60">
         <div class="container">
