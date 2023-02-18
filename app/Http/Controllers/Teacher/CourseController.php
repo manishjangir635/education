@@ -19,6 +19,7 @@ class CourseController extends Controller
             $course=new Course();    
             $course->title=$title;
             $course->category=$category;
+            $course->image='default.jpg';
             $course->user_id=$this->login_user_id;
             $course->save();
             return redirect('teacher/dashboard');
@@ -34,12 +35,57 @@ class CourseController extends Controller
     public function edit(Request $request , $type, $id){
        
         $course_detail=Course::with(['section_list'])->find($id);
+       
+       
         if ($request->isMethod('post')) {
             
             $data=$request->all();
-            extract($data);      
+            extract($data);    
+            
+            if ($request->file()) 
+            {
+              $file = $request->file('image');                   
+              if ($file)
+              {
+                if(file_exists(public_path() .'public/teacher/image/'.$course_detail->image))
+                {
+                    @unlink(public_path() .'public/teacher/image/'.$course_detail->image);
+                }
+                $destinationPath = 'public/teacher/image/';
+                $extension = $request->file('image')->getClientOriginalExtension();
+                $filename = rand(11111, 99999) . '.' . $extension;
+                $file->move($destinationPath, $filename);
+                $course_detail->image=$filename;
+              }
+            }
+
+
+
+            if ($request->file()) 
+            {
+              $file = $request->file('preview_video');                   
+              if ($file)
+              {
+                if(file_exists(public_path() .'public/teacher/image/'.$course_detail->preview_video))
+                {
+                    @unlink(public_path() .'public/teacher/image/'.$course_detail->preview_video);
+                }
+                $destinationPath = 'public/teacher/image/';
+                $extension = $request->file('preview_video')->getClientOriginalExtension();
+                $filename = rand(11111, 99999) . '.' . $extension;
+                $file->move($destinationPath, $filename);
+                $course_detail->preview_video=$filename;
+              }
+            }
+
+
+
             $course_detail->title=$title;
+            $course_detail->subtitle=$subtitle;
+            $course_detail->description=$description;
             $course_detail->save();
+
+            return redirect()->back()->with('success','Course updated successfully');
         }else{
 
             return view('teacher/course/'.$type.'_edit',compact('course_detail'));
