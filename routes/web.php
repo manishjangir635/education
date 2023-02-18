@@ -72,9 +72,15 @@ Route::get('dashboard', [Test::class, 'dashboard']);
 Route::group(array('prefix' => 'teacher'), function() {
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/course/create', [CourseController::class, 'create']);
-Route::post('/course/create', [CourseController::class, 'create']);
-Route::get('/course/edit', [CourseController::class, 'edit']);
-Route::post('/course/edit', [CourseController::class, 'edit']);
+
+
+
+
+
+Route::post('/course/create', [CourseController::class, 'create']);  
+Route::get('/course/edit/{id}', [CourseController::class, 'edit']);   
+Route::post('/course/edit/{id}', [CourseController::class, 'edit']);
+
 
 });
 

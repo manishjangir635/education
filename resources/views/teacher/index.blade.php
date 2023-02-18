@@ -22,7 +22,7 @@
                         </select>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-2 text-end ms-auto d-flex justify-content-end">
-                        <a href="new-course.html" class="themeBtn h-100">New course</a>
+                        <a href="{{url('/')}}/teacher/course/create" class="themeBtn h-100">New course</a>
                     </div>
                 </div>
             </form>
@@ -61,6 +61,8 @@
                         </div>
                     </div>
                 </div>
+                
+                @foreach($course_list as $course)
                 <div class="card mb-20">
                     <div class="d-md-flex">
                         <div class="thumbBlock">
@@ -71,13 +73,12 @@
                                 <div class="col-sm-12 col-md-12 col-lg-3 col-xl-4">
                                     <div class="card-item">
                                         <a href="javascript:void(0);"
-                                            class="font-16 font-black text-darkblue line-clamp">Part-time BHMS Academy -
-                                            Materia Medica for BHMS and</a>
+                                            class="font-16 font-black text-darkblue line-clamp">{{$course->title}}</a>
                                         <div class="mt-2 mt-lg-4">
                                             <a class="themeBtn2 btnsmall text-uppercase">Live</a><small
                                                 class="ms-3 font-14 text-darkblue font-regular">₹16,999</small>
                                         </div>
-                                        <div class="upper-link"><a href="manage-courses.html">Edit / mange course</a></div>
+                                        <div class="upper-link"><a href="{{url('/')}}/teacher/course/edit/{{$course->id}}">Edit / mange course</a></div>
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-8 col-lg-5 col-xl-4">
@@ -138,6 +139,11 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
+              
+
+
+
                 <div class="card mb-20">
                     <div class="d-md-flex">
                         <div class="thumbBlock">
