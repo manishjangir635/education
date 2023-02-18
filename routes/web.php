@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\UserAuthController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CmsController;
+use App\Http\Controllers\CartController;
 
 
 // use App\Http\Controllers\Test;
@@ -12,6 +13,9 @@ use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\EmailTemplateController;
 use App\Http\Controllers\Admin\UserController;
 
+
+use App\Http\Controllers\Teacher\DashboardController;
+use App\Http\Controllers\Teacher\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,30 +28,57 @@ use App\Http\Controllers\Admin\UserController;
 |
 */
 
-Route::get('', [HomeController::class, 'index'])->name('index');
-Route::get('my-cart', [HomeController::class, 'my_cart'])->name('mycart');
+Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('my-cart', [CartController::class, 'my_cart'])->name('mycart');
 
-Route::get('signup', [UserAuthController::class, 'signup_index'])->name('signup.index');
-Route::get('login', [UserAuthController::class, 'login_index'])->name('login.index');
-Route::get('forgot-password', [UserAuthController::class, 'forgot_password'])->name('forgot_password.index');
+Route::get('my-learning', [HomeController::class, 'my_learning'])->name('mylearning.index');
+Route::get('shopping-cart', [HomeController::class, 'shopping_cart'])->name('shopping_cart.index');
+Route::get('account', [HomeController::class, 'account'])->name('account.index');
+Route::get('messages', [HomeController::class, 'messages'])->name('messages.index');
+Route::get('purchase-history', [HomeController::class, 'purchase_history'])->name('purchase_history.index');
+Route::get('my-redemption-coupons', [HomeController::class, 'my_redemption_coupons'])->name('my_redemption_coupons.index');
+Route::get('refer-and-earn', [HomeController::class, 'refer_and_earn'])->name('refer_and_earn.index');
+Route::get('course-play', [HomeController::class, 'course_play'])->name('course_play.index');
+Route::get('courses', [HomeController::class, 'course'])->name('course.index');
+Route::get('courses-detail', [HomeController::class, 'courses_detail'])->name('courses_detail.index');
+Route::get('teacher-detail', [HomeController::class, 'teacher_detail'])->name('teacher_detail.index');
+
+
+
+Route::get('signup', [AuthController::class, 'register'])->name('signup.index');
+Route::get('login', [AuthController::class, 'login'])->name('login.index');
+Route::post('auth', [AuthController::class, 'auth']);
+Route::get('forgot-password', [AuthController::class, 'forgot_password'])->name('forgot_password.index');
 
 
 Route::get('terms', [CmsController::class, 'terms'])->name('terms.index');
 Route::get('privacy-policy', [CmsController::class, 'privacy_policy'])->name('privacy_policy.index');
 Route::get('faqs', [CmsController::class, 'faqs'])->name('faqs.index');
+Route::get('privacy-policy', [CmsController::class, 'privacy_policy'])->name('privacy_policy.index');
+Route::get('faqs', [CmsController::class, 'faqs'])->name('faqs.index');
+Route::get('about-us', [CmsController::class, 'about_us'])->name('about_us.index');
 
-
-
-// Route::get('register', [Test::class, 'register']);
-// Route::post('save', [Test::class, 'save']);
-// Route::post('auth_login', [Test::class, 'auth_login']);
-// Route::get('/', function () {
-//     return view('login');
-// });
 
 
 Route::get('logout', [Test::class, 'logout']);
 Route::get('dashboard', [Test::class, 'dashboard']);
+
+Route::group(array('prefix' => 'teacher'), function() {
+Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/course/create', [CourseController::class, 'create']);
+Route::post('/course/create', [CourseController::class, 'create']);  
+Route::get('/course/edit/{type}/{id}', [CourseController::class, 'edit']);   
+Route::post('/course/edit/{type}/{id}', [CourseController::class, 'edit']);
+
+Route::post('/course/create/section/{course_id}', [CourseController::class, 'create_section']);  
+Route::post('/course/create/lecture/{section_id}', [CourseController::class, 'create_lecture']); 
+
+});
+
+
+
+
+
 Route::group(array('prefix' => 'admin'), function() {
 	Route::group(array('middleware' => 'App\Http\Middleware\GuestAdmin', 'namespace' => 'admin'), function () {
         Route::get('/', [AdminLoginController::class, 'login']);
