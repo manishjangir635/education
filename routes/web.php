@@ -13,6 +13,9 @@ use App\Http\Controllers\Admin\EmailTemplateController;
 use App\Http\Controllers\Admin\UserController;
 
 
+use App\Http\Controllers\Teacher\DashboardController;
+use App\Http\Controllers\Teacher\CourseController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,11 +27,11 @@ use App\Http\Controllers\Admin\UserController;
 |
 */
 
-Route::get('', [HomeController::class, 'index'])->name('index');
-Route::get('my-cart', [HomeController::class, 'my_cart'])->name('mycart');
+Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('my-cart', [CartController::class, 'my_cart'])->name('mycart');
 
-Route::get('signup', [UserAuthController::class, 'signup_index'])->name('signup.index');
-Route::get('login', [UserAuthController::class, 'login_index'])->name('login.index');
+Route::get('signup', [UserAuthController::class, 'register'])->name('signup.index');
+Route::get('login', [UserAuthController::class, 'login'])->name('login.index');
 Route::get('forgot-password', [UserAuthController::class, 'forgot_password'])->name('forgot_password.index');
 
 
@@ -38,16 +41,26 @@ Route::get('faqs', [CmsController::class, 'faqs'])->name('faqs.index');
 
 
 
-// Route::get('register', [Test::class, 'register']);
-// Route::post('save', [Test::class, 'save']);
-// Route::post('auth_login', [Test::class, 'auth_login']);
-// Route::get('/', function () {
-//     return view('login');
-// });
+
+
 
 
 Route::get('logout', [Test::class, 'logout']);
 Route::get('dashboard', [Test::class, 'dashboard']);
+
+Route::group(array('prefix' => 'teacher'), function() {
+Route::get('/dashboard', [DashboardController::class, 'index']); 
+Route::get('/course/create', [CourseController::class, 'create']);
+Route::post('/course/create', [CourseController::class, 'create']);  
+Route::get('/course/edit', [CourseController::class, 'edit']);   
+Route::post('/course/edit', [CourseController::class, 'edit']);
+
+});
+
+
+
+
+
 Route::group(array('prefix' => 'admin'), function() {
 	Route::group(array('middleware' => 'App\Http\Middleware\GuestAdmin', 'namespace' => 'admin'), function () {
         Route::get('/', [AdminLoginController::class, 'login']);

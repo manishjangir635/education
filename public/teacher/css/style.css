@@ -1,0 +1,1035 @@
+/* --- Header --- */
+
+header {
+    background: var(--bs-white);
+    padding: 10px 5px;
+    border-bottom: 1px solid var(--bg-darkgrey);
+    position: sticky;
+    top: 0;
+    z-index: 9;
+}
+
+header .notification {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--bs-white);
+    right: -10px;
+}
+
+header .dropdown-menu {
+    min-width: 300px;
+    padding: 15px;
+    background: var(--bs-white);
+    border-radius: 0;
+    border-color: var(--bg-darkgrey);
+    box-shadow: 0px 12px 44px rgba(0, 0, 0, 0.03);
+}
+
+header .dropdown-menu:before,
+header .dropdown-menu:after {
+    content: "";
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 0;
+    right: 35px;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #fff;
+}
+
+header .dropdown-menu:after {
+    z-index: -1;
+    background: var(--bg-darkgrey);
+    top: -1px;
+}
+
+header .dropdown-menu li a {
+    color: var(--text-darkblue);
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in;
+    display: block;
+}
+
+header .dropdown-menu li a:hover {
+    background: var(--bg-lightgrey);
+}
+
+/* --- Header --- */
+
+/* ==== Main ==== */
+
+main {
+    display: flex;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+main .content {
+    width: calc(100% - 80px);
+    padding: 40px 20px;
+    margin-left: 80px;
+}
+
+/* ==== Main ==== */
+
+/* ==== Left Panel ==== */
+main .left-menu {
+    width: 80px;
+    height: 100%;
+    background: var(--bs-white);
+    border-right: 1px solid var(--bg-darkgrey);
+    position: fixed;
+    top: 81px;
+    text-align: center;
+    overflow-y: auto;
+    padding-top: 30px;
+    padding-bottom: 90px;
+}
+
+main .left-menu .nav .nav-item {
+    position: relative;
+    margin: 5px 0;
+}
+
+main .left-menu .nav .nav-item .nav-link {
+    padding: 10px 0;
+    display: inline-flex;
+    transition: all 0.3s ease-in-out;
+}
+main .left-menu .nav .nav-item .nav-link svg{
+    width: 36px;
+    height: 36px;
+}
+main .left-menu .nav .nav-item .nav-link:before {
+    content: "";
+    background: var(--bg-skyblue);
+    width: 6px;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+main .left-menu .nav .nav-item .nav-link svg path {
+    transition: all 0.3s ease-in-out;
+}
+
+main .left-menu .nav .nav-item .nav-link:hover svg path,
+main .left-menu .nav .nav-item .nav-link.active svg path {
+    fill: var(--text-skyblue);
+}
+
+main .left-menu .nav .nav-item .nav-link:hover:before,
+main .left-menu .nav .nav-item .nav-link.active:before {
+    height: 100%;
+}
+
+main .innerMenu{
+    width: 250px;
+    text-align: left;
+}
+
+main .innerMenu .nav .nav-item a.nav-link{
+    display: block;
+    color: var(--bg-darkblue);
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    padding: 10px 15px 10px 20px;
+    transition: all 0.3s ease-in;
+}
+main .innerMenu .nav .nav-item a.nav-link:hover, main .innerMenu .nav .nav-item a.nav-link.active{
+    color: var(--bg-darkblue);
+    font-weight: 600;
+    background: var(--bg-lightgrey);
+}
+main .innerMenu .nav .nav-item a.nav-link::before{
+    content: "";
+    width: 6px;
+}
+main .innerMenu ~ .content{
+    margin-left: 250px;
+    width: calc(100% - 250px);
+}
+/* ==== Left Panel ==== */
+
+
+/* ==== Filter ==== */
+.filter .btn-group .btn {
+    background: var(--bs-white);
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.filter .btn-group .btn:hover {
+    background: var(--bg-darkblue);
+}
+
+.filter .btn-group .btn:hover img {
+    filter: brightness(0) invert(1);
+    transition: all 0.3s ease-in-out;
+}
+
+.filter .btn-group .btn-check:focus+.btn,
+.btn:focus {
+    box-shadow: none;
+}
+
+.filter .btn-group .btn-check:active+.btn,
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:active {
+    background: var(--bg-darkblue);
+}
+
+.filter .btn-group .btn-check:active+.btn img,
+.btn-check:checked+.btn img,
+.btn.active img,
+.btn.show img,
+.btn:active img {
+    filter: brightness(0) invert(1);
+}
+
+.filter .btn-group .btn.btn-outline-primary {
+    border-color: var(--bg-darkgrey);
+}
+
+/* ==== Filter ==== */
+
+/* ==== Class Block ==== */
+.class-blocks {
+    position: relative;
+}
+
+.class-blocks .card {
+    border-radius: 0;
+    border-color: var(--bg-darkgrey);
+    box-shadow: 0 12px 44px rgba(0, 0, 0, 0.03);
+}
+
+.class-blocks .card .thumbBlock {
+    background: var(--bg-lightgrey);
+    height: 100%;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.class-blocks .card .card-item {
+    height: 100%;
+    padding: 10px 15px;
+    position: relative;
+}
+
+.class-blocks .card .card-item .progress {
+    border-radius: 30px;
+    height: 8px;
+}
+
+.class-blocks .card .card-item .upper-link {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, .8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in;
+    opacity: 0;
+    visibility: hidden;
+    padding: 10px;
+
+}
+
+.class-blocks .card .card-item .upper-link a {
+    color: var(--bg-skyblue);
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease-in;
+}
+
+.class-blocks .card .card-item:hover .upper-link {
+    opacity: 1;
+    visibility: visible;
+}
+
+.class-blocks .card .card-item .upper-link a:hover {
+    color: var(--bg-darkblue);
+}
+
+/* ==== Class Block ==== */
+
+/* === Profile Page === */
+
+.my-courses {
+    width: 60%;
+}
+
+.my-courses .card {
+    background: none;
+    border: none;
+    border-radius: 0;
+}
+
+.my-courses .card .thumbBlock {
+    box-shadow: 0 12px 44px rgba(0, 0, 0, 0.03);
+}
+
+.profile-block {
+    max-width: 190px;
+}
+
+.avatar-upload {
+    position: relative;
+}
+
+.avatar-upload #img-preview {
+    width: 190px;
+    height: 190px;
+    position: relative;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.avatar-upload #img-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-upload input#choose-file {
+    display: none;
+}
+
+.avatar-upload label {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    background: var(--bg-skyblue);
+    color: var(--bs-white);
+    border: 2px solid var(--bs-white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 20px;
+    bottom: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.avatar-upload label:hover {
+    background: var(--bg-darkblue);
+}
+
+.socialLink a {
+    margin-top: 10px;
+    border: 1px solid var(--bg-darkgrey);
+    background: #fff;
+    color: var(--bg-darkblue);
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease-in;
+}
+
+.socialLink a i {
+    margin-right: 5px;
+}
+
+.socialLink a:hover {
+    color: var(--text-skyblue);
+    border-color: var(--bg-skyblue);
+}
+
+.edit-profile .userProfile {
+    text-align: center;
+}
+
+.edit-profile .userProfile .p-title {
+    background: var(--bg-darkblue);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-profile .nav .nav-link {
+    background: none;
+    color: var(--bg-darkblue);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: capitalize;
+    display: block;
+    border-radius: 0;
+    text-align: left;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in;
+}
+
+.edit-profile .nav .nav-link:hover,
+.edit-profile .nav .nav-link.active {
+    background: var(--bg-lightgrey);
+    font-weight: bold;
+}
+
+.edit-profile .input-group .urlLink {
+    width: 200px;
+    font-size: 14px;
+    flex: 0 auto;
+}
+
+
+.edit-profile form .form-control {
+    font-size: 14px;
+}
+
+.edit-profile form .previewDiv {
+    padding: 15px;
+    background: var(--bs-white);
+    border: 1px solid var(--bg-darkgrey);
+    margin-bottom: 20px;
+}
+
+.edit-profile form .previewDiv img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.edit-profile form input[type=file] {
+    line-height: 40px;
+    height: 50px;
+    background: var(--bg-lightgrey);
+}
+
+.edit-profile form input[type=file]::-ms-browse {
+    display: none;
+}
+
+.edit-profile form input[type=file]::-webkit-file-upload-button {
+    display: none;
+}
+
+.edit-profile form input[type=file]::file-selector-button {
+    display: none;
+}
+
+#email_pass_edit {
+    display: none;
+}
+.addsocialLink{
+    margin-top: 10px;
+    border: 1px solid var(--bg-darkgrey);
+    background: #fff;
+    color: var(--bg-darkblue);
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease-in;
+}
+.edit-profile form .imgUpload {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: #fff;
+	height: 100%;
+	line-height: 100%;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	padding: 0 20px;
+	border: 1px solid #bec3ce;
+    transition: all 0.3s ease-in;
+}
+.edit-profile form .imgUpload:hover {
+    background: var(--bg-lightgrey);
+}
+
+
+/* === Profile Page === */
+
+
+/* === Message Page === */
+
+.ui-block .input-group .form-control{
+    border-radius: 0;
+    height: 48px;
+}
+.chat-user-list{
+    margin: 0;
+    padding: 0;
+    height: 658px;
+    overflow-y: auto;
+}
+
+.chat-user-list li{
+    padding: 15px;
+    background: var(--bg-lightgrey);
+    border: 1px solid var(--bg-darkgrey);
+    cursor: pointer;
+}
+.chat-user-list li .user-avtar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 15px;
+}
+.chat-user-list li span.active-user{
+    background: #45E96B;
+    border: 1px solid #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 3px;
+}
+.chat-user-list li + li{
+    margin-top: 15px;
+}
+.message-block .message-header{
+    padding:15px 20px;
+    border-bottom: 1px solid var(--bg-darkgrey);
+    background-color: var(--bg-lightgrey);
+    display: flex;
+    align-items: center;
+}
+.message-block .message-header-img{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+.message-block .message-header-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.message-block .message-header-img span.active-user{
+    background: #45E96B;
+    border: 1px solid #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 3px;
+}
+.message-block .active_state{
+    margin-left: 15px;
+}
+.message-block .message-page{
+    margin: 0;
+    position: relative;
+}
+.message-block .message-index{
+    overflow: hidden;
+    overflow-y: auto;
+    height: 572px;
+    padding: 30px 20px;
+}
+.message-block .recived-chat{
+    margin: 25px 0;
+    margin-right: auto;
+    width: 60%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.message-block .recived-chat-img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 20px;
+    text-align: center;
+    flex-shrink: 0;
+}
+.message-block .recived-chat-img img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.message-block .recived-msg-inbox p{
+    background: var(--bg-lightgrey);
+    border-radius: 15px 15px 15px 5px;
+    color: var(--bg-darkblue);
+    font-size: 14px;
+    padding: 5px 10px 5px 12px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+}
+.message-block .time{
+    color: var(--bg-darkgrey);
+    font-size: 12px;
+    font-weight: 400;
+}
+.message-block .outgoing-chat{
+    margin: 25px 0;
+    margin-left: auto;
+    width: 60%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.message-block .outgoing-chat-msg p{
+    background: var(--bg-skyblue);
+    color: #fff;
+    border-radius: 15px 15px 5px 15px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+}
+
+.message-block .outgoing-chat-img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-left: 20px;
+    text-align: center;
+}
+.message-block .outgoing-chat-img img{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.message-block .msg-bottom{
+    border-top: 1px solid var(--bg-darkgrey);
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+}
+.message-block .msg-bottom a.leftIcon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+
+}
+.message-block .msg-bottom a.leftIcon img{
+    width: 100%;
+}
+.message-block .msg-bottom a.leftIcon:hover{
+    background: var(--bg-lightgrey);
+}
+.message-block .msg-bottom .form-control{
+    border: none;
+}
+.message-block .bottom-icons{
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+.message-block .msg-bottom .input-group button{
+    border: none;
+    outline: none;
+    background: var(--bg-skyblue);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in;
+}
+.message-block .msg-bottom .input-group button:hover{
+    background: var(--bg-darkblue);
+}
+/* === Message Page === */
+
+
+/* === Rating And Review Page === */
+
+.rating-pik{
+    position: relative;
+    width: 220px;
+    flex: initial;
+}
+.rating-pik .bv_mainselect{
+    position: relative;
+    width: auto;
+}
+.rating-pik .bv_atual{
+    border: none;
+    outline: none;
+    border-radius: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--bg-darkblue);
+}
+.rating-pik .bv_atual .arrows_bv{
+    color: var(--bg-darkblue);
+    font-size: 14px;
+}
+.rating-pik .bv_ul_inner{
+    min-width: 180px;
+    padding: 15px;
+    margin-top: 10px;
+    right:-60px;
+}
+.rating-pik .bv_ul_inner li {
+    padding: 10px 10px;
+}
+.review-response{
+    position: relative;
+}
+.review-response .reviewby{
+    margin-bottom: 15px;
+}
+.review-response .reviewby .user-avtar{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 15px;
+}
+.review-response textarea{
+    border: 1px solid var(--bg-darkgrey);
+    border-radius: 0;
+    resize: none;
+    padding: 15px;
+}
+/* === Rating And Review Page === */
+
+
+/* === Pricing Page === */
+
+.pricing{
+    position: relative;
+}
+.pricing .col{
+    flex: initial;
+}
+.pricing .col.pricecol{ 
+    width: 200px;
+    display: flex;
+    align-items: center;
+}
+.pricing .col.pricecol input{ 
+    box-shadow: 0px 12px 44px rgba(0, 0, 0, 0.03);
+}
+.pricing .col.validity{ 
+    width: 110px;
+}
+.pricing .col.validity{ 
+    position: relative;
+}
+.pricing .bv_mainselect{
+    position: relative;
+    width: auto;
+    box-shadow: 0px 12px 44px rgba(0, 0, 0, 0.03);
+}
+.pricing .bv_atual{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--bg-darkblue);
+}
+.pricing .bv_atual .arrows_bv{
+    color: var(--text-darkblue);
+    font-size: 16px;
+}
+.pricing .bv_ul_inner{
+    min-width: 180px;
+    padding: 15px;
+    right:-40px;
+}
+
+/* === Pricing Page === */
+
+
+.coupon-block{
+    background: var(--bg-lightgrey);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-image: linear-gradient(to right, #B5BBC7 50%, rgba(255, 255, 255, 0) 0%), linear-gradient(#B5BBC7 50%, rgba(255, 255, 255, 0) 0%), linear-gradient(to right, #B5BBC7 50%, rgba(255, 255, 255, 0) 0%), linear-gradient(#B5BBC7 50%, rgba(255, 255, 255, 0) 0%);
+    background-position: top, right, bottom, left;
+    background-size: 10px 1px, 1px 10px;
+    background-repeat: repeat-x, repeat-y;
+}
+.coupon-block .bv_atual{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--bg-darkblue);
+}
+.coupon-block .bv_atual .arrows_bv{
+    color: var(--text-darkblue);
+    font-size: 16px;
+}
+.coupon-block .bv_ul_inner{
+    min-width: 180px;
+    padding: 15px;
+    right:-40px;
+}
+.coupon-block .date{
+    position:relative;
+    background:#fff url(../images/down2.svg) no-repeat right 10px center / 15px;
+}
+
+
+/* === Pricing Page === */
+
+
+/* === Edit Manage Page === */
+
+.more-fields{
+    padding: 0;
+    margin: 0;
+}
+.more-fields li{
+    position: relative;
+    margin-top: 15px;
+}
+.more-fields li .input-group-text{
+    position: absolute;
+    right: 0;
+    z-index: 3;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+}
+.more-fields li .input-group-text a{
+    padding: 11px 15px;
+    transition: all 0.3s ease-in;
+}
+.more-fields li .input-group-text a:hover{
+    background: var(--bg-lightgrey);
+}
+.more-fields li:hover .input-group-text{
+    visibility: visible;
+    opacity: 1;
+}
+.addmore{
+    font-size: 16px;
+    color: var(--bg-skyblue);
+    font-weight: 500;
+    display: inline-flex;
+    transition: all 0.3s ease-in;
+}
+.addmore:hover{
+    color: var(--bg-darkblue);
+}
+.course_image .previewDiv{
+    background: var(--bg-lightgrey);
+    border: 1px solid var(--bg-darkgrey);
+}
+.course_image .previewDiv img{
+    width: 100%;
+    height: 100%;
+}
+.course_image input[type=file] {
+    line-height: 40px;
+    height: 50px;
+    background: var(--bg-lightgrey);
+}
+
+.course_image .previewDiv video{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    background: url(../images/blankBg.svg) no-repeat center center / contain;
+}
+
+
+.course_image input[type=file]::-ms-browse {
+    display: none;
+}
+
+.course_image input[type=file]::-webkit-file-upload-button {
+    display: none;
+}
+
+.course_image input[type=file]::file-selector-button {
+    display: none;
+}
+.course_image .uploadType {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: #fff;
+	height: 100%;
+	line-height: 100%;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	padding: 0 20px;
+	border: 1px solid #bec3ce;
+    transition: all 0.3s ease-in;
+}
+.course_image .uploadType:hover {
+    background: var(--bg-lightgrey);
+}
+
+/* === Edit Manage Page === */
+
+
+
+/* === Curriculum Page === */
+.curriculmSection{
+    position: relative;
+}
+.curriculmSection .sectionHeader{
+    margin-bottom: 20px;
+}
+.curriculmSection .sectionHeader .action_btn{
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+}
+.curriculmSection .sectionHeader:hover .action_btn{
+    visibility: visible;
+    opacity: 1;
+}
+.curriculmSection .accordion{
+    border: none;
+    padding-left: 75px;
+}
+.curriculmSection .accordion-item{
+    border: 1px solid var(--bg-darkgrey);
+    border-radius: 0;
+    margin-top: 20px;
+}
+
+.curriculmSection .accordion-item .accordion-header{
+    padding: 15px;
+}
+.curriculmSection .accordion-item .accordion-button{
+    border: none;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+}
+.curriculmSection .accordion-item .accordion-button:after{
+    background: url(../images/down2.svg) no-repeat center;
+    position: absolute;
+    right: 50px;
+}
+.addNewsection{
+    position: relative;
+}
+.addNewsection a.add_new[aria-expanded="true"]{
+    background: none;
+    width: auto;
+    height: auto;
+    padding: 0;
+    visibility: visible;
+    margin-left: 0;
+}
+.addNewsection a.add_new[aria-expanded="true"] img{
+    transform: rotate(45deg);
+    width: 22px;
+    height: 22px;
+    transition: all 0.3s ease-in;
+    filter: none;
+}
+.addNewsection .add_new{
+    visibility: hidden;
+}
+.addNewsection .add_new img{
+    filter: brightness(.4);
+}
+.addNewsection:hover .add_new{
+    visibility: visible;
+}
+/* === Curriculum Page === */
+
+
+/* ==== Pagination ==== */
+.pagination{
+    margin-top: 20px;
+}
+.pagination .page-link{
+   border-radius: 0 !important;
+   border: 1px solid var(--bg-darkgrey);
+   font-size: 16px;
+   color: var(--bg-darkblue);
+   padding: 10px 15px;
+}
+.pagination .page-link:hover, .pagination .page-link.active{
+    background: var(--bg-skyblue);
+    color: var(--bs-white);
+    border-color: var(--bg-skyblue);
+}
+/* ==== Pagination ==== */
+.allCoursesSel{
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.allCoursesSel .bv_mainselect{
+    position: relative;
+    width: auto;
+}
+.allCoursesSel .bv_atual{
+    border: none;
+    outline: none;
+    border-radius: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--bg-darkblue);
+}
+.allCoursesSel .bv_atual .arrows_bv{
+    color: var(--bg-darkblue);
+    font-size: 14px;
+}
+.allCoursesSel .bv_ul_inner{
+    padding: 15px;
+    margin-top: 10px;
+    right:-60px;
+}
+.allCoursesSel .bv_ul_inner li {
+    padding: 10px 10px;
+}
