@@ -45,8 +45,6 @@ Route::get('teacher-detail', [HomeController::class, 'teacher_detail'])->name('t
 
 
 
-
-
 Route::get('signup', [UserAuthController::class, 'register'])->name('signup.index');
 Route::get('login', [UserAuthController::class, 'login'])->name('login.index');
 Route::get('forgot-password', [UserAuthController::class, 'forgot_password'])->name('forgot_password.index');
@@ -61,26 +59,18 @@ Route::get('about-us', [CmsController::class, 'about_us'])->name('about_us.index
 
 
 
-
-
-
-
-
 Route::get('logout', [Test::class, 'logout']);
 Route::get('dashboard', [Test::class, 'dashboard']);
 
 Route::group(array('prefix' => 'teacher'), function() {
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/course/create', [CourseController::class, 'create']);
-
-
-
-
-
 Route::post('/course/create', [CourseController::class, 'create']);  
-Route::get('/course/edit/{id}', [CourseController::class, 'edit']);   
-Route::post('/course/edit/{id}', [CourseController::class, 'edit']);
+Route::get('/course/edit/{type}/{id}', [CourseController::class, 'edit']);   
+Route::post('/course/edit/{type}/{id}', [CourseController::class, 'edit']);
 
+Route::post('/course/create/section/{course_id}', [CourseController::class, 'create_section']);  
+Route::post('/course/create/lecture/{section_id}', [CourseController::class, 'create_lecture']); 
 
 });
 

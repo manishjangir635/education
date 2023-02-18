@@ -2,6 +2,8 @@
 namespace App\Http\Controllers\Teacher;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
+use App\Models\Section;
+use App\Models\Lecture;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -29,9 +31,9 @@ class CourseController extends Controller
        
     }
 
-    public function edit(Request $request , $id){
+    public function edit(Request $request , $type, $id){
        
-        $course_detail=Course::find($id);
+        $course_detail=Course::with(['section_list'])->find($id);
         if ($request->isMethod('post')) {
             
             $data=$request->all();
@@ -39,10 +41,42 @@ class CourseController extends Controller
             $course_detail->title=$title;
             $course_detail->save();
         }else{
-            return view('teacher/course/edit',compact('course_detail'));
+
+            return view('teacher/course/'.$type.'_edit',compact('course_detail'));
         }
        
         
+    }
+
+
+
+    public function create_section(Request $request,$course_id){
+
+        $data=$request->all();
+        extract($data);  
+        
+        $section=new Section();
+        $section->course_id=$course_id;
+        $section->title=$title;
+        $section->save();
+
+        return redirect()->back();
+
+    }
+
+
+    public function create_lecture(Request $request,$section_id){
+
+        $data=$request->all();
+        extract($data);  
+        
+        $Lecture=new Lecture();
+        $Lecture->section_id=$section_id;
+        $Lecture->title=$title;
+        $Lecture->save();
+
+        return redirect()->back();
+
     }
   
 }
