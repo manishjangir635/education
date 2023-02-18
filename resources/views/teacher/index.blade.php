@@ -78,7 +78,7 @@
                                             <a class="themeBtn2 btnsmall text-uppercase">Live</a><small
                                                 class="ms-3 font-14 text-darkblue font-regular">₹16,999</small>
                                         </div>
-                                        <div class="upper-link"><a href="{{url('/')}}/teacher/course/edit/{{$course->id}}">Edit / mange course</a></div>
+                                        <div class="upper-link"><a href="{{url('/')}}/teacher/course/edit/detail/{{$course->id}}">Edit / mange course</a></div>
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-8 col-lg-5 col-xl-4">

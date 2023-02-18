@@ -1,7 +1,15 @@
 @extends('teacher.layouts.master')
 @section('content')
 
-
+<div class="left-menu innerMenu">
+			<ul class="nav flex-column">
+				<li class="nav-item"><a href="{{url('/')}}/teacher/course/edit/detail/{{$course_detail->id}}" class="nav-link active"> Course landing page </a>
+				</li>
+				<li class="nav-item"><a href="{{url('/')}}/teacher/course/edit/curriculum/{{$course_detail->id}}" class="nav-link"> Curriculum </a></li>
+				<li class="nav-item"><a href="{{url('/')}}/teacher/course/edit/pricing/{{$course_detail->id}}" class="nav-link"> Pricing </a></li>
+				<li class="nav-item"><a href="{{url('/')}}/teacher/course/edit/promotion/{{$course_detail->id}}" class="nav-link"> Promotions </a></li>
+			</ul>
+		</div>
 <div class="content">
 			<div class="ui-block">
 				<div class="p-4 border-bottom1">
