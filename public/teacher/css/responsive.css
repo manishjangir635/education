@@ -1,0 +1,254 @@
+@media all and (max-width: 1440px) {
+    .themeBtn {
+        font-size: 14px;
+    }
+
+    .themeBtn2 {
+        font-size: 14px;
+    }  
+    .class-blocks .card .row .col-6 .card-item{
+        padding: 10px 0;
+    }
+    .class-blocks .card .row .col-xl-2 .card-item{
+        padding:10px 0;
+    }
+    .class-blocks .card .card-item .font-16{
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+    .class-blocks .card .card-item .font-14{
+        font-size: 14px;
+    }
+}
+@media all and (max-width: 1199px) {
+    .themeBtn {
+        font-size: 14px;
+    }
+
+    .themeBtn2 {
+        font-size: 14px;
+    }
+
+    .heading1 {
+        font-size: 30px;
+    }
+
+    .themeBtn2 {
+        font-size: 12px;
+    }
+
+    .font-18 {
+        font-size: 16px;
+    }
+
+    .font-16 {
+        font-size: 14px;
+    }
+    .class-blocks .card .row .col-6 .card-item{
+        padding: 0;
+    }
+    .class-blocks .card .row .col-xl-2 .card-item{
+        padding: 0;
+    }
+    .class-blocks .card .row .col-xl-2 .card-item .themeBtn{
+        padding: 10px;
+        font-size: 11px;
+    }
+    .class-blocks .card .card-item {
+        padding: 5px 12px;
+    }
+    .class-blocks .card .card-item span i:first-child{
+        margin-left: 0 !important;
+    }
+    .class-blocks .card .card-item .font-16{
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+    .class-blocks .card .card-item .font-14{
+        font-size: 12px;
+    }
+    .class-blocks .card .card-item .mb-3{
+        margin-bottom: 10px !important;
+    }
+    .class-blocks .card .card-item .upper-link a{
+        font-size: 14px;
+    }
+     .class-blocks .card .card-item small{
+        display: inline-block;
+     }
+    .profile-block {
+        margin-top: 60px;
+    }
+
+    .detail-table th,
+    .detail-table td {
+        font-size: 14px;
+    }
+    .message-block .outgoing-chat{
+        width: 80%;
+    }
+    .message-block .recived-chat{
+        width: 80%;
+    }
+}
+
+@media all and (max-width: 991.98px) {
+    .heading1 {
+        font-size: 28px;
+    }
+
+    .themeBtn2 {
+        font-size: 10px;
+    }
+
+    .font-30 {
+        font-size: 20px;
+    }
+
+    .font-22 {
+        font-size: 16px;
+    }
+
+    .font-18 {
+        font-size: 14px;
+    }
+
+    .font-16 {
+        font-size: 13px;
+    }
+
+    .class-blocks .card .card-item {
+        padding: 5px 10px;
+    }
+    .class-blocks .card .row .col-6 .card-item{
+        padding: 5px 10px;
+    }
+    .class-blocks .card .row .col-xl-2 .card-item{
+        padding: 5px 10px;
+    }
+    .class-blocks .card .thumbBlock .img-fluid {
+        object-fit: cover;
+        height: 245px;
+    }
+    .class-blocks .card .card-item .upper-link a{
+        font-size: 14px;
+    }
+
+    .userProfile .p-title {
+        width: 60px;
+        height: 60px;
+    }
+
+    .detail-table {
+        white-space: nowrap;
+    }
+
+    .chat-user-list li {
+        padding: 8px;
+    }
+
+    .chat-user-list li .user-avtar {
+        width: 40px;
+        height: 40px;
+        font-size: 13px;
+        margin-right: 10px;
+    }
+
+    .chat-user-list li span.active-user {
+        left: 0;
+        top: 0;
+    }
+
+    .class-blocks .card .thumbBlock{
+        width: 200px;
+    }
+
+}
+
+@media all and (max-width: 767.98px) {
+    .heading1 {
+        font-size: 24px;
+    }
+
+    .font-32 {
+        font-size: 24px;
+    }
+
+    .class-blocks .card .w-auto {
+        width: 100% !important;
+    }
+
+    .class-blocks .card .thumbBlock {
+        width: 100%;
+    }
+
+    .class-blocks .card .card-item {
+        padding: 10px 10px;
+    }
+
+    .class-blocks .card .thumbBlock .img-fluid {
+        height: auto;
+    }
+    .class-blocks .card .row .col-xl-2 .card-item .themeBtn{
+        margin-bottom: 15px;
+    }
+
+    .my-courses {
+        width: 100%;
+    }
+    .pricing .col.pricecol{ 
+        width: 100%;
+    }
+    .pricing .col.validity{ 
+        width: 100%;
+    }
+
+}
+
+@media all and (max-width: 575px) {
+    .font-16 {
+        font-size: 12px;
+    }
+
+    .ml-100 {
+        margin-left: 20px;
+    }
+
+    form .form-control {
+        height: 44px;
+        font-size: 14px;
+    }
+
+    .edit-profile .input-group .input-group-text.urlLink {
+        width: 100%;
+        word-break: break-all;
+        white-space: normal;
+    }
+}
+
+@media all and (min-width: 992px) {
+    header .dropdown-menu-end {
+        right: 0;
+        left: auto;
+    }
+
+    header .dropdown .dropdown-menu {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s;
+        margin-top: 15px;
+    }
+
+    header .dropdown-menu.fade-up {
+        top: 150%;
+    }
+
+    header .nav-item:hover .dropdown-menu {
+        transition: .3s;
+        opacity: 1;
+        visibility: visible;
+        top: 100%;
+        transform: rotateX(0deg);
+    }
+}
