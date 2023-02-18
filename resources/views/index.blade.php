@@ -5,13 +5,13 @@
         <div class="banner">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="{{asset('public/student/images/slide1.jpg')}}" alt="banner" width="100%" height="650">
+                    <img src="{{url('/')}}/public/student/images/slide1.jpg" alt="banner" width="100%" height="650">
                 </div>
                 <div class="swiper-slide">
-                    <img src="{{asset('public/student/images/slide1.jpg')}}" alt="banner" width="100%" height="650">
+                    <img src="{{url('/')}}/public/student/images/slide1.jpg" alt="banner" width="100%" height="650">
                 </div>
                 <div class="swiper-slide">
-                    <img src="{{asset('public/student/images/slide1.jpg')}}" alt="banner" width="100%" height="650">
+                    <img src="{{url('/')}}/public/student/images/slide1.jpg" alt="banner" width="100%" height="650">
                 </div>
             </div>
             <div class="slide-btns">
@@ -26,15 +26,15 @@
     <section class="bg-white pt-60 pb-60">
         <div class="heading-block">
             <h3 class="main-heading">Discover a course with</h3>
-            <a class="border-btn" href="courses.html">View All</a>
+            <a class="border-btn" href="{{route('course.index')}}">View All</a>
         </div>
         <div class="courses mt-30">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb1.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb1.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -63,9 +63,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb2.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb2.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -94,9 +94,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb3.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb3.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -125,9 +125,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb1.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb1.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -156,9 +156,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb2.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb2.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -187,9 +187,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb3.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb3.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -230,15 +230,15 @@
     <section class="pt-60 pb-60">
         <div class="heading-block">
             <h3 class="main-heading">Recommended courses</h3>
-            <a class="border-btn" href="courses.html">View All</a>
+            <a class="border-btn" href="{{route('course.index')}}">View All</a>
         </div>
         <div class="courses mt-30">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb4.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb4.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -267,9 +267,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb5.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb5.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -298,9 +298,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb6.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb6.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -329,9 +329,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb4.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb4.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -360,9 +360,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb5.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb5.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -391,9 +391,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb6.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb6.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -459,7 +459,7 @@
             <div class="row">
                 <div class="col-sm-12 col-md-4">
                     <div class="img-center-block">
-                        <img src="{{asset('public/student/images/teach-your-way.svg')}}" alt="tech" width="112" height="114">
+                        <img src="{{url('/')}}/public/student/images/teach-your-way.svg" alt="tech" width="112" height="114">
                         <h4 class="font-20 text-darkblue font-bold mt-20 mb-10">Teach your way</h4>
                         <p class="font-14 text-darkblue font-regular mb-0">Publish the course you want, in the way you
                             want, and always have of control your own content.</p>
@@ -467,7 +467,7 @@
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <div class="img-center-block">
-                        <img src="{{asset('public/student/images/inspire.svg')}}" alt="inspire" width="160" height="109">
+                        <img src="{{url('/')}}/public/student/images/inspire.svg" alt="inspire" width="160" height="109">
                         <h4 class="font-20 text-darkblue font-bold mt-20 mb-10">Inspire</h4>
                         <p class="font-14 text-darkblue font-regular mb-0">Teach what you know and help learns explore
                             their interests, gain new skills, and advance their careers.</p>
@@ -475,7 +475,7 @@
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <div class="img-center-block">
-                        <img src="{{asset('public/student/images/get-rewarded.svg')}}" alt="rewarded" width="112" height="111">
+                        <img src="{{url('/')}}/public/student/images/get-rewarded.svg" alt="rewarded" width="112" height="111">
                         <h4 class="font-20 text-darkblue font-bold mt-20 mb-10">Get rewarded</h4>
                         <p class="font-14 text-darkblue font-regular mb-0">Expand your professional network, build your
                             expertise, and earn money on each
@@ -497,7 +497,7 @@
             <div class="row">
                 <div class="col-sm-12 col-md-4">
                     <div class="img-center-block">
-                        <img src="{{asset('public/student/images/curriculum.svg')}}" alt="curriculum" width="112" height="114">
+                        <img src="{{url('/')}}/public/student/images/curriculum.svg" alt="curriculum" width="112" height="114">
                         <h4 class="font-20 text-darkblue font-bold mt-20 mb-10">Plan you curriculum</h4>
                         <p class="font-14 text-darkblue font-regular mb-0">Start with your passion and knowledge. Choose
                             an engaging topic for your audience and compile a course.</p>
@@ -505,7 +505,7 @@
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <div class="img-center-block">
-                        <img src="{{asset('public/student/images/lectures.svg')}}" alt="Record your lectures" width="160" height="109">
+                        <img src="{{url('/')}}/public/student/images/lectures.svg" alt="Record your lectures" width="160" height="109">
                         <h4 class="font-20 text-darkblue font-bold mt-20 mb-10">Record your lectures</h4>
                         <p class="font-14 text-darkblue font-regular mb-0">Film your PTBA lectures using a basic tool
                             like a smartphone or a DSLR camera. If you don’t like being on camera, just capture your
@@ -514,7 +514,7 @@
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <div class="img-center-block">
-                        <img src="{{asset('public/student/images/earning.svg')}}" alt="earning" width="112" height="111">
+                        <img src="{{url('/')}}/public/student/images/earning.svg" alt="earning" width="112" height="111">
                         <h4 class="font-20 text-darkblue font-bold mt-20 mb-10">Start earning</h4>
                         <p class="font-14 text-darkblue font-regular mb-0">You’ll be paid monthly for every student who
                             takes your course, forever.</p>
@@ -531,13 +531,13 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-4 d-none d-sm-block align-self-end">
-                    <img src="{{asset('public/student/images/instructor.png')}}" alt="instructor" width="439" height="404" class="img-fluid">
+                    <img src="{{url('/')}}/public/student/images/instructor.png" alt="instructor" width="439" height="404" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-7 align-self-center">
                     <h4 class="playfair font-40 text-darkblue font-bold">Become an instructor today</h4>
                     <p class="font-22 text-darkblue font-medium">Join one of the world's largest online leaening
                         maketplaces.</p>
-                    <a class="get-started" href="courses.html">Get started</a>
+                    <a class="get-started" href="{{route('course.index')}}">Get started</a>
                 </div>
             </div>
         </div>
@@ -549,15 +549,15 @@
     <section class="bg-white pt-60 pb-60">
         <div class="heading-block">
             <h3 class="main-heading">Top courses</h3>
-            <a class="border-btn" href="courses.html">View All</a>
+            <a class="border-btn" href="{{route('course.index')}}">View All</a>
         </div>
         <div class="courses mt-30">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb1.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb1.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -586,9 +586,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb2.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb2.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -617,9 +617,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb3.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb3.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -648,9 +648,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb1.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb1.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -679,9 +679,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb2.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb2.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -710,9 +710,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb3.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb3.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -753,15 +753,15 @@
     <section class="pt-60 pb-60">
         <div class="heading-block">
             <h3 class="main-heading">Recently enrolled</h3>
-            <a class="border-btn" href="courses.html">View All</a>
+            <a class="border-btn" href="{{route('course.index')}}">View All</a>
         </div>
         <div class="courses mt-30">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb4.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb4.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -790,9 +790,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb5.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb5.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -821,9 +821,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb6.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb6.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -852,9 +852,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb4.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb4.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -883,9 +883,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb5.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb5.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -914,9 +914,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="courses-detail.html">
+                        <a href="{{route('courses_detail.index')}}">
                             <div class="course-thumb">
-                                <img src="{{asset('public/student/images/course-thumb/course-thumb6.jpg')}}" alt="course" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb6.jpg" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
@@ -957,15 +957,15 @@
     <section class="bg-white pt-60 pb-60">
         <div class="heading-block">
             <h3 class="main-heading">PTBA Teachers </h3>
-            <a class="border-btn" href="teacher-detail.html">View All</a>
+            <a class="border-btn" href="{{route('teacher_detail.index')}}">View All</a>
         </div>
         <div class="teacher mt-30">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="teacher-block">
-                        <a href="teacher-detail.html">
+                        <a href="{{route('teacher_detail.index')}}">
                             <div class="teacher-thumb">
-                                <img src="{{asset('public/student/images/teacher/teacher1.jpg')}}" alt="teacher" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/teacher/teacher1.jpg" alt="teacher" width="100%" height="200">
                             </div>
                             <div class="teacher-detail text-center">
                                 <h4 class="font-18 text-darkblue font-bold">Jessica Hische</h4>
@@ -976,9 +976,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="teacher-block">
-                        <a href="teacher-detail.html">
+                        <a href="{{route('teacher_detail.index')}}">
                             <div class="teacher-thumb">
-                                <img src="{{asset('public/student/images/teacher/teacher2.jpg')}}" alt="teacher" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/teacher/teacher2.jpg" alt="teacher" width="100%" height="200">
                             </div>
                             <div class="teacher-detail text-center">
                                 <h4 class="font-18 text-darkblue font-bold">Humaira Asim</h4>
@@ -989,9 +989,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="teacher-block">
-                        <a href="teacher-detail.html">
+                        <a href="{{route('teacher_detail.index')}}">
                             <div class="teacher-thumb">
-                                <img src="{{asset('public/student/images/teacher/teacher3.jpg')}}" alt="teacher" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/teacher/teacher3.jpg" alt="teacher" width="100%" height="200">
                             </div>
                             <div class="teacher-detail text-center">
                                 <h4 class="font-18 text-darkblue font-bold">Dr. Reece Wartenberg</h4>
@@ -1002,9 +1002,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="teacher-block">
-                        <a href="teacher-detail.html">
+                        <a href="{{route('teacher_detail.index')}}">
                             <div class="teacher-thumb">
-                                <img src="{{asset('public/student/images/teacher/teacher4.jpg')}}" alt="teacher" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/teacher/teacher4.jpg" alt="teacher" width="100%" height="200">
                             </div>
                             <div class="teacher-detail text-center">
                                 <h4 class="font-18 text-darkblue font-bold">Elizabeth Heck</h4>
@@ -1015,9 +1015,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="teacher-block">
-                        <a href="teacher-detail.html">
+                        <a href="{{route('teacher_detail.index')}}">
                             <div class="teacher-thumb">
-                                <img src="{{asset('public/student/images/teacher/teacher5.jpg')}}" alt="teacher" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/teacher/teacher5.jpg" alt="teacher" width="100%" height="200">
                             </div>
                             <div class="teacher-detail text-center">
                                 <h4 class="font-18 text-darkblue font-bold">Jessica Hische</h4>
@@ -1028,9 +1028,9 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="teacher-block">
-                        <a href="teacher-detail.html">
+                        <a href="{{route('teacher_detail.index')}}">
                             <div class="teacher-thumb">
-                                <img src="{{asset('public/student/images/teacher/teacher3.jpg')}}" alt="teacher" width="100%" height="200">
+                                <img src="{{url('/')}}/public/student/images/teacher/teacher3.jpg" alt="teacher" width="100%" height="200">
                             </div>
                             <div class="teacher-detail text-center">
                                 <h4 class="font-18 text-darkblue font-bold">Jessica Hische</h4>
