@@ -9,18 +9,22 @@
                 </div>
                 <h1 class="playfair font-32 text-darkblue">How about a working title?</h1>
                 <p class="font-16 font-medium text-darkblue mb-4">it's ok if you can't think of a good title now. You can change it later</p>
-                <form>
+                <form method="post" action="{{url('/')}}/teacher/course/create">
+                    {{csrf_field()}}
                     <div class="row justify-content-center mb-4">
                         <div class="col-sm-12 col-md-8 col-lg-6">
-                            <input type="text" class="form-control" placeholder="e.g. Learn Photoshop CS6 from Scratch">
+                            <input type="text" name="title" class="form-control" placeholder="e.g. Learn Photoshop CS6 from Scratch">
                         </div>
                     </div>
+
+                    
+
                     <div class="row justify-content-center text-start">
                         <div class="col-sm-12 col-md-8 col-lg-6">
-                            <select id="category" class="form-control">
-                                <option value="v-1">Category 1</option>
-                                <option value="v-2">Category 2</option>
-                                <option value="v-3">Category 3</option>
+                            <select id="category" name="category" class="form-control">
+                            @foreach($categories as $category)
+                            <option value="{{$category->id}}">{{$category->title}}</option>
+                            @endforeach
                             </select>
                         </div>
                         <div class="col-sm-12 text-end mt-3">
