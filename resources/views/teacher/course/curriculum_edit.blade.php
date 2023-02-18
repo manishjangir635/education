@@ -87,12 +87,12 @@
 
 
 								<div class="addNewsection w-100 position-absolute start-0">
-									<a class="add_new ml-n1" data-bs-toggle="collapse" href="#newSubitem" role="button"
+									<a class="add_new ml-n1" data-bs-toggle="collapse" href="#newSubitem{{$section->id}}" role="button"
 									aria-expanded="false">
 										<img src="{{url('/')}}/public/teacher/images/addNew.svg" alt="icon" width="20" height="20">
 									</a>
 								</div>
-								<div class="collapse mt-20" id="newSubitem">
+								<div class="collapse mt-20" id="newSubitem{{$section->id}}">
 									<div class="card py-3 px-4 rounded-0 border1">
 										<form action="{{url('/')}}/teacher/course/create/lecture/{{$section->id}}" method="post">
 											{{csrf_field()}}
@@ -115,12 +115,12 @@
 								</div>
 							
 								<div class="addNewsection w-100 position-absolute start-0">
-									<a class="add_new ml-n1" data-bs-toggle="collapse" href="#newSubitem1" role="button"
+									<a class="add_new ml-n1" data-bs-toggle="collapse" href="#newSubitem{{$section->id}}" role="button"
 									aria-expanded="false">
 										<img src="{{url('/')}}/public/teacher/images/addNew.svg" alt="icon" width="20" height="20">
 									</a>
 								</div>
-								<div class="collapse mt-20" id="newSubitem1">
+								<div class="collapse mt-20" id="newSubitem{{$section->id}}">
 									<div class="card py-3 px-4 rounded-0 border1">
 									<form action="{{url('/')}}/teacher/course/create/lecture/{{$section->id}}" method="post">
 											{{csrf_field()}}
@@ -175,30 +175,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="border1 p-4 bg-lightgrey mt-30 mb-30">
-							<div class="sectionHeader d-flex align-items-center">
-								<span class="font-16 font-medium text-darkblue">Unpublished Section:</span>
-								<span class="font-16 font-regular text-darkblue"><img class="mx-2" src="{{url('/')}}/public/teacher/images/file.svg"
-										alt="icon"> Introduction</span>
-								<span class="action_btn mx-3">
-									<a href="#"><img src="{{url('/')}}/public/teacher/images/edit2.svg" alt="img"></a>
-									<a href="#" class="ms-3"><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
-								</span>
-								<span class="action_btn ms-auto">
-									<a href="#"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a>
-								</span>
-							</div>
-							<div class="addNewsection">
-								<a class="add_new ml-n2" data-bs-toggle="collapse" href="#subSect2" role="button"
-									aria-expanded="false">
-									<img src="{{url('/')}}/public/teacher/images/addNew.svg" alt="icon" width="20" height="20">
-								</a>
-								<div class="collapse mt-10" id="subSect2">
-									<a class="borderBtn border-dashed bg-white font-regular"
-										href="javascript:void(0);">+ Lecture</a>
-								</div>
-							</div>
-						</div>
+					
 						<div class="addNewsection">
 							<a class="add_new ml-n1" data-bs-toggle="collapse" href="#newSection1" role="button"
 								aria-expanded="false">

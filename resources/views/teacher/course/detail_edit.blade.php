@@ -19,27 +19,28 @@
 					</div>
 				</div>
 				<div class="p-4 mb-100">
-					<form>
+					<form action="{{url('/')}}/teacher/course/edit/detail/{{$course_detail->id}}" method="post" enctype="multipart/form-data">
+						{{csrf_field()}}
 						<div class="row gy-3">
 							<div class="col-sm-12">
 								<div class="mb-3">
 									<label class="font-16 font-bold text-darkblue mb-1" for="">Course title</label>
 									<div class="textLimit">
-									    <input type="text" class="form-control char" maxlength="60" placeholder="Insert your course title" value="{{$course_detail->title}}">
+									    <input type="text" class="form-control char" maxlength="60" placeholder="Insert your course title" name="title" value="{{$course_detail->title}}">
 										<span class="counter"></span>
 								    </div>
 								</div>
 								<div class="mb-3">
 									<label class="font-16 font-bold text-darkblue mb-1" for="">Course subtitle</label>
 									<div class="textLimit">
-									   <input type="text" class="form-control char" maxlength="120" placeholder="Insert your course subtitle">
+									   <input type="text" class="form-control char" maxlength="120" placeholder="Insert your course subtitle" name="subtitle" value="{{$course_detail->subtitle}}">
 									   <span class="counter"></span>
 									</div>
 								</div>
 								<div class="mb-3">
 									<label class="font-16 font-bold text-darkblue mb-1" for="">Course
 										description</label>
-									<textarea class="form-control" id="editor2" placeholder="Insert your course description"></textarea>
+									<textarea class="form-control" id="editor2" placeholder="Insert your course description" name="description">{{$course_detail->description}}</textarea>
 								</div>
 								<div class="mt-30">
 									<h3 class="font-20 font-bold text-darkblue">Who is this course for? <a
@@ -167,13 +168,13 @@
 									<h3 class="font-20 font-bold text-darkblue mb-2">Course image</h3>
 									<div class="row">
 										<div class="col-12 col-sm-12 col-lg-4">
-											<div class="previewDiv"><img id="output" src="images/blankBg.svg"></div>
+											<div class="previewDiv"><img id="output" src="{{url('/')}}/public/teacher/image/{{$course_detail->image}}"></div>
 										</div>
 										<div class="col-12 col-sm-12 col-lg-8 mt-2 mt-lg-0">
 											<p class="font-16 font-regular text-darkblue">It must meet our <a class="text-skyblue text-decoration-underline">course image quality standards</a> <br>
 												(Image guidelines: 750x422 pixels; .jpg, .jpeg,. gif,<br> or .png format)</p>
 												<div class="position-relative w-75">
-                                                    <input id="img-input" type="file" class="form-control" accept="image/*" onchange="loadFile(event)">
+                                                    <input id="img-input" type="file" name="image" class="form-control" accept="image/*" onchange="loadFile(event)">
 													<label class="uploadType" for="img-input">Upload File</label>
 											    </div>
 										</div>
@@ -183,7 +184,7 @@
 									<h3 class="font-20 font-bold text-darkblue mb-2">Course Preview Video</h3>
 									<div class="row">
 										<div class="col-12 col-sm-12 col-lg-4">
-											<div class="previewDiv"><video id="video" poster="/mages/blankBg.svg" controls></video></div>
+											<div class="previewDiv"><video id="video" srs="{{url('/')}}/public/teacher/image/{{$course_detail->preview_video}}" poster="/mages/blankBg.svg" controls></video></div>
 										</div>
 										<div class="col-12 col-sm-12 col-lg-8 mt-2 mt-lg-0">
 											<p class="font-16 font-regular text-darkblue">It must meet our <a class="text-skyblue text-decoration-underline">course image quality standards</a> <br>
@@ -199,29 +200,6 @@
 						</div>
 						<div class="mt-30">
 							<button type="submit" class="themeBtn">Save Course</button>
-							<div class="wrapper">
-								<div class="item">
-								  <span class="text">Draggable Element One</span>
-								  <i class="fas fa-bars"></i>
-								</div>
-								<div class="item">
-								  <span class="text">Draggable Element Two</span>
-								  <i class="fas fa-bars"></i>
-								</div>
-								<div class="item">
-								  <span class="text">Draggable Element Three</span>
-								  <i class="fas fa-bars"></i>
-								</div>
-								<div class="item">
-								  <span class="text">Draggable Element Four</span>
-								  <i class="fas fa-bars"></i>
-								</div>
-								<div class="item">
-								  <span class="text">Draggable Element Five</span>
-								  <i class="fas fa-bars"></i>
-								</div>
-							  </div>
-						</div>
 					</form>
 				</div>
 			</div>
