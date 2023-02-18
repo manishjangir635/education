@@ -77,8 +77,8 @@ Route::get('/course/create', [CourseController::class, 'create']);
 
 
 
-Route::post('/course/create', [CourseController::class, 'create']);  
-Route::get('/course/edit/{id}', [CourseController::class, 'edit']);   
+Route::post('/course/create', [CourseController::class, 'create']);
+Route::get('/course/edit/{id}', [CourseController::class, 'edit']);
 Route::post('/course/edit/{id}', [CourseController::class, 'edit']);
 
 
