@@ -3,11 +3,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-6 text-center text-md-start">
-                    <a href="index.html"><img src="{{asset('public/student/images/f-logo.svg')}}" alt="logo" width="202" height="86"></a>
+                    <a href="index.html"><img src="{{url('/')}}/public/student/images/f-logo.svg" alt="logo" width="202" height="86"></a>
                 </div>
                 <div class="col-sm-12 col-md-6 align-self-end">
                     <ul class="f-link">
-                        <li><a href="about-us.html">About us</a></li>
+                        <li><a href="{{route('about_us.index')}}">About us</a></li>
                         <li><a href="javascript:void(0);">Become a Teacher</a></li>
                         <li><a href="mailto:ptba@gmail.com">Help and Support</a></li>
                     </ul>
@@ -20,22 +20,22 @@
                     </div>
                     <div class="col-sm-12 col-md-5">
                         <ul class="f-link">
-                            <li><a href="terms.html">Terms</a></li>
-                            <li><a href="privacy-policy.html">Privacy policy</a></li>
+                            <li><a href="{{route('terms.index')}}">Terms</a></li>
+                            <li><a href="{{route('privacy_policy.index')}}">Privacy policy</a></li>
                             <li><a href="{{route('faqs.index')}}">FAQs</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-12 col-md-4">
                         <ul class="social-link">
-                            <li><a href="javascript:viod(0);"><img src="{{asset('public/student/images/facebook.svg')}}" width="21" height="22"></a>
+                            <li><a href="javascript:viod(0);"><img src="{{url('/')}}/public/student/images/facebook.svg" width="21" height="22"></a>
                             </li>
-                            <li><a href="javascript:viod(0);"><img src="{{asset('public/student/images/twitter.svg')}}" width="21" height="22"></a>
+                            <li><a href="javascript:viod(0);"><img src="{{url('/')}}/public/student/images/twitter.svg" width="21" height="22"></a>
                             </li>
-                            <li><a href="javascript:viod(0);"><img src="{{asset('public/student/images/youtube.svg')}}" width="21" height="22"></a>
+                            <li><a href="javascript:viod(0);"><img src="{{url('/')}}/public/student/images/youtube.svg" width="21" height="22"></a>
                             </li>
-                            <li><a href="javascript:viod(0);"><img src="{{asset('public/student/images/telegram.svg')}}" width="21" height="22"></a>
+                            <li><a href="javascript:viod(0);"><img src="{{url('/')}}/public/student/images/telegram.svg" width="21" height="22"></a>
                             </li>
-                            <li><a href="javascript:viod(0);"><img src="{{asset('public/student/images/instagram.svg')}}" width="21"
+                            <li><a href="javascript:viod(0);"><img src="{{url('/')}}/public/student/images/instagram.svg" width="21"
                                         height="22"></a></li>
                         </ul>
                     </div>
@@ -45,11 +45,11 @@
     </footer>
     <!-- Footer -->
 
-    <script src="{{asset('public/student/js/jquery-3.6.0.min.js')}}"></script>
-    <script src="{{asset('public/student/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('public/student/js/swiper-bundle.min.js')}}"></script>
-    <script src="{{asset('public/student/js/bvselect.js')}}"></script>
-    <script src="{{asset('public/student/js/custom.js')}}"></script>
+    <script src="{{url('/')}}/public/student/js/jquery-3.6.0.min.js"></script>
+    <script src="{{url('/')}}/public/student/js/bootstrap.bundle.min.js"></script>
+    <script src="{{url('/')}}/public/student/js/swiper-bundle.min.js"></script>
+    <script src="{{url('/')}}/public/student/js/bvselect.js"></script>
+    <script src="{{url('/')}}/public/student/js/custom.js"></script>
 </body>
 
 

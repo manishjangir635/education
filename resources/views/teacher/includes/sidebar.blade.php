@@ -82,7 +82,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="messages.html" class="nav-link" aria-current="page" title="Communication" data-bs-toggle="tooltip"
+                    <a href="{{route('messages.index')}}" class="nav-link" aria-current="page" title="Communication" data-bs-toggle="tooltip"
                         data-bs-placement="right">
                         <svg width="48" height="48" viewBox="0 0 48 48">
                             <g transform="translate(15929 4017)">
