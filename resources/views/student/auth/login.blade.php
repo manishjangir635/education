@@ -1,14 +1,5 @@
 @extends('student.layouts.master')
 @section('content')
-
-@if(Session::has('success'))
-<p class="success">{{ Session::get('success') }}</p>
-@endif
-
-@if(Session::has('error'))
-<p class="error">{{ Session::get('error') }}</p>
-@endif
-
     <section class="content-block pt-100 pb-100">
         <div class="container">
             <div class="row justify-content-center">
@@ -19,10 +10,12 @@
                         <div class="mb-20">
                             <label for="email" class="font-16 text-darkblue font-medium mb-1">Email address</label>
                             <input type="email"  name="email" class="form-control" id="email" placeholder="name@example.com">
+                            {!!$errors->first("email", "<span class='text-danger'>:message</span>")!!}
                         </div>
                         <div class="mb-20">
                             <label for="password" class="font-16 text-darkblue font-medium mb-1">Password</label>
                             <input type="password" name="password"  class="form-control" id="password" placeholder="password">
+                            {!!$errors->first("password", "<span class='text-danger'>:message</span>")!!}
                         </div>
                         <div class="mb-20">
                             <button type="submit" class="w-100 theme-btn2">Log In</button>

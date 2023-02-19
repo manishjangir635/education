@@ -3,13 +3,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BHMS Academy</title>
-    <link type="text/css" href="{{url('/')}}/public/student/css/bootstrap.min.css" rel="stylesheet">
-    <link type="text/css" href="{{url('/')}}/public/student/css/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{url('/')}}/public/student/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="{{url('/')}}/public/student/css/bvselect.css">
-    <link type="text/css" href="{{url('/')}}/public/student/css/reset.css" rel="stylesheet">
-    <link type="text/css" href="{{url('/')}}/public/student/css/style.css" rel="stylesheet">
-    <link type="text/css" href="{{url('/')}}/public/student/css/responsive.css" rel="stylesheet">
+    <link type="text/css" href="{{assets('student/css/bootstrap-icons.css')}}" rel="stylesheet">
+    <link type="text/css" href="{{assets('student/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{assets('student/css/swiper-bundle.min.css')}}">
+    <link rel="stylesheet" href="{{assets('student/css/bvselect.css')}}">
+    <link type="text/css" href="{{assets('student/css/reset.css')}}" rel="stylesheet">
+    <link type="text/css" href="{{assets('student/css/style.css')}}" rel="stylesheet">
+    <link type="text/css" href="{{assets('student/css/responsive.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{assets('student/css/toastr.css')}}">
+
 </head>
 
 <body>
@@ -41,15 +43,18 @@
                             <li class="nav-item">
                                 <a class="cart-btn" href="{{route('shopping_cart.index')}}"><i class="bi bi-cart"></i></a>
                             </li>
+                            @if(empty(Auth::id()))
                             <li class="nav-item">
                                 <a class="border-btn" href="{{route('login.index')}}">Login</a>
                             </li>
                             <li class="nav-item">
                                 <a class="theme-btn" href="{{route('signup.index')}}">Sign up</a>
                             </li>
+                            @endif
                         </ul>
                     </div>
                 </div>
+                @if(Auth::id())
                 <div class="dropdown nav-item">
                     <a href="javaceript:void(0);" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="{{url('/')}}/public/student/images/userImg.jpg" alt="User" width="50" height="50" class="rounded-circle">
@@ -59,8 +64,8 @@
                             <img src="{{url('/')}}/public/student/images/userImg.jpg" alt="User" width="50" height="50"
                                 class="rounded-circle flex-shrink-0">
                             <div class="ms-3">
-                                <h5 class="mb-1 font-16 text-skyblue font-medium">Taha Khan</h5>
-                                <span class="font-14 text-darkblue font-regular">khantaha12@gmail.com</span>
+                                <h5 class="mb-1 font-16 text-skyblue font-medium">{{Auth::user()->name}}</h5>
+                                <span class="font-14 text-darkblue font-regular">{{Auth::user()->email}}</span>
                             </div>
                         </div>
                         <li><a class="drop-item" href="{{route('account.index')}}">Profile and settings</a></li>
@@ -75,9 +80,10 @@
                         <li><a class="drop-item" href="{{route('teacher.dashboard')}}">Teacher Dashboard</a>
                         </li>
                         <li class="dropdown-divider my-2 mx-n2"></li>
-                        <li><a class="drop-item" href="javascript:void(0);">Log out</a></li>
+                        <li><a class="drop-item" href="{{url('logout')}}">Log out</a></li>
                     </ul>
                 </div>
+                @endif
             </nav>
         </div>
     </header>
