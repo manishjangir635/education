@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\StudentCourseController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CmsController;
 use App\Http\Controllers\CartController;
@@ -44,8 +45,8 @@ Route::get('purchase-history', [HomeController::class, 'purchase_history'])->nam
 Route::get('my-redemption-coupons', [HomeController::class, 'my_redemption_coupons'])->name('my_redemption_coupons.index');
 Route::get('refer-and-earn', [HomeController::class, 'refer_and_earn'])->name('refer_and_earn.index');
 Route::get('course-play', [HomeController::class, 'course_play'])->name('course_play.index');
-Route::get('courses', [HomeController::class, 'course'])->name('course.index');
-Route::get('courses-detail', [HomeController::class, 'courses_detail'])->name('courses_detail.index');
+Route::get('courses', [StudentCourseController::class, 'course'])->name('course.index');
+Route::get('courses-detail/{id}', [StudentCourseController::class, 'courses_detail'])->name('courses_detail.index');
 Route::get('teacher-detail', [HomeController::class, 'teacher_detail'])->name('teacher_detail.index');
 
 
