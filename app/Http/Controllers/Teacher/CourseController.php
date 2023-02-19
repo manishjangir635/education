@@ -6,6 +6,7 @@ use App\Models\Section;
 use App\Models\Lecture;
 use Illuminate\Http\Request;
 use Auth;
+use Vimeo\Laravel\Facades\Vimeo;
 
 class CourseController extends Controller
 {
@@ -33,6 +34,7 @@ class CourseController extends Controller
     }
 
     public function edit(Request $request , $type, $id){
+
        
         $course_detail=Course::with(['section_list'])->find($id);
        
@@ -117,6 +119,20 @@ class CourseController extends Controller
         extract($data);  
         
         $Lecture=new Lecture();
+
+        if ($request->file()) 
+        {
+          $file = $request->file('video');                   
+          if ($file)
+          {  
+            $uri = Vimeo::upload($file,[
+              'name' =>  $title,
+              'description' => 'No Description'
+            ]);
+            $Lecture->video=explode('videos/', $uri)[1];
+          }
+        }
+
         $Lecture->section_id=$section_id;
         $Lecture->title=$title;
         $Lecture->save();

@@ -32,10 +32,10 @@
 					<div class="curriculmSection wrapper1">
 						
 
-						@foreach($course_detail->section_list as $section)
+						@foreach($course_detail->section_list as $section_key => $section)
 					    <div class="border1 p-4 bg-lightgrey mb-30">
 							<div class="sectionHeader d-flex align-items-center">
-								<span class="font-16 font-medium text-darkblue">Section 1:</span>
+								<span class="font-16 font-medium text-darkblue">Section {{$section_key+1}}:</span>
 								<span class="font-16 font-regular text-darkblue"><img class="mx-2" src="{{url('/')}}/public/teacher/images/file.svg"
 										alt="icon"> {{ $section->title}}</span>
 								<span class="action_btn mx-3">
@@ -49,13 +49,13 @@
 							</div>
 							<div class="accordion wrapper2" id="accordionExample">
 
-							@foreach($section->lecture_list as $lecture)
+							@foreach($section->lecture_list as $lecture_key => $lecture)
 								<div class="accordion-item">
 									<div class="accordion-header sectionHeader accordion-button mb-0 collapsed"
-										data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false">
+										data-bs-toggle="collapse" data-bs-target="#collapse{{$lecture_key}}" aria-expanded="false">
 										<span
 											class="font-16 font-regular text-darkblue me-2 d-inline-flex align-items-center"><i
-												class="bi bi-check-circle-fill font-18 me-2"></i> Lecture 1:</span>
+												class="bi bi-check-circle-fill font-18 me-2"></i> Lecture {{$lecture_key+1}}:</span>
 										<span
 											class="font-16 font-regular text-darkblue d-inline-flex align-items-center"><i
 												class="bi bi-play-circle-fill font-18 me-2"></i> {{$lecture->title}}</span>
@@ -74,11 +74,11 @@
 										</div>
 									</div>
 
-
-									<div id="collapseOne" class="accordion-collapse collapse"
+									
+									<div id="collapse{{$lecture_key}}" class="accordion-collapse collapse"
 										data-bs-parent="#accordionExample">
 										<div class="accordion-body p-3 pt-0">
-											Lecture 1:
+											<iframe src="https://player.vimeo.com/video/{{$lecture->video}}" style="width: 100%" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 										</div>
 									</div>
 								</div>
@@ -86,33 +86,7 @@
 								@endforeach
 
 
-								<div class="addNewsection w-100 position-absolute start-0">
-									<a class="add_new ml-n1" data-bs-toggle="collapse" href="#newSubitem{{$section->id}}" role="button"
-									aria-expanded="false">
-										<img src="{{url('/')}}/public/teacher/images/addNew.svg" alt="icon" width="20" height="20">
-									</a>
-								</div>
-								<div class="collapse mt-20" id="newSubitem{{$section->id}}">
-									<div class="card py-3 px-4 rounded-0 border1">
-										<form action="{{url('/')}}/teacher/course/create/lecture/{{$section->id}}" method="post">
-											{{csrf_field()}}
-											<div class="row g-3 align-items-center">
-												<div class="col-auto">
-													<label class="font-16 font-medium text-darkblue" for="">New
-														Lecture:</label>
-												</div>
-												<div class="col">
-													<input type="text" class="form-control" placeholder="Enter a Title" name="title">
-												</div>
-												<div class="col-12 mt-20 text-end">
-													<button class="btn p-0 me-3 borderBtn border-0 rounded-0 font-14"
-														type="submit">Cancel</button>
-													<button class="themeBtn2" type="submit">Add Lecture</button>
-												</div>
-											</div>
-										</form>
-									</div>
-								</div>
+								
 							
 								<div class="addNewsection w-100 position-absolute start-0">
 									<a class="add_new ml-n1" data-bs-toggle="collapse" href="#newSubitem{{$section->id}}" role="button"
@@ -122,7 +96,7 @@
 								</div>
 								<div class="collapse mt-20" id="newSubitem{{$section->id}}">
 									<div class="card py-3 px-4 rounded-0 border1">
-									<form action="{{url('/')}}/teacher/course/create/lecture/{{$section->id}}" method="post">
+									<form action="{{url('/')}}/teacher/course/create/lecture/{{$section->id}}" method="post" enctype="multipart/form-data">
 											{{csrf_field()}}
 											<div class="row g-3 align-items-center">
 												<div class="col-auto">
@@ -131,6 +105,10 @@
 												</div>
 												<div class="col">
 													<input type="text" class="form-control" placeholder="Enter a Title" name="title">
+												</div>
+
+												<div class="col">
+												<input  type="file" name="video" class="form-control">
 												</div>
 												<div class="col-12 mt-20 text-end">
 													<button class="btn p-0 me-3 borderBtn border-0 rounded-0 font-14"
@@ -176,32 +154,7 @@
 							</div>
 						</div>
 					
-						<div class="addNewsection">
-							<a class="add_new ml-n1" data-bs-toggle="collapse" href="#newSection1" role="button"
-								aria-expanded="false">
-								<img src="{{url('/')}}/public/teacher/images/addNew.svg" alt="icon" width="20" height="20">
-							</a>
-							<div class="collapse mt-10" id="newSection1">
-								<div class="card py-3 px-4 rounded-0 border1">
-									<form>
-										<div class="row g-3 align-items-center">
-											<div class="col-auto">
-												<label class="font-16 font-medium text-darkblue" for="">New
-													Section:</label>
-											</div>
-											<div class="col">
-												<input type="text" class="form-control" placeholder="Enter a Title">
-											</div>
-											<div class="col-12 mt-20 text-end">
-												<button class="btn p-0 me-3 borderBtn border-0 rounded-0 font-14"
-													type="button">Cancel</button>
-												<button class="themeBtn2" type="button">Add Section</button>
-											</div>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>
