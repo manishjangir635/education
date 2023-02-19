@@ -14,10 +14,10 @@ class EmailAction extends Seeder
      */
     public function run()
     {
-        DB::table('email_actions')->insert([
+       $data=[[
             'action' => 'registration',
             'name' => 'Register',
-            'options' => 'USER_NAME,LINK',
+            'options' => 'USER_NAME,LINK,FORGOT_PASSWORD_LINK',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ],[
@@ -26,6 +26,7 @@ class EmailAction extends Seeder
             'options' => 'USER_NAME,LINK,FORGOT_PASSWORD_LINK',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
-        ]);
+        ]];
+        DB::table('email_actions')->insert($data);
     }
 }
