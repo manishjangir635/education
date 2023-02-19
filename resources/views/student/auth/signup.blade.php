@@ -5,18 +5,22 @@
             <div class="row justify-content-center">
                 <div class="col-sm-12 col-md-6">
                     <h3 class="font-24 text-darkblue font-bold mb-30 text-center">Sign up and start learning</h3>
-                    <form method="post">
+                    <form method="post" action="{{url('userRegister')}}">
+                        @csrf
                         <div class="mb-20">
                             <label for="name" class="font-16 text-darkblue font-medium mb-1">Name</label>
-                            <input type="text" class="form-control" id="email" placeholder="Rohit Kumar">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Rohit Kumar">
+                            {!!$errors->first("name", "<span class='text-danger'>:message</span>")!!}
                         </div>
                         <div class="mb-20">
                             <label for="email" class="font-16 text-darkblue font-medium mb-1">Email address</label>
-                            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                            {!!$errors->first("email", "<span class='text-danger'>:message</span>")!!}
                         </div>
                         <div class="mb-20">
                             <label for="password" class="font-16 text-darkblue font-medium mb-1">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="password">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="password">
+                            {!!$errors->first("password", "<span class='text-danger'>:message</span>")!!}
                         </div>
                         <div class="mb-20">
                             <button type="submit" class="w-100 theme-btn2">Sign Up</button>
