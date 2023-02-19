@@ -1,8 +1,8 @@
-<?php 
+<?php
 				$segment1	=	Request::segment(2);
-				$segment2	=	Request::segment(3); 
-				$segment3	=	Request::segment(4); 
-				$segment4	=	Request::segment(5); 
+				$segment2	=	Request::segment(3);
+				$segment3	=	Request::segment(4);
+				$segment4	=	Request::segment(5);
 			?>
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -38,12 +38,6 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-gift"></i>
-              <p>Restaurant Management</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
               <i class="nav-icon fas fa-dollar-sign"></i>
               <p>Pricing Management</p>
             </a>
@@ -75,6 +69,12 @@
                 </a>
               </li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <a href="{{url('admin/cms-manager')}}" class="nav-link {{ in_array($segment1 ,array('cms')) ? 'active' : '' }}">
+              <i class="nav-icon fas fa-file"></i>
+              <p> Cms Management</p>
+            </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">

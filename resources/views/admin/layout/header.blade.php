@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="{{assets('admin/plugins/summernote/summernote-bs4.min.css')}}">
 
   <link rel="stylesheet" href="{{assets('admin/css/toastr.css')}}">
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -63,7 +64,7 @@
           </a>
         </div>
       </li>
-     
+
     </ul>
   </nav>
   <!-- /.navbar -->
