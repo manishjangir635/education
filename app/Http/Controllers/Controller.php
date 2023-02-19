@@ -12,10 +12,10 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    protected $login_user_id=0;
+    protected $login_user_id=1;
 
-    function __cunstruct(){
-        $this->login_user_id=4;
+    function __construct(){
+        $this->login_user_id=1;
     }
 
     function get_categories(){

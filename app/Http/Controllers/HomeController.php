@@ -57,14 +57,7 @@ class HomeController extends Controller
         return view('student.course-play');
     }
 
-    public function course(){
-
-        return view('student.course');
-    }
-
-    public function courses_detail(){
-        return view('student.courses-detail');
-    }
+  
 
     public function teacher_detail(){
         return view('student.teacher-detail');
