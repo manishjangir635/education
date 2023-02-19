@@ -709,7 +709,7 @@ footer .social-link li a:hover {
     border-radius: 0;
     border: 1px solid var(--bg-darkgrey);
     background: var(--bg-lightgrey);
-    color: var(--bg-darkgrey);
+    /* color: var(--bg-darkgrey); */
     font-size: 16px;
 }
 .content-block .list-group{
