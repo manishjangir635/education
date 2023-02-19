@@ -49,6 +49,7 @@ Route::get('signup', [AuthController::class, 'register'])->name('signup.index');
 Route::get('login', [AuthController::class, 'login'])->name('login.index');
 Route::post('auth', [AuthController::class, 'auth']);
 Route::get('forgot-password', [AuthController::class, 'forgot_password'])->name('forgot_password.index');
+Route::post('userRegister', [AuthController::class, 'userRegister']);
 
 
 Route::get('terms', [CmsController::class, 'terms'])->name('terms.index');

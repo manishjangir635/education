@@ -15,14 +15,12 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_role_id')->comment('1=admin,2=restaurant,3=retailer,4=restaurant_chef,5=restaurant_server,6=restaurant_host,7=restaurant_cashier, 8=restaurant_food_prepration,9=restaurant_dinning_manager,10=restaurant_owner_manager,11=retailer_manager,12=retailer_cashier,13=retailer_clerk,14=retailer_deil_operator')->default('0');
-            $table->integer('is_staff')->comment('1= restaurant , 2 = retailer')->default('0');
+            $table->integer('user_role_id')->comment('1=admin,2=teacher,3=student,4=both')->default('3');
             $table->string('name');
             $table->string('username');
             $table->string('email')->unique();
-            $table->integer('mobile_number');
+            $table->integer('mobile_number')->nullable();
             $table->string('password');
-            $table->integer('employment_type')->comment('1= full_time , 2 = part_time')->default('0');
             $table->integer('is_mobile_verified')->default('0');
             $table->integer('is_email_verified')->default('0');
             $table->integer('is_active')->default('0');

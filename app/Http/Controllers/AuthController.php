@@ -1,14 +1,59 @@
 <?php
 
 namespace App\Http\Controllers;
-use Auth;
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\EmailAction;
+use App\Models\EmailTemplate;
+use validate,Auth,Session,Hash;
 
 class AuthController extends Controller
 {
     //user signup
     public function register(){
         return view('student/auth/signup');
+    }
+
+    public function userRegister(Request $request)
+    {
+        $validated = $request->validate([
+            'name'   => 'required',
+            'email'  =>	'required|email:rfc,dns',
+            'password'   => 'required',
+        ]);
+        $user = new User;
+        $user->name = $request->name;
+        $user->username = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $insert_id = $user->id;
+        if($insert_id){
+            $settingsEmail 		= config('global.Email');
+            $username			=  $userDetail->username;
+			$full_name			=  $userDetail->name;  
+			$route_url      	=  url('admin/resetPassword/'.base64_encode($insert_id));
+			$varify_link   		=   $route_url;
+
+            $emailActions		=	EmailAction::where('action','=','registration')->first();
+            $emailTemplates		=	EmailTemplate::where('action','=','registration')->select('name','subject','action','body')->first();
+            $cons = explode(',',$emailActions['options']);
+            $constants = array();
+            
+            foreach($cons as $key=>$val){
+                $constants[] = '{'.$val.'}';
+            }
+            $subject 			=  $emailTemplates['subject'];
+            $rep_Array 			= array($username,$varify_link,$route_url); 
+            $messageBody		=  str_replace($constants, $rep_Array, $emailTemplates['body']);
+            // pre($messageBody);
+            sendMail($email,$full_name,$subject,$messageBody,$settingsEmail);
+            Session::flash('success', trans('An email has been sent to your inbox. To reset your password please follow the steps mentioned in the email.')); 
+			return redirect('/');	
+        }else{
+            return redirect()->back()->with('error', trans('Something went to wrong.'));
+
+        }
+
     }
     public function login(Request $request){
 
