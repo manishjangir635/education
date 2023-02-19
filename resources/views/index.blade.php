@@ -33,14 +33,14 @@
                 @foreach($course_list as $course)
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="{{route('courses_detail.index')}}">
+                        <a href="{{url('/')}}/courses-detail/{{$course->id}}">
                             <div class="course-thumb">
                                 <img src="{{url('/')}}/public/teacher/image/{{$course->image}}" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">{{$course->title}}</h4>
                                 <p class="font-14 text-darkblue font-regular">{{$course->subtitle}}</p>
-                                <h5 class="font-16 text-darkblue font-medium">Dr. Bhumika P</h5>
+                                <h5 class="font-16 text-darkblue font-medium">{{$course->user->name}}</h5>
                                 <h5 class="font-16 text-darkblue font-medium my-3">4.5
                                     <span class="text-yellow d-inline-flex">
                                         <i class="bi bi-star-fill ms-1"></i>
@@ -52,7 +52,7 @@
                                 </h5>
                                 <h5 class="font-16 text-darkblue font-medium">22 Student Enrolled</h5>
                                 <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
-                                    <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
+                                    <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹{{$course->price}} <del
                                             class="font-16 text-dgray font-regular">₹3,399</del></h5>
                                     <a class="theme-btn" href="{{route('mycart')}}">Add to Cart</a>
                                 </div>
@@ -83,14 +83,14 @@
             @foreach($course_list as $course)
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="{{route('courses_detail.index')}}">
+                        <a href="{{url('/')}}/courses-detail/{{$course->id}}">
                             <div class="course-thumb">
                                 <img src="{{url('/')}}/public/teacher/image/{{$course->image}}" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">{{$course->title}}</h4>
                                 <p class="font-14 text-darkblue font-regular">{{$course->subtitle}}</p>
-                                <h5 class="font-16 text-darkblue font-medium">Dr. Bhumika P</h5>
+                                <h5 class="font-16 text-darkblue font-medium">{{$course->user->name}}</h5>
                                 <h5 class="font-16 text-darkblue font-medium my-3">4.5
                                     <span class="text-yellow d-inline-flex">
                                         <i class="bi bi-star-fill ms-1"></i>
@@ -102,7 +102,7 @@
                                 </h5>
                                 <h5 class="font-16 text-darkblue font-medium">22 Student Enrolled</h5>
                                 <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
-                                    <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
+                                    <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹{{$course->price}} <del
                                             class="font-16 text-dgray font-regular">₹3,399</del></h5>
                                     <a class="theme-btn" href="{{route('mycart')}}">Add to Cart</a>
                                 </div>
@@ -248,14 +248,14 @@
             @foreach($course_list as $course)
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="{{route('courses_detail.index')}}">
+                        <a href="{{url('/')}}/courses-detail/{{$course->id}}">
                             <div class="course-thumb">
                                 <img src="{{url('/')}}/public/teacher/image/{{$course->image}}" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">{{$course->title}}</h4>
                                 <p class="font-14 text-darkblue font-regular">{{$course->subtitle}}</p>
-                                <h5 class="font-16 text-darkblue font-medium">Dr. Bhumika P</h5>
+                                <h5 class="font-16 text-darkblue font-medium">{{$course->user->name}}</h5>
                                 <h5 class="font-16 text-darkblue font-medium my-3">4.5
                                     <span class="text-yellow d-inline-flex">
                                         <i class="bi bi-star-fill ms-1"></i>
@@ -267,7 +267,7 @@
                                 </h5>
                                 <h5 class="font-16 text-darkblue font-medium">22 Student Enrolled</h5>
                                 <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
-                                    <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
+                                    <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹{{$course->price}} <del
                                             class="font-16 text-dgray font-regular">₹3,399</del></h5>
                                     <a class="theme-btn" href="{{route('mycart')}}">Add to Cart</a>
                                 </div>
@@ -299,14 +299,14 @@
             @foreach($course_list as $course)
                 <div class="swiper-slide">
                     <div class="course-block">
-                        <a href="{{route('courses_detail.index')}}">
+                        <a href="{{url('/')}}/courses-detail/{{$course->id}}">
                             <div class="course-thumb">
                                 <img src="{{url('/')}}/public/teacher/image/{{$course->image}}" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">{{$course->title}}</h4>
                                 <p class="font-14 text-darkblue font-regular">{{$course->subtitle}}</p>
-                                <h5 class="font-16 text-darkblue font-medium">Dr. Bhumika P</h5>
+                                <h5 class="font-16 text-darkblue font-medium">{{$course->user->name}}</h5>
                                 <h5 class="font-16 text-darkblue font-medium my-3">4.5
                                     <span class="text-yellow d-inline-flex">
                                         <i class="bi bi-star-fill ms-1"></i>
@@ -318,7 +318,7 @@
                                 </h5>
                                 <h5 class="font-16 text-darkblue font-medium">22 Student Enrolled</h5>
                                 <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
-                                    <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
+                                    <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹{{$course->price}} <del
                                             class="font-16 text-dgray font-regular">₹3,399</del></h5>
                                     <a class="theme-btn" href="{{route('mycart')}}">Add to Cart</a>
                                 </div>
