@@ -57,6 +57,8 @@ Route::group(array('middleware' => 'App\Http\Middleware\StudentIn'), function ()
 	Route::get('forgot-password', [AuthController::class, 'forgot_password'])->name('forgot_password.index');
 	Route::post('userRegister', [AuthController::class, 'userRegister']);
 	Route::get('activate/{id}', [AuthController::class, 'activate']);
+	Route::post('sendResetLink', [AdminLoginController::class, 'sendResetLink'])->name('/sendResetLink');
+
 });
 
 
