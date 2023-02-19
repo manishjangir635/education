@@ -18,20 +18,22 @@ class AuthController extends Controller
     {
         $validated = $request->validate([
             'name'   => 'required',
-            'email'  =>	'required|email:rfc,dns',
-            'password'   => 'required',
+            'email'  =>	'required|unique:users,email|email:rfc,dns',
+            'password'   => 'required|min:1|max:10',
         ]);
         $user = new User;
         $user->name = $request->name;
         $user->username = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
+        $user->save();
         $insert_id = $user->id;
         if($insert_id){
             $settingsEmail 		= config('global.Email');
-            $username			=  $userDetail->username;
-			$full_name			=  $userDetail->name;  
-			$route_url      	=  url('admin/resetPassword/'.base64_encode($insert_id));
+            $username			=  $request->username;
+			$full_name			=  $request->name; 
+			$email			=  $request->email;  
+			$route_url      	=  url('activate/'.base64_encode($insert_id));
 			$varify_link   		=   $route_url;
 
             $emailActions		=	EmailAction::where('action','=','registration')->first();
@@ -47,7 +49,7 @@ class AuthController extends Controller
             $messageBody		=  str_replace($constants, $rep_Array, $emailTemplates['body']);
             // pre($messageBody);
             sendMail($email,$full_name,$subject,$messageBody,$settingsEmail);
-            Session::flash('success', trans('An email has been sent to your inbox. To reset your password please follow the steps mentioned in the email.')); 
+            Session::flash('success', trans('A unique link has been sent your email id. Kindly verify the email.')); 
 			return redirect('/');	
         }else{
             return redirect()->back()->with('error', trans('Something went to wrong.'));
@@ -75,53 +77,135 @@ class AuthController extends Controller
     }
 
 
-    public function auth(Request $req){
-
- 
-        $this->validate($req, [
-           'email' => 'required|max:255',
-           'password' => 'required',
+    public function auth(Request $request){
+        $validated = $request->validate([
+            'email'  =>	'required|email:rfc,dns',
+            'password'   => 'required|min:1|max:10',
         ]);
-
-      
-        $remember = $req->has('remember')? true: false;
-        if(auth()->attempt(array('email' => $req->input('email'),'password' =>$req->input('password')), $remember)){
-        
-    
-         if($remember)
-            {
-               setcookie('email',$req->input('email'), time()+(86400*30),"/");
-               setcookie('password',$req->input('password'), time()+(86400*30),"/");
-           } 
-           else { 
-             
-               setcookie('email',$req->input('email'), time()-(86400*30),"/");
-               setcookie('password',$req->input('password'), time()-(86400*30),"/");
-           }
-
-        
-       
-           $user = Auth::user();
-          
-          if(!$user->email_confirmed){
-            return redirect()->back()->with('error','Email is not verified');
-
-            //  $emailtemplate = EmailTemplate::where('slug','user-registration')->first();
-            //  $activationlink = url('/activate/').'/'.base64_encode($user->id);  
-            //  $emailtemplate->content = str_replace(array('{name}','{url}'),array($user->first_name,$activationlink), $emailtemplate->content);
-            //  Auth::logout();
-            //  return redirect('/')->with('login_resend','resend-email/'.base64_encode($user->id));
-           }
-
-           return redirect('/dashboard')->with('success','Successfully Login');
-
+        $auth = array(
+            'email' => $request->email,
+            'password' => $request->password,
+           
+        );
+        $userDetail	=	User::where('is_email_verified',1)->where('user_role_id','!=',1)->where('email',$request->email)->first();
+        if(!empty($userDetail)){
+            if($userDetail->is_active == 1){
+                if(Auth::attempt($auth)){ 
+                    Auth::login($userDetail);
+                    return redirect('/my-learning')->with('success','Successfully Login');
+         
+                 }else{
+                     return redirect()->back()->with('error','Email or Password is incorrect');
+                 } 
+            }else{
+                Session::flash('error', 'Your account has been deactivate.');
+                return redirect()->back()->withInput();
+            }
+           
         }else{
-            return redirect()->back()->with('error','Email or Password is incorrect');
-        }            
+            Session::flash('error', 'Please login with valid email.');
+			return redirect()->back()->withInput();
+        }
+                   
    }
 
 
+   public function activate($id)
+   {
+        $id =  base64_decode($id);
+
+        $data = User::find($id);
+        $data->is_active=1;        
+        $data->is_email_verified = 1;
+        $data->save();
+        Session::flash('success', 'Your account has been activated successfully.');
+        return redirect('/');
+   }
     public function forgot_password(){
         return view('student/auth/forgot_password');
     }
+
+    public function logout()
+    {
+        Auth::logout();
+		Session::flash('success', 'You are now logged out!');
+		return redirect('/login')->with('success', 'You are now logged out!');
+    }
+
+    public function sendResetLink(Request $request)
+    {
+  
+        $validated = $request->validate([
+            'email' 		=>	'required|email:rfc,dns',
+        ]);
+        $email = $request->email;
+		$userDetail	=	User::where('email',$email)->where('is_active',1)->first();
+        if(!empty($userDetail)){
+            $forgot_password_validate_string	= 	md5($userDetail->email.time().time());
+            User::where('email',$email)->update(array('forgot_password_validate_string'=>$forgot_password_validate_string));
+            $settingsEmail 		= config('global.Email');
+            $username			=  $userDetail->username;
+			$full_name			=  $userDetail->name;  
+			$route_url      	=  url('resetPassword/'.$forgot_password_validate_string);
+			$varify_link   		=   $route_url;
+
+            $emailActions		=	EmailAction::where('action','=','forgot_password')->first();
+            $emailTemplates		=	EmailTemplate::where('action','=','forgot_password')->select('name','subject','action','body')->first();
+            $cons = explode(',',$emailActions['options']);
+            $constants = array();
+            
+            foreach($cons as $key=>$val){
+                $constants[] = '{'.$val.'}';
+            }
+            $subject 			=  $emailTemplates['subject'];
+            $rep_Array 			= array($username,$varify_link,$route_url); 
+            $messageBody		=  str_replace($constants, $rep_Array, $emailTemplates['body']);
+            // pre($messageBody);
+            sendMail($email,$full_name,$subject,$messageBody,$settingsEmail);
+            Session::flash('success', trans('An email has been sent to your inbox. To reset your password please follow the steps mentioned in the email.')); 
+			return redirect('/');						
+
+        }else{
+            return redirect()->back()->with('error', trans('Credential is not found.'));
+
+        }
+    }
+
+    public function resetPassword($validate_string=null){
+		if($validate_string!="" && $validate_string!=null){
+			$userDetail	=	User::where('is_active','1')->where('forgot_password_validate_string',$validate_string)->first();
+			if(!empty($userDetail)){
+				return view('student.auth.reset_password' ,compact('validate_string'));
+			}else{
+				return redirect('/')
+						->with('error', trans('error, you are using wrong link.'));
+			}
+			
+		}else{
+			return redirect('/')->with('error', trans('Sorry, you are using wrong link.'));
+		}
+	}
+
+    public function newPassword(Request $request){
+        $validated = $request->validate([
+			'new_password'		=>	'required|max:255|same:confirom_password',
+			'confirom_password'  =>	'required|max:255'
+        ]);
+
+        $user = User::where('forgot_password_validate_string',$request->validate_string)->first();
+        if(!empty($user)){
+            $user->password = Hash::make($request->new_password);
+            $user->forgot_password_validate_string = '';
+            $update = $user->save();
+            if($update){
+                Session::flash('success', trans('Thank you for resetting your password. Please login to access your account.')); 
+                return redirect('/');
+            }
+        }else{
+            return redirect()->back()->with('error', trans('Sorry, you are using wrong link.'));
+        }
+
+
+    }
+
 }

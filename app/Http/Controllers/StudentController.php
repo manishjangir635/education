@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Course;
-use App\Models\Cmspage;
 use Illuminate\Http\Request;
+use App\Models\Course;
 
 class HomeController extends Controller
 {
@@ -58,26 +57,17 @@ class HomeController extends Controller
         return view('student.course-play');
     }
 
-  
+    public function course(){
+
+        return view('student.course');
+    }
+
+    public function courses_detail(){
+        return view('student.courses-detail');
+    }
 
     public function teacher_detail(){
         return view('student.teacher-detail');
-    }
-
-    public function terms(){
-        $record=Cmspage::where('slug','terms')->first();
-        return view('cms.terms',compact('record'));
-    }
-    public function privacy_policy(){
-        $record=Cmspage::where('slug','privacy-policy')->first();
-        return view('cms.privacy-policy',compact('record'));
-    }
-    public function faqs(){
-        return view('cms.faqs');
-    }
-
-    public function about_us(){
-        return view('cms.about-us');
     }
 
 

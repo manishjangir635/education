@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\StudentCourseController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 
@@ -33,8 +34,11 @@ use App\Http\Controllers\Teacher\ProfileController;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('my-cart', [CartController::class, 'my_cart'])->name('mycart');
+Route::group(array('middleware' => 'App\Http\Middleware\StudentNotIn'), function () {
+	Route::get('my-learning', [HomeController::class, 'my_learning'])->name('mylearning.index');
+	Route::get('logout', [AuthController::class, 'logout']);
 
-Route::get('my-learning', [HomeController::class, 'my_learning'])->name('mylearning.index');
+});
 Route::get('shopping-cart', [HomeController::class, 'shopping_cart'])->name('shopping_cart.index');
 Route::get('profile', [HomeController::class, 'account'])->name('account.index');
 Route::get('messages', [HomeController::class, 'messages'])->name('messages.index');
@@ -42,17 +46,24 @@ Route::get('purchase-history', [HomeController::class, 'purchase_history'])->nam
 Route::get('my-redemption-coupons', [HomeController::class, 'my_redemption_coupons'])->name('my_redemption_coupons.index');
 Route::get('refer-and-earn', [HomeController::class, 'refer_and_earn'])->name('refer_and_earn.index');
 Route::get('course-play', [HomeController::class, 'course_play'])->name('course_play.index');
-Route::get('courses', [HomeController::class, 'course'])->name('course.index');
-Route::get('courses-detail', [HomeController::class, 'courses_detail'])->name('courses_detail.index');
+Route::get('courses', [StudentCourseController::class, 'course'])->name('course.index');
+Route::get('courses-detail/{id}', [StudentCourseController::class, 'courses_detail'])->name('courses_detail.index');
 Route::get('teacher-detail', [HomeController::class, 'teacher_detail'])->name('teacher_detail.index');
 
 
+Route::group(array('middleware' => 'App\Http\Middleware\StudentIn'), function () {
+	Route::get('signup', [AuthController::class, 'register'])->name('signup.index');
+	Route::get('login', [AuthController::class, 'login'])->name('login.index');
+	Route::post('auth', [AuthController::class, 'auth']);
+	Route::get('forgot-password', [AuthController::class, 'forgot_password'])->name('forgot_password.index');
+	Route::post('userRegister', [AuthController::class, 'userRegister']);
+	Route::get('activate/{id}', [AuthController::class, 'activate']);
+	Route::post('sendResetLink', [AuthController::class, 'sendResetLink'])->name('/sendResetLink');
+	Route::get('resetPassword/{string}', [AuthController::class, 'resetPassword']);
+	Route::post('newPassword', [AuthController::class, 'newPassword']);
 
-Route::get('signup', [AuthController::class, 'register'])->name('signup.index');
-Route::get('login', [AuthController::class, 'login'])->name('login.index');
-Route::post('auth', [AuthController::class, 'auth']);
-Route::get('forgot-password', [AuthController::class, 'forgot_password'])->name('forgot_password.index');
-Route::post('userRegister', [AuthController::class, 'userRegister']);
+
+});
 
 
 Route::get('terms', [HomeController::class, 'terms'])->name('terms.index');
@@ -61,11 +72,6 @@ Route::get('faqs', [HomeController::class, 'faqs'])->name('faqs.index');
 Route::get('privacy-policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy.index');
 Route::get('faqs', [HomeController::class, 'faqs'])->name('faqs.index');
 Route::get('about-us', [HomeController::class, 'about_us'])->name('about_us.index');
-
-
-
-Route::get('logout', [Test::class, 'logout']);
-Route::get('dashboard', [Test::class, 'dashboard']);
 
 Route::group(array('prefix' => 'teacher'), function() {
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('teacher.dashboard');
@@ -76,6 +82,7 @@ Route::post('/course/create', [CourseController::class, 'create']);
 Route::get('/course/edit/{type}/{id}', [CourseController::class, 'edit']);
 Route::post('/course/edit/{type}/{id}', [CourseController::class, 'edit']);
 
+Route::post('/course/update/price/{id}', [CourseController::class, 'update_course_price']);
 Route::post('/course/create/section/{course_id}', [CourseController::class, 'create_section']);
 Route::post('/course/create/lecture/{section_id}', [CourseController::class, 'create_lecture']);
 

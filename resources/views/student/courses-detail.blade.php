@@ -11,9 +11,8 @@
                             <li class="breadcrumb-item"><a href="#">General Health</a></li>
                             <li class="breadcrumb-item active">Homeopathy</li>
                         </ol>
-                       <h1 class="font-36 text-white mb-20">Part-time BHMS Academy - Materia Medica for
-                        BHMS and AIAPGET</h1>
-                       <p class="font-14 text-white font-regular mb-0">Materia Medica for BHMS (written and oral) plus for MD entrance exam, and various competitive exams in Homeopathy</p>
+                       <h1 class="font-36 text-white mb-20">{{$course_detail->title}}</h1>
+                       <p class="font-14 text-white font-regular mb-0">{{$course_detail->subtitle}}</p>
                        <h5 class="font-16 text-white font-medium my-3">4.5
                         <span class="text-yellow d-inline-flex">
                             <i class="bi bi-star-fill ms-1"></i>
@@ -60,20 +59,8 @@
                                 <li>Taking down notes alongside the lectures will immensly help you</li>
                             </ul>
                             <h5 class="font-20 text-darkblue font-bold mb-3">Description</h5>
-                            <p class="font-16 text-darkblue font-regular">Welcome to the <strong>Part-Time BHMS Academy</strong>.</p>
-                            <p class="font-16 text-darkblue font-regular">Materia Medica has always been a difficult subject to score especially in competitive exams. Unlike other subjects, it cannot be completed in entirety in few months or even a year because even after the best of preparation, the symptoms start vanishing from the mind within few weeks. It requires constant and repeated hammering. Still, though, almost 20-25% of the questions in the exams get asked from this one subject, because of its importance in homoeopathy, hence this subject cannot be neglected.</p>
-                            <p class="font-16 text-darkblue font-regular">With an endeavour to make this subject easy and scoring, I have decided to launch my course Part-Time BHMS Academy. The course aims to teach Materia medica to the students right from the beginning, while the students are in their BHMS (2nd, 3rd, 4th year, final year or internship), to <strong>prepare them for BHMS exams (written/viva), taking each individual drug at a time, and alongside, also prepare them for the MD entrance exams and other competitive exams in homoeopathy</strong>. Thereby building a strong foundation of Materia Medica right from the very start.</p>
-                            <h5 class="font-16 text-darkblue font-bold mb-2 pt-2">Drugs included in this course</h5>
-                            <p class="font-16 text-darkblue font-regular">Being the first course of its kind, I have covered 5 major and important homoeopathic drugs namely:</p>
-                            <ul class="cricle-list list-small">
-                                <li>Aconitum napellus</li>
-                                <li>Arnica montana</li>
-                                <li>Allium cepa</li>
-                                <li>Apis mellifica</li>
-                                <li>Arsenicum album</li>
-                            </ul>
-                            <h5 class="font-16 text-darkblue font-bold mb-2">Enrol once, benefit a lifetime</h5>
-                            <p class="font-16 text-darkblue font-regular">You would be entitled to lifelong access to this course if enrolled once. You would require to study these drugs from time to time during your entire 5 and 1/2 years BHMS course, and every time thereafter you wish to prepare for competitive exams in homoeopathy.</p>
+                            {!!$course_detail->description!!}
+                            
                             <h5 class="font-20 text-darkblue font-bold mb-3 pt-2">Who this course is for:</h5>
                             <ul class="cricle-list list-small">
                                 <li>Students who find studying Materia Medica difficult and less scoring</li>
@@ -410,7 +397,7 @@
                      <div class="row gy-4">
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <div class="course-block">
-                                <a href="{{route('courses_detail.index')}}">
+                                <a href="">
                                     <div class="course-thumb">
                                         <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb4.jpg" alt="course" width="100%" height="200">
                                     </div>
@@ -440,7 +427,7 @@
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <div class="course-block">
-                                <a href="{{route('courses_detail.index')}}">
+                                <a href="">
                                     <div class="course-thumb">
                                         <img src="{{url('/')}}/public/student/images/course-thumb/course-thumb5.jpg" alt="course" width="100%" height="200">
                                     </div>
@@ -478,9 +465,9 @@
                             </div>
                             <div class="course-detail">
                                 <div class="d-flex align-items-center">
-                                    <span class="font-44 font-bold text-darkblue mb-1">₹529</span>
-                                    <del class="font-18 text-dgray font-medium ms-2 mb-1">₹3,499</del>
-                                    <span class="font-18 text-darkblue font-medium ms-2 mb-1">85% off</span>
+                                    <span class="font-44 font-bold text-darkblue mb-1">₹{{$course_detail->price*$course_detail->discount/100}}</span>
+                                    <del class="font-18 text-dgray font-medium ms-2 mb-1">₹{{$course_detail->price}}</del>
+                                    <span class="font-18 text-darkblue font-medium ms-2 mb-1">{{$course_detail->discount}}% off</span>
                                 </div>
                                 <div class="mb-10 d-flex align-items-center">
                                     <a class="flex-fill me-3 theme-btn" href="javascript:void(0);">Add to Cart</a>
