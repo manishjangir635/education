@@ -50,36 +50,21 @@
 										Write a clear description of the intended learners for your course who will find your course <br>content valuable. This will help you attract the right learners to your course.
 									</p>
 									<ul class="more-fields wrapper1">
-										<li class="item">
+										
+									@foreach($course_detail->course_for as $val1)
+									<li class="item">
 											<div class="input-group textLimit">
-												<input type="text" class="form-control char" maxlength="160" placeholder="">
+												<input type="text" name="course_for[]" class="form-control char" maxlength="160" placeholder="" value="{{$val1->title}}" required>
 												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
 													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
-													<a href="javascript:void(0);" class=""><img src="images/delete.svg" alt="img"></a>
-													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="images/drag.svg" alt="img"></a>
+													<a href="javascript:void(0);" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
+													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a>
 												</span>
 											</div>
 										</li>
-										<li class="item">
-											<div class="input-group textLimit">
-												<input type="text" class="form-control char" maxlength="160" placeholder="">
-												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
-													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
-													<a href="javascript:void(0);" class=""><img src="images/delete.svg" alt="img"></a>
-													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="images/drag.svg" alt="img"></a>
-												</span>
-											</div>
-										</li>
-										<li class="item">
-											<div class="input-group textLimit">
-												<input type="text" class="form-control char" maxlength="160" placeholder="">
-												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
-													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
-													<a href="javascript:void(0);" class=""><img src="images/delete.svg" alt="img"></a>
-													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="images/drag.svg" alt="img"></a>
-												</span>
-											</div>
-										</li>
+
+									@endforeach
+										
 										<div id="fields_wrap"></div>
 										<a class="addmore mt-3" href="javascript:void(0);">+ Add more to your response</a>
 									</ul>
@@ -91,36 +76,18 @@
 									<p class="mb-0 font-16 font-regular text-darkblue">List the required skills, experience, tools or equipment learners <br>should have prior to taking your course.
 									</p>
 									<ul class="more-fields wrapper2">
+									@foreach($course_detail->course_requirments as $val2)
 										<li class="item">
 											<div class="input-group textLimit">
-												<input type="text" class="form-control char" maxlength="160" placeholder="">
+												<input type="text" name="course_requirment[]" class="form-control char" maxlength="160" placeholder="" required value="{{$val2->title}}">
 												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
 													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
-													<a href="javascript:void(0);" class=""><img src="images/delete.svg" alt="img"></a>
-													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="images/drag.svg" alt="img"></a>
+													<a href="javascript:void(0);" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
+													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a>
 												</span>
 											</div>
 										</li>
-										<li class="item">
-											<div class="input-group textLimit">
-												<input type="text" class="form-control char" maxlength="160" placeholder="">
-												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
-													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
-													<a href="javascript:void(0);" class=""><img src="images/delete.svg" alt="img"></a>
-													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="images/drag.svg" alt="img"></a>
-												</span>
-											</div>
-										</li>
-										<li class="item">
-											<div class="input-group textLimit">
-												<input type="text" class="form-control char" maxlength="160" placeholder="">
-												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
-													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
-													<a href="javascript:void(0);" class=""><img src="images/delete.svg" alt="img"></a>
-													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="images/drag.svg" alt="img"></a>
-												</span>
-											</div>
-										</li>
+										@endforeach
 										<a class="addmore mt-3" href="javascript:void(0);">+ Add more to your response</a>
 									</ul>
 								</div>
@@ -131,36 +98,18 @@
 									<p class="mb-0 font-16 font-regular text-darkblue">You must enter at least 4 learning objectives or outcomes that learners can expect to <br>achieve after completing your course.
 									</p>
 									<ul class="more-fields wrapper3">
+									@foreach($course_detail->student_learn as $val3)
 										<li class="item">
 											<div class="input-group textLimit">
-												<input type="text" class="form-control char" maxlength="160" placeholder="">
+												<input type="text" name="student_learn[]" class="form-control char" maxlength="160" placeholder="" required value="{{$val3->title}}">
 												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
 													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
-													<a href="javascript:void(0);" class=""><img src="images/delete.svg" alt="img"></a>
-													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="images/drag.svg" alt="img"></a>
+													<a href="javascript:void(0);" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
+													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a>
 												</span>
 											</div>
 										</li>
-										<li class="item">
-											<div class="input-group textLimit">
-												<input type="text" class="form-control char" maxlength="160" placeholder="">
-												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
-													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
-													<a href="javascript:void(0);" class=""><img src="images/delete.svg" alt="img"></a>
-													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="images/drag.svg" alt="img"></a>
-												</span>
-											</div>
-										</li>
-										<li class="item">
-											<div class="input-group textLimit">
-												<input type="text" class="form-control char" maxlength="160" placeholder="">
-												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
-													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
-													<a href="javascript:void(0);" class=""><img src="images/delete.svg" alt="img"></a>
-													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="images/drag.svg" alt="img"></a>
-												</span>
-											</div>
-										</li>
+										@endforeach
 										<a class="addmore mt-3" href="javascript:void(0);">+ Add more to your response</a>
 									</ul>
 								</div>

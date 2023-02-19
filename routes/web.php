@@ -78,6 +78,7 @@ Route::post('/course/create', [CourseController::class, 'create']);
 Route::get('/course/edit/{type}/{id}', [CourseController::class, 'edit']);
 Route::post('/course/edit/{type}/{id}', [CourseController::class, 'edit']);
 
+Route::post('/course/update/price/{id}', [CourseController::class, 'update_course_price']);
 Route::post('/course/create/section/{course_id}', [CourseController::class, 'create_section']);
 Route::post('/course/create/lecture/{section_id}', [CourseController::class, 'create_lecture']);
 
