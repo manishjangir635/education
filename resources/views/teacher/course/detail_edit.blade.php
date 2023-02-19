@@ -64,6 +64,17 @@
 										</li>
 
 									@endforeach
+
+									<li class="item">
+											<div class="input-group textLimit">
+												<input type="text" name="course_for[]" class="form-control char" maxlength="160" placeholder=""  required>
+												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
+													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
+													<a href="javascript:void(0);" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
+													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a>
+												</span>
+											</div>
+										</li>
 										
 										<div id="fields_wrap"></div>
 										<a class="addmore mt-3" href="javascript:void(0);">+ Add more to your response</a>
@@ -88,6 +99,17 @@
 											</div>
 										</li>
 										@endforeach
+
+										<li class="item">
+											<div class="input-group textLimit">
+												<input type="text" name="course_requirment[]" class="form-control char" maxlength="160" placeholder="" required >
+												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
+													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
+													<a href="javascript:void(0);" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
+													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a>
+												</span>
+											</div>
+										</li>
 										<a class="addmore mt-3" href="javascript:void(0);">+ Add more to your response</a>
 									</ul>
 								</div>
@@ -110,6 +132,17 @@
 											</div>
 										</li>
 										@endforeach
+
+										<li class="item">
+											<div class="input-group textLimit">
+												<input type="text" name="student_learn[]" class="form-control char" maxlength="160" placeholder="" required >
+												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
+													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
+													<a href="javascript:void(0);" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
+													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a>
+												</span>
+											</div>
+										</li>
 										<a class="addmore mt-3" href="javascript:void(0);">+ Add more to your response</a>
 									</ul>
 								</div>
