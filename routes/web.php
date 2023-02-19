@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentCourseController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CmsController;
 use App\Http\Controllers\CartController;
 
 
@@ -13,6 +12,8 @@ use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\EmailTemplateController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\CmsController;
+
 
 
 use App\Http\Controllers\Teacher\DashboardController;
@@ -65,12 +66,12 @@ Route::group(array('middleware' => 'App\Http\Middleware\StudentIn'), function ()
 });
 
 
-Route::get('terms', [CmsController::class, 'terms'])->name('terms.index');
-Route::get('privacy-policy', [CmsController::class, 'privacy_policy'])->name('privacy_policy.index');
-Route::get('faqs', [CmsController::class, 'faqs'])->name('faqs.index');
-Route::get('privacy-policy', [CmsController::class, 'privacy_policy'])->name('privacy_policy.index');
-Route::get('faqs', [CmsController::class, 'faqs'])->name('faqs.index');
-Route::get('about-us', [CmsController::class, 'about_us'])->name('about_us.index');
+Route::get('terms', [HomeController::class, 'terms'])->name('terms.index');
+Route::get('privacy-policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy.index');
+Route::get('faqs', [HomeController::class, 'faqs'])->name('faqs.index');
+Route::get('privacy-policy', [HomeController::class, 'privacy_policy'])->name('privacy_policy.index');
+Route::get('faqs', [HomeController::class, 'faqs'])->name('faqs.index');
+Route::get('about-us', [HomeController::class, 'about_us'])->name('about_us.index');
 
 Route::group(array('prefix' => 'teacher'), function() {
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('teacher.dashboard');
@@ -87,6 +88,7 @@ Route::post('/course/create/lecture/{section_id}', [CourseController::class, 'cr
 
 Route::get('profile', [ProfileController::class, 'index'])->name('teacher_profile.index');
 Route::get('profile/edit', [ProfileController::class, 'edit'])->name('teacher_profile.edit');
+
 
 Route::get('payment', [TeacherController::class, 'payment'])->name('teacher_payment.index');
 Route::get('students', [TeacherController::class, 'students'])->name('teacher_students.index');
@@ -129,8 +131,14 @@ Route::group(array('prefix' => 'admin'), function() {
 		Route::get('add_users', [UserController::class, 'add'])->name('/add_users');
 		Route::post('save_users', [UserController::class, 'save'])->name('/save_users');
 
+        Route::get('cms-manager', [CmsController::class, 'index'])->name('cms-manager');
+        Route::get('cms-manager/edit-cms/{id}', [CmsController::class, 'edit'])->name('edit_cms_page');
+        Route::post('cms-manager/update-cms/{id}', [CmsController::class, 'update'])->name('update_cms_page');
 
 
+
+		// Route::get('cms-manager/add-cms', [CmsController::class, 'add'])->name('admin.add_cms');
+		// Route::post('cms/save', [CmsController::class, 'save']);
 
     });
 });

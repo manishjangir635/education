@@ -74,9 +74,9 @@ async
 @endif
 
 <script>
-	
+
 	var body = CKEDITOR.replace('body', {extraAllowedContent: 'div',height: 300});
-		
+
 	$('body').on('change','.select_action',function(){
 		var value = $(this).val();
 		$.ajaxSetup({
@@ -88,7 +88,7 @@ async
 			url: "{{route('/getConstant')}}",
 			type: "POST",
 			data: { value: value},
-			success: function(r){		
+			success: function(r){
 				// console.log(r);
 				$('.constant').html(r);
 			}
@@ -102,12 +102,12 @@ async
 		if(strUser != ''){
 			var newStr = '{'+strUser+'}';
 			var oEditor = CKEDITOR.instances["body"] ;
-			oEditor.insertHtml(newStr) ;	
+			oEditor.insertHtml(newStr) ;
 		}
-	
+
     }
 
-	$('body').on('click', '.delete_any_item', function(e){ 
+	$('body').on('click', '.delete_any_item', function(e){
 		url = $(this).attr('href');
 		bootbox.confirm("Are you sure want to delete this ?",
 		function(result){
@@ -128,7 +128,7 @@ async
 	function addvenueaddress() {
 		var input = document.getElementById('address');
 		var autocomplete = new google.maps.places.Autocomplete(input);
- 
+
 		autocomplete.addListener('place_changed', function() {
 		var place = autocomplete.getPlace();
 		console.log(place.geometry);
@@ -140,25 +140,30 @@ async
 		IsplaceChange = true;
 		var userlat = place.geometry['location'].lat();
 		var userlng = place.geometry['location'].lng();
- 
+
 		var postCode = extractFromAdress(place.address_components, "postal_code");
 		var street = extractFromAdress(place.address_components, "route");
 		var town = extractFromAdress(place.address_components, "locality");
 		var country = extractFromAdress(place.address_components, "country");
 		var state = extractFromAdress(place.address_components, "administrative_area_level_1");
- 
+
 		console.log(postCode);
-		
+
 		$('#lat').val(userlat);
 		$('#long').val(userlng);
-		
+
 		$('#city').val(town);
 		$('#state').val(state);
 		$('#country').val(country);
 		$('#postal_code').val(postCode);
-		
+
 		});
 	}
+
+    // var content_en = CKEDITOR.replace('content_en', {extraAllowedContent: 'div',height: 100});
+    var meta_description_en = CKEDITOR.replace('meta_description_en', {extraAllowedContent: 'div',height: 300});
+
+
 </script>
 </body>
 </html>

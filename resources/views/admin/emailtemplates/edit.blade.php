@@ -21,7 +21,7 @@
     <section class="content">
       <div class="container-fluid">
         <!-- SELECT2 EXAMPLE -->
-        
+
         <!-- /.card -->
 
         <!-- SELECT2 EXAMPLE -->
@@ -70,7 +70,7 @@
             </div>
             <!-- /.row -->
           </div>
-         
+
         </div>
 
       </div>

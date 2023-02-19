@@ -5,12 +5,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Add Cms</h1>
+            <h1>Add User</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Add Cms</li>
+              <li class="breadcrumb-item active">Add User</li>
             </ol>
           </div>
         </div>
@@ -21,7 +21,7 @@
     <section class="content">
       <div class="container-fluid">
         <!-- SELECT2 EXAMPLE -->
-
+        
         <!-- /.card -->
 
         <!-- SELECT2 EXAMPLE -->
@@ -63,7 +63,7 @@
                         <option value="3" @if(old('role')==3) selected @endif> Retailer </option>
                     </select>
                     {!!$errors->first("role", "<span class='text-danger'>:message</span>")!!}
-
+                 
                 </div>
                 <!-- /.form-group -->
                 <div class="form-group">
@@ -93,8 +93,8 @@
                     {!!$errors->first("confirom_password", "<span class='text-danger'>:message</span>")!!}
 
                 </div>
-
-
+            
+              
                 <!-- /.form-group -->
                 <button class="btn btn-primary" type="submit">Save</button>
                 </form>
@@ -102,7 +102,7 @@
             </div>
             <!-- /.row -->
           </div>
-
+         
         </div>
 
       </div>
