@@ -17,9 +17,9 @@ class AuthController extends Controller
     public function userRegister(Request $request)
     {
         $validated = $request->validate([
-            'name'   => 'required',
+            'name'   => 'required|min:1|max:55',
             'email'  =>	'required|unique:users,email|email:rfc,dns',
-            'password'   => 'required|min:1|max:10',
+            'password'   => 'required|min:6|max:12',
         ]);
         $user = new User;
         $user->name = $request->name;
@@ -80,7 +80,7 @@ class AuthController extends Controller
     public function auth(Request $request){
         $validated = $request->validate([
             'email'  =>	'required|email:rfc,dns',
-            'password'   => 'required|min:1|max:10',
+            'password'   => 'required|min:6|max:12',
         ]);
         $auth = array(
             'email' => $request->email,
@@ -141,6 +141,7 @@ class AuthController extends Controller
         $email = $request->email;
 		$userDetail	=	User::where('email',$email)->where('is_active',1)->first();
         if(!empty($userDetail)){
+            if($userDetail->is_active == 1){
             $forgot_password_validate_string	= 	md5($userDetail->email.time().time());
             User::where('email',$email)->update(array('forgot_password_validate_string'=>$forgot_password_validate_string));
             $settingsEmail 		= config('global.Email');
@@ -164,7 +165,9 @@ class AuthController extends Controller
             sendMail($email,$full_name,$subject,$messageBody,$settingsEmail);
             Session::flash('success', trans('An email has been sent to your inbox. To reset your password please follow the steps mentioned in the email.')); 
 			return redirect('/');						
-
+            }else{
+            return redirect()->back()->with('error', trans('Email is still not verified.'));
+            }
         }else{
             return redirect()->back()->with('error', trans('Credential is not found.'));
 
@@ -188,8 +191,8 @@ class AuthController extends Controller
 
     public function newPassword(Request $request){
         $validated = $request->validate([
-			'new_password'		=>	'required|max:255|same:confirom_password',
-			'confirom_password'  =>	'required|max:255'
+			'new_password'		=>	'required|min:6|max:12|same:confirom_password',
+			'confirom_password'  =>	'required|min:6|max:12'
         ]);
 
         $user = User::where('forgot_password_validate_string',$request->validate_string)->first();
