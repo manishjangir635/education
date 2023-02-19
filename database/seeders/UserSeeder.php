@@ -17,13 +17,11 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             'user_role_id' => 1,
-            'is_staff' => 0,
             'name' => 'admin',
             'username' => 'admin',
             'email' => 'admin@mailinator.com',
             'mobile_number' => 1234568790,
             'password' => Hash::make("Admin@123"),
-            'employment_type' => 1,
             'is_mobile_verified' => 1,
             'is_email_verified' => 1,
             'is_active' => 1,

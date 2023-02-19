@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Course;
 
 class HomeController extends Controller
 {
     public function index(){
-        return view('index');
+
+        $course_list=Course::take(12)->get();
+
+        $top_course_list=Course::take(12)->get();
+
+        return view('index',compact('course_list','top_course_list'));
     }
     public function my_cart(){
 
