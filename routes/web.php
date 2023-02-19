@@ -32,8 +32,11 @@ use App\Http\Controllers\Teacher\ProfileController;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('my-cart', [CartController::class, 'my_cart'])->name('mycart');
+Route::group(array('middleware' => 'App\Http\Middleware\StudentNotIn'), function () {
+	Route::get('my-learning', [HomeController::class, 'my_learning'])->name('mylearning.index');
+	Route::get('logout', [AuthController::class, 'logout']);
 
-Route::get('my-learning', [HomeController::class, 'my_learning'])->name('mylearning.index');
+});
 Route::get('shopping-cart', [HomeController::class, 'shopping_cart'])->name('shopping_cart.index');
 Route::get('profile', [HomeController::class, 'account'])->name('account.index');
 Route::get('messages', [HomeController::class, 'messages'])->name('messages.index');
@@ -46,12 +49,14 @@ Route::get('courses-detail', [HomeController::class, 'courses_detail'])->name('c
 Route::get('teacher-detail', [HomeController::class, 'teacher_detail'])->name('teacher_detail.index');
 
 
-
-Route::get('signup', [AuthController::class, 'register'])->name('signup.index');
-Route::get('login', [AuthController::class, 'login'])->name('login.index');
-Route::post('auth', [AuthController::class, 'auth']);
-Route::get('forgot-password', [AuthController::class, 'forgot_password'])->name('forgot_password.index');
-Route::post('userRegister', [AuthController::class, 'userRegister']);
+Route::group(array('middleware' => 'App\Http\Middleware\StudentIn'), function () {
+	Route::get('signup', [AuthController::class, 'register'])->name('signup.index');
+	Route::get('login', [AuthController::class, 'login'])->name('login.index');
+	Route::post('auth', [AuthController::class, 'auth']);
+	Route::get('forgot-password', [AuthController::class, 'forgot_password'])->name('forgot_password.index');
+	Route::post('userRegister', [AuthController::class, 'userRegister']);
+	Route::get('activate/{id}', [AuthController::class, 'activate']);
+});
 
 
 Route::get('terms', [CmsController::class, 'terms'])->name('terms.index');
@@ -60,11 +65,6 @@ Route::get('faqs', [CmsController::class, 'faqs'])->name('faqs.index');
 Route::get('privacy-policy', [CmsController::class, 'privacy_policy'])->name('privacy_policy.index');
 Route::get('faqs', [CmsController::class, 'faqs'])->name('faqs.index');
 Route::get('about-us', [CmsController::class, 'about_us'])->name('about_us.index');
-
-
-
-Route::get('logout', [Test::class, 'logout']);
-Route::get('dashboard', [Test::class, 'dashboard']);
 
 Route::group(array('prefix' => 'teacher'), function() {
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('teacher.dashboard');
