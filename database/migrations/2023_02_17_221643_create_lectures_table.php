@@ -17,6 +17,7 @@ class CreateLecturesTable extends Migration
             $table->id();
             $table->integer('section_id');
             $table->string('title');
+            $table->text('video');
         });
     }
 
