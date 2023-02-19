@@ -16,6 +16,8 @@ use App\Http\Controllers\Admin\UserController;
 
 use App\Http\Controllers\Teacher\DashboardController;
 use App\Http\Controllers\Teacher\CourseController;
+use App\Http\Controllers\Teacher\TeacherController;
+use App\Http\Controllers\Teacher\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +35,7 @@ Route::get('my-cart', [CartController::class, 'my_cart'])->name('mycart');
 
 Route::get('my-learning', [HomeController::class, 'my_learning'])->name('mylearning.index');
 Route::get('shopping-cart', [HomeController::class, 'shopping_cart'])->name('shopping_cart.index');
-Route::get('account', [HomeController::class, 'account'])->name('account.index');
+Route::get('profile', [HomeController::class, 'account'])->name('account.index');
 Route::get('messages', [HomeController::class, 'messages'])->name('messages.index');
 Route::get('purchase-history', [HomeController::class, 'purchase_history'])->name('purchase_history.index');
 Route::get('my-redemption-coupons', [HomeController::class, 'my_redemption_coupons'])->name('my_redemption_coupons.index');
@@ -64,14 +66,27 @@ Route::get('logout', [Test::class, 'logout']);
 Route::get('dashboard', [Test::class, 'dashboard']);
 
 Route::group(array('prefix' => 'teacher'), function() {
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('teacher.dashboard');
+
+
 Route::get('/course/create', [CourseController::class, 'create']);
-Route::post('/course/create', [CourseController::class, 'create']);  
-Route::get('/course/edit/{type}/{id}', [CourseController::class, 'edit']);   
+Route::post('/course/create', [CourseController::class, 'create']);
+Route::get('/course/edit/{type}/{id}', [CourseController::class, 'edit']);
 Route::post('/course/edit/{type}/{id}', [CourseController::class, 'edit']);
 
-Route::post('/course/create/section/{course_id}', [CourseController::class, 'create_section']);  
-Route::post('/course/create/lecture/{section_id}', [CourseController::class, 'create_lecture']); 
+Route::post('/course/create/section/{course_id}', [CourseController::class, 'create_section']);
+Route::post('/course/create/lecture/{section_id}', [CourseController::class, 'create_lecture']);
+
+Route::get('profile', [ProfileController::class, 'index'])->name('teacher_profile.index');
+Route::get('profile/edit', [ProfileController::class, 'edit'])->name('teacher_profile.edit');
+
+Route::get('payment', [TeacherController::class, 'payment'])->name('teacher_payment.index');
+Route::get('students', [TeacherController::class, 'students'])->name('teacher_students.index');
+Route::get('revenue-report', [TeacherController::class, 'revenue_report'])->name('revenue_report.index');
+Route::get('messages', [TeacherController::class, 'messages'])->name('teacher_messages.index');
+Route::get('reviews', [TeacherController::class, 'reviews'])->name('teacher_reviews.index');
+
+
 
 });
 

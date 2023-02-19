@@ -1,7 +1,9 @@
+@extends('teacher.layouts.master')
+@section('content')
 <div class="left-menu">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a href="{{route('teacher.dashboard')}}" class="nav-link active" aria-current="page" title="Teacher Dashboard"
+                    <a href="index.html" class="nav-link active" aria-current="page" title="Teacher Dashboard"
                         data-bs-toggle="tooltip" data-bs-placement="right">
                         <svg width="48" height="48" viewBox="0 0 48 48">
                             <g data-name="Group 16224" transform="translate(15933.904 4540)">
@@ -13,7 +15,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('teacher_students.index')}}" class="nav-link" aria-current="page" title="Students" data-bs-toggle="tooltip"
+                    <a href="students.html" class="nav-link" aria-current="page" title="Students" data-bs-toggle="tooltip"
                         data-bs-placement="right">
                         <svg width="48" height="48" viewBox="0 0 48 48">
                             <g data-name="Group 16226" transform="translate(15930.414 4334.922)">
@@ -42,7 +44,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('revenue_report.index')}}" class="nav-link" aria-current="page" title="Performance" data-bs-toggle="tooltip"
+                    <a href="revenue-report.html" class="nav-link" aria-current="page" title="Performance" data-bs-toggle="tooltip"
                         data-bs-placement="right">
                         <svg width="48" height="48" viewBox="0 0 48 48">
                             <g transform="translate(15931.627 4234.362)">
@@ -65,7 +67,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('teacher_reviews.index')}}" class="nav-link" aria-current="page" title="Ratings and Reviews" data-bs-toggle="tooltip"
+                    <a href="reviews.html" class="nav-link" aria-current="page" title="Ratings and Reviews" data-bs-toggle="tooltip"
                         data-bs-placement="right">
                         <svg width="48" height="48" viewBox="0 0 48 48">
                             <g transform="translate(15932 4123)">
@@ -82,7 +84,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('teacher_messages.index')}}" class="nav-link" aria-current="page" title="Communication" data-bs-toggle="tooltip"
+                    <a href="messages.html" class="nav-link" aria-current="page" title="Communication" data-bs-toggle="tooltip"
                         data-bs-placement="right">
                         <svg width="48" height="48" viewBox="0 0 48 48">
                             <g transform="translate(15929 4017)">
@@ -95,3 +97,36 @@
                 </li>
             </ul>
         </div>
+        <div class="content">
+            <div class="p-lg-5">
+            <h1 class="playfair font-30 text-darkblue">Your Bank Details</h1>
+            <p class="font-16 font-medium text-darkblue">Enter the details to complete kyc All fields are mandatory</p>
+            <div class="border-block mt-30">
+                <form>
+                    <div class="row g-4">
+                        <div class="col-sm-12 col-md-6">
+                            <label class="font-16 font-medium text-darkblue mb-1" for="">Account Holder's Name</label>
+                            <input type="text" class="form-control" placeholder="Account Holder's Name">
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <label class="font-16 font-medium text-darkblue mb-1" for="">IFSC Code</label>
+                            <input type="text" class="form-control" placeholder="IFSC Code">
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <label class="font-16 font-medium text-darkblue mb-1" for="">Account Number</label>
+                            <input type="text" class="form-control" placeholder="Account Number">
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <label class="font-16 font-medium text-darkblue mb-1" for="">Confirm Account Number</label>
+                            <input type="text" class="form-control" placeholder="Confirm Account Number">
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <button type="submit" class="themeBtn px-md-5">Proceed</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+
+@endsection
