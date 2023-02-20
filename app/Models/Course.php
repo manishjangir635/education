@@ -15,6 +15,16 @@ class Course extends Model
     
     protected $table='courses';
 
+    public function getImageAttribute($value)
+    {
+        if ($value) {
+            return url('/').'/public/teacher/image/'.$value;
+        } else {
+            return url('/').'/public/teacher/image/default.png';
+        }
+    }
+
+  
     public function section_list()
     {
         return $this->hasMany(Section::class)->with('lecture_list');
@@ -25,6 +35,7 @@ class Course extends Model
         return $this->belongsTo(User::class)->select('id','name');
     }
 
+    
 
     public function course_for()
     {
