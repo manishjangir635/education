@@ -24,6 +24,7 @@ class CreateCoursesTable extends Migration
             $table->text('image')->nullable();
             $table->text('preview_video')->nullable();
             $table->integer('price')->default(0);
+            $table->integer('discount_percentage')->default(0);
             $table->timestamps();
         });
     }

@@ -35,7 +35,7 @@
                     <div class="course-block">
                         <a href="{{url('/')}}/courses-detail/{{$course->id}}">
                             <div class="course-thumb">
-                                <img src="{{url('/')}}/public/teacher/image/{{$course->image}}" alt="course" width="100%" height="200">
+                                <img src="{{$course->image}}" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">{{$course->title}}</h4>
@@ -54,7 +54,7 @@
                                 <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
                                     <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹{{$course->price}} <del
                                             class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                    <a class="theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                    <a class="theme-btn" href="{{url('/')}}/cart/add/{{$course->id}}">Add to Cart</a>
                                 </div>
                             </div>
                         </a>
@@ -85,7 +85,7 @@
                     <div class="course-block">
                         <a href="{{url('/')}}/courses-detail/{{$course->id}}">
                             <div class="course-thumb">
-                                <img src="{{url('/')}}/public/teacher/image/{{$course->image}}" alt="course" width="100%" height="200">
+                                <img src="{{$course->image}}" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">{{$course->title}}</h4>
@@ -104,7 +104,7 @@
                                 <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
                                     <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹{{$course->price}} <del
                                             class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                    <a class="theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                    <a class="theme-btn" href="{{url('/')}}/cart/add/{{$course->id}}">Add to Cart</a>
                                 </div>
                             </div>
                         </a>
@@ -250,7 +250,7 @@
                     <div class="course-block">
                         <a href="{{url('/')}}/courses-detail/{{$course->id}}">
                             <div class="course-thumb">
-                                <img src="{{url('/')}}/public/teacher/image/{{$course->image}}" alt="course" width="100%" height="200">
+                                <img src="{{$course->image}}" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">{{$course->title}}</h4>
@@ -269,7 +269,7 @@
                                 <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
                                     <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹{{$course->price}} <del
                                             class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                    <a class="theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                    <a class="theme-btn" href="{{url('/')}}/cart/add/{{$course->id}}">Add to Cart</a>
                                 </div>
                             </div>
                         </a>
@@ -301,7 +301,7 @@
                     <div class="course-block">
                         <a href="{{url('/')}}/courses-detail/{{$course->id}}">
                             <div class="course-thumb">
-                                <img src="{{url('/')}}/public/teacher/image/{{$course->image}}" alt="course" width="100%" height="200">
+                                <img src="{{$course->image}}" alt="course" width="100%" height="200">
                             </div>
                             <div class="course-detail">
                                 <h4 class="font-16 text-darkblue font-bold">{{$course->title}}</h4>
@@ -320,7 +320,7 @@
                                 <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
                                     <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹{{$course->price}} <del
                                             class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                    <a class="theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                    <a class="theme-btn" href="{{url('/')}}/cart/add/{{$course->id}}">Add to Cart</a>
                                 </div>
                             </div>
                         </a>

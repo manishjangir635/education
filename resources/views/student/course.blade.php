@@ -23,48 +23,34 @@
                 <div class="row gy-4">
                     <div class="col-sm-12 col-md-3">
                         <div class="filter-courses">
-                            <h5 class="font-16 text-darkblue font-bold mb-0">Subject</h5>
+                            <h5 class="font-16 text-darkblue font-bold mb-0">Category</h5>
                             <ul>
-                                <li><input class="form-check-input" type="checkbox"> <span>Practice Of Medicine</span></li>
-                                <li><input class="form-check-input" type="checkbox"> <span>Materia Medica</span></li>
-                                <li><input class="form-check-input" type="checkbox"> <span>Preventive & Social Medicine</span></li>
-                                <li><input class="form-check-input" type="checkbox"> <span>Organon & Homeopathic Philosophy</span></li>
-                                <li><input class="form-check-input" type="checkbox"> <span>Repertory</span></li>
-                                <li><input class="form-check-input" type="checkbox"> <span>Gynaecology & Obstetrics</span></li>
-                                <li><input class="form-check-input" type="checkbox"> <span>Surgery</span></li>
-                                <li><input class="form-check-input" type="checkbox"> <span>Pathology</span></li>
-                                <li><input class="form-check-input" type="checkbox"> <span>Forensic Medicine & Toxiocology</span></li>
-                                <li><input class="form-check-input" type="checkbox"> <span>Anatomy</span></li>
-                                <li><input class="form-check-input" type="checkbox"> <span>Physiology & Biochemistry</span></li>
-                                <li><input class="form-check-input" type="checkbox"> <span>Pharmacy</span></li>
+                                @foreach($category_list as $category)
+                                <li><input class="form-check-input" name="category[]" type="checkbox" value="{{$category->id}}"> <span>{{$category->title}}</span></li>
+                                @endforeach
                             </ul>
                             <h5 class="font-16 text-darkblue font-bold mb-0">Teacher</h5>
                             <ul>
-                                <li><input class="form-check-input" type="checkbox"> <span>Dr. Rashi</span></li>
-                                <li><input class="form-check-input" type="checkbox"> <span>Dr. Poorva Tiwari</span></li>
-                                <li><input class="form-check-input" type="checkbox"> <span>Dr. Himani Garg</span></li>
-                                <li><input class="form-check-input" type="checkbox"> <span>Dr. Harsh Nigam</span></li>
-                                <li><input class="form-check-input" type="checkbox"> <span>Grant Bentley</span></li>
-                                <li><input class="form-check-input" type="checkbox"> <span>Dr. Maneesha Solanki</span></li>
-                                <li><input class="form-check-input" type="checkbox"> <span>Louise Bentley</span></li>
-                                <li><input class="form-check-input" type="checkbox"> <span>Dr. Saptarshi Banerjea</span></li>
-                                <li><input class="form-check-input" type="checkbox"> <span> Dr. Rashid Akhtar</span></li>
+                                
+                                @foreach($user_list as $user)
+                                <li><input class="form-check-input" name="teacher[]" type="checkbox" value="{{$user->id}}"> <span>{{$user->name}}</span></li>
+                                @endforeach
+
                             </ul>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-9">
                         <div class="row gy-4">
+                            @foreach($course_list as $course)
                             <div class="col-sm-12 col-md-6 col-lg-4">
                                 <div class="course-block">
                                     <div class="ratio ratio-16x9 course-thumb">
-                                        <iframe src="https://www.youtube.com/embed/iGcNOabh0kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        <iframe src="{{url('/')}}/teacher/video/{{$course->preview_video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
                                     <div class="course-detail">
-                                        <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
-                                            to Build Creative Confidence</h4>
-                                        <p class="font-14 text-darkblue font-regular">Share a completed worksheet, reflection, or
-                                            project.</p>
-                                        <h5 class="font-16 text-darkblue font-medium">Dr. Bhumika P</h5>
+                                        <h4 class="font-16 text-darkblue font-bold">{{$course->title}}</h4>
+                                        <p class="font-14 text-darkblue font-regular">{{$course->subtitle}}</p>
+                                        <h5 class="font-16 text-darkblue font-medium">{{$course->user->name}}</h5>
                                         <h5 class="font-16 text-darkblue font-medium my-3">4.5
                                             <span class="text-yellow d-inline-flex">
                                                 <i class="bi bi-star-fill ms-1"></i>
@@ -76,269 +62,21 @@
                                         </h5>
                                         <h5 class="font-16 text-darkblue font-medium">22 Student Enrolled</h5>
                                         <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
-                                            <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
-                                                    class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                            <a class="theme-btn" href="javascript:void(0);">Add to Cart</a>
+                                            <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹{{$course->price-($course->price*$course->discount_percentage/100)}} <del
+                                                    class="font-16 text-dgray font-regular">₹{{$course->price}}</del></h5>
+                                            <a class="theme-btn" href="{{url('/')}}/cart/add/{{$course->id}}">Add to Cart</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <div class="course-block">
-                                    <div class="ratio ratio-16x9 course-thumb">
-                                        <iframe src="https://www.youtube.com/embed/iGcNOabh0kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                    <div class="course-detail">
-                                        <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
-                                            to Build Creative Confidence</h4>
-                                        <p class="font-14 text-darkblue font-regular">Share a completed worksheet, reflection, or
-                                            project.</p>
-                                        <h5 class="font-16 text-darkblue font-medium">Dr. Bhumika P</h5>
-                                        <h5 class="font-16 text-darkblue font-medium my-3">4.5
-                                            <span class="text-yellow d-inline-flex">
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star ms-1"></i>
-                                            </span>
-                                        </h5>
-                                        <h5 class="font-16 text-darkblue font-medium">22 Student Enrolled</h5>
-                                        <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
-                                            <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
-                                                    class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                            <a class="theme-btn" href="javascript:void(0);">Add to Cart</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <div class="course-block">
-                                    <div class="ratio ratio-16x9 course-thumb">
-                                        <iframe src="https://www.youtube.com/embed/iGcNOabh0kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                    <div class="course-detail">
-                                        <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
-                                            to Build Creative Confidence</h4>
-                                        <p class="font-14 text-darkblue font-regular">Share a completed worksheet, reflection, or
-                                            project.</p>
-                                        <h5 class="font-16 text-darkblue font-medium">Dr. Bhumika P</h5>
-                                        <h5 class="font-16 text-darkblue font-medium my-3">4.5
-                                            <span class="text-yellow d-inline-flex">
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star ms-1"></i>
-                                            </span>
-                                        </h5>
-                                        <h5 class="font-16 text-darkblue font-medium">22 Student Enrolled</h5>
-                                        <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
-                                            <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
-                                                    class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                            <a class="theme-btn" href="javascript:void(0);">Add to Cart</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <div class="course-block">
-                                    <div class="ratio ratio-16x9 course-thumb">
-                                        <iframe src="https://www.youtube.com/embed/iGcNOabh0kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                    <div class="course-detail">
-                                        <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
-                                            to Build Creative Confidence</h4>
-                                        <p class="font-14 text-darkblue font-regular">Share a completed worksheet, reflection, or
-                                            project.</p>
-                                        <h5 class="font-16 text-darkblue font-medium">Dr. Bhumika P</h5>
-                                        <h5 class="font-16 text-darkblue font-medium my-3">4.5
-                                            <span class="text-yellow d-inline-flex">
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star ms-1"></i>
-                                            </span>
-                                        </h5>
-                                        <h5 class="font-16 text-darkblue font-medium">22 Student Enrolled</h5>
-                                        <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
-                                            <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
-                                                    class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                            <a class="theme-btn" href="javascript:void(0);">Add to Cart</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <div class="course-block">
-                                    <div class="ratio ratio-16x9 course-thumb">
-                                        <iframe src="https://www.youtube.com/embed/iGcNOabh0kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                    <div class="course-detail">
-                                        <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
-                                            to Build Creative Confidence</h4>
-                                        <p class="font-14 text-darkblue font-regular">Share a completed worksheet, reflection, or
-                                            project.</p>
-                                        <h5 class="font-16 text-darkblue font-medium">Dr. Bhumika P</h5>
-                                        <h5 class="font-16 text-darkblue font-medium my-3">4.5
-                                            <span class="text-yellow d-inline-flex">
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star ms-1"></i>
-                                            </span>
-                                        </h5>
-                                        <h5 class="font-16 text-darkblue font-medium">22 Student Enrolled</h5>
-                                        <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
-                                            <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
-                                                    class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                            <a class="theme-btn" href="javascript:void(0);">Add to Cart</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <div class="course-block">
-                                    <div class="ratio ratio-16x9 course-thumb">
-                                        <iframe src="https://www.youtube.com/embed/iGcNOabh0kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                    <div class="course-detail">
-                                        <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
-                                            to Build Creative Confidence</h4>
-                                        <p class="font-14 text-darkblue font-regular">Share a completed worksheet, reflection, or
-                                            project.</p>
-                                        <h5 class="font-16 text-darkblue font-medium">Dr. Bhumika P</h5>
-                                        <h5 class="font-16 text-darkblue font-medium my-3">4.5
-                                            <span class="text-yellow d-inline-flex">
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star ms-1"></i>
-                                            </span>
-                                        </h5>
-                                        <h5 class="font-16 text-darkblue font-medium">22 Student Enrolled</h5>
-                                        <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
-                                            <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
-                                                    class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                            <a class="theme-btn" href="javascript:void(0);">Add to Cart</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <div class="course-block">
-                                    <div class="ratio ratio-16x9 course-thumb">
-                                        <iframe src="https://www.youtube.com/embed/iGcNOabh0kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                    <div class="course-detail">
-                                        <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
-                                            to Build Creative Confidence</h4>
-                                        <p class="font-14 text-darkblue font-regular">Share a completed worksheet, reflection, or
-                                            project.</p>
-                                        <h5 class="font-16 text-darkblue font-medium">Dr. Bhumika P</h5>
-                                        <h5 class="font-16 text-darkblue font-medium my-3">4.5
-                                            <span class="text-yellow d-inline-flex">
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star ms-1"></i>
-                                            </span>
-                                        </h5>
-                                        <h5 class="font-16 text-darkblue font-medium">22 Student Enrolled</h5>
-                                        <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
-                                            <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
-                                                    class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                            <a class="theme-btn" href="javascript:void(0);">Add to Cart</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <div class="course-block">
-                                    <div class="ratio ratio-16x9 course-thumb">
-                                        <iframe src="https://www.youtube.com/embed/iGcNOabh0kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                    <div class="course-detail">
-                                        <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
-                                            to Build Creative Confidence</h4>
-                                        <p class="font-14 text-darkblue font-regular">Share a completed worksheet, reflection, or
-                                            project.</p>
-                                        <h5 class="font-16 text-darkblue font-medium">Dr. Bhumika P</h5>
-                                        <h5 class="font-16 text-darkblue font-medium my-3">4.5
-                                            <span class="text-yellow d-inline-flex">
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star ms-1"></i>
-                                            </span>
-                                        </h5>
-                                        <h5 class="font-16 text-darkblue font-medium">22 Student Enrolled</h5>
-                                        <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
-                                            <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
-                                                    class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                            <a class="theme-btn" href="javascript:void(0);">Add to Cart</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-6 col-lg-4">
-                                <div class="course-block">
-                                    <div class="ratio ratio-16x9 course-thumb">
-                                        <iframe src="https://www.youtube.com/embed/iGcNOabh0kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                    <div class="course-detail">
-                                        <h4 class="font-16 text-darkblue font-bold">Unlocking Your Potential: 5 Exercises
-                                            to Build Creative Confidence</h4>
-                                        <p class="font-14 text-darkblue font-regular">Share a completed worksheet, reflection, or
-                                            project.</p>
-                                        <h5 class="font-16 text-darkblue font-medium">Dr. Bhumika P</h5>
-                                        <h5 class="font-16 text-darkblue font-medium my-3">4.5
-                                            <span class="text-yellow d-inline-flex">
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star-fill ms-1"></i>
-                                                <i class="bi bi-star ms-1"></i>
-                                            </span>
-                                        </h5>
-                                        <h5 class="font-16 text-darkblue font-medium">22 Student Enrolled</h5>
-                                        <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
-                                            <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
-                                                    class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                            <a class="theme-btn" href="javascript:void(0);">Add to Cart</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+
                         </div>
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item">
-                              <a class="page-link"><i class="bi bi-chevron-left"></i></a>
-                            </li>
-                            <li class="page-item"><a class="page-link active" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-                            <li class="page-item"><a class="page-link" href="#">5</a></li>
-                            <li class="page-item page-dot">...</li>
-                            <li class="page-item"><a class="page-link" href="#">40</a></li>
-                            <li class="page-item">
-                              <a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a>
-                            </li>
-                            <li>
-                                <select class="form-select">
-                                    <option selected>10/page</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </li>
-                      </ul>
+
+                        <div class="pagination-wrapper">
+                            {{ $course_list->links('custom_pagination') }}
+                        </div>
+
                     </div>
                 </div>
             </div>

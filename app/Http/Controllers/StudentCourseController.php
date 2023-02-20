@@ -4,71 +4,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\Category;
+use App\Models\User;
 
-class HomeController extends Controller
+class StudentCourseController extends Controller
 {
-    public function index(){
+    public function course(Request $request){
 
-        $course_list=Course::with(['user'])->take(12)->get();
+        $course_list=Course::with(['user'])->paginate(1, ['*'], 'page', null, ['view' => 'custom_pagination']);
 
-        $top_course_list=Course::with(['user'])->take(12)->get();
+        $category_list=Category::get();
 
-        return view('index',compact('course_list','top_course_list'));
-    }
-    public function my_cart(){
+        $user_list=User::get();
 
-        return view('student.my-cart');
-    }
-    public function my_learning(){
-
-        return view('student.my-learning');
+        return view('student/course',compact('course_list','category_list','user_list'));
     }
 
-    public function shopping_cart(){
-
-        return view('student.shopping-cart');
-    }
-    public function account(){
-
-        return view('student.account');
+    public function courses_detail(Request $request,$id){
+        $course_detail=Course::with(['user','course_for','course_requirments','student_learn','section_list'])->find($id); 
+        return view('student/courses-detail',compact('course_detail'));
     }
 
-    public function messages(){
 
-        return view('student.messages');
-    }
-
-    public function purchase_history(){
-        return view('student.purchase-history');
-    }
-
-    public function my_redemption_coupons(){
-
-        return view('student.my-redemption-coupons');
-    }
-
-    public function refer_and_earn(){
-
-        return view('student.refer-and-earn');
-    }
-
-    public function course_play(){
-
-        return view('student.course-play');
-    }
-
-    public function course(){
-
-        return view('student.course');
-    }
-
-    public function courses_detail(){
-        return view('student.courses-detail');
-    }
-
-    public function teacher_detail(){
-        return view('student.teacher-detail');
-    }
-
+    
 
 }

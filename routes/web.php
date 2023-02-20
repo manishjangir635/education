@@ -33,7 +33,13 @@ use App\Http\Controllers\Teacher\ProfileController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::get('my-cart', [CartController::class, 'my_cart'])->name('mycart');
+
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::get('/cart/add/{course_id}', [CartController::class, 'add']);
+Route::get('/cart/remove/{course_id}', [CartController::class, 'remove']);
+
+
 Route::group(array('middleware' => 'App\Http\Middleware\StudentNotIn'), function () {
 	Route::get('my-learning', [HomeController::class, 'my_learning'])->name('mylearning.index');
 	Route::get('logout', [AuthController::class, 'logout']);
