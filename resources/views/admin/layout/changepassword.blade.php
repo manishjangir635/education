@@ -45,9 +45,9 @@
                 </div>
                 <!-- /.form-group -->
                 <div class="form-group">
-                  <label>Confirom Password</label>
-                  <input class="form-control" type="password" name="confirom_password" placeholder="confirom password">
-                  {!!$errors->first("confirom_password", "<span class='text-danger'>:message</span>")!!}
+                  <label>Confirm Password</label>
+                  <input class="form-control" type="password" name="confirm_password" placeholder="confirm password">
+                  {!!$errors->first("confirm_password", "<span class='text-danger'>:message</span>")!!}
                 </div>
                 <!-- /.form-group -->
                 <button class="btn btn-primary" type="submit">Save</button>

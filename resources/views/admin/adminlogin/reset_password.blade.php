@@ -12,9 +12,9 @@
          <div class="error-message help-inline">
             <?php echo $errors->first('new_password'); ?>
          </div>
-         <input type="password" class="adminlogin" placeholder="Confirom Password" name="confirom_password"/>
+         <input type="password" class="adminlogin" placeholder="Confirm Password" name="confirm_password"/>
          <div class="error-message help-inline">
-            <?php echo $errors->first('confirom_password'); ?>
+            <?php echo $errors->first('confirm_password'); ?>
          </div>
 
          <div class="clearfix"></div>

@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         EmailTemplateSeeder::class,
         CategoryTableSeeder::class,
         EmailAction::class,
+        CmsTableSeeder::class,
 
         ]);
     }

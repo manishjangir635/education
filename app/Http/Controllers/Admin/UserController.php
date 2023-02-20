@@ -31,7 +31,7 @@ class UserController extends Controller
 			'role'	    =>	'required',
 			'location'	    =>	'required',
 			'password'  =>	'required',
-			'confirom_password'  =>	'required|same:password',
+			'confirm_password'  =>	'required|same:password',
         ]);
 
         $user = new User;

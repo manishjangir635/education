@@ -17,6 +17,7 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             'user_role_id' => 1,
+            'is_teacher' => 1,
             'name' => 'admin',
             'username' => 'admin',
             'email' => 'admin@mailinator.com',
