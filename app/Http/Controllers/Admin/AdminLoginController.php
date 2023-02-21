@@ -101,8 +101,8 @@ class AdminLoginController extends Controller
 
     public function resetPasswordSave(Request $request){
         $validated = $request->validate([
-			'new_password'		=>	'required|max:255|same:confirom_password',
-			'confirom_password'  =>	'required|max:255'
+			'new_password'		=>	'required|max:255|same:confirm_password',
+			'confirm_password'  =>	'required|max:255'
         ]);
 
         $user = User::where('forgot_password_validate_string',$request->validate_string)->first();

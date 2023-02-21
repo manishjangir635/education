@@ -191,8 +191,8 @@ class AuthController extends Controller
 
     public function newPassword(Request $request){
         $validated = $request->validate([
-			'new_password'		=>	'required|min:6|max:12|same:confirom_password',
-			'confirom_password'  =>	'required|min:6|max:12'
+			'new_password'		=>	'required|min:6|max:12|same:confirm_password',
+			'confirm_password'  =>	'required|min:6|max:12'
         ]);
 
         $user = User::where('forgot_password_validate_string',$request->validate_string)->first();

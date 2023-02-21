@@ -88,9 +88,9 @@
 
                 <!-- /.form-group -->
                 <div class="form-group">
-                    <label>Confirom Password<span class="requireRed"> * </span></label>
-                    <input class="form-control" type="password" name="confirom_password" placeholder="Enter confirom password">
-                    {!!$errors->first("confirom_password", "<span class='text-danger'>:message</span>")!!}
+                    <label>Confirm Password<span class="requireRed"> * </span></label>
+                    <input class="form-control" type="password" name="confirm_password" placeholder="Enter confirm password">
+                    {!!$errors->first("confirm_password", "<span class='text-danger'>:message</span>")!!}
 
                 </div>
             

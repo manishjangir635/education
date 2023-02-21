@@ -20,8 +20,8 @@ class AdminDashboardController extends Controller
         // pre($request->all());
         $validated = $request->validate([
             'old_password' 		=>	'required|max:255',
-			'new_password'		=>	'required|max:255|same:confirom_password',
-			'confirom_password'  =>	'required|max:255'
+			'new_password'		=>	'required|max:255|same:confirm_password',
+			'confirm_password'  =>	'required|max:255'
         ]);
 
         $user = User::where('id',Auth::id())->first();
