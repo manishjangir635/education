@@ -41,7 +41,7 @@
                                 <a class="nav-link" href="{{route('mylearning.index')}}">My Courses</a>
                             </li>
                             <li class="nav-item">
-                                <a class="cart-btn" href="{{route('shopping_cart.index')}}"><i class="bi bi-cart"></i></a>
+                                <a class="cart-btn" href="{{route('cart.index')}}"><i class="bi bi-cart"></i></a>
                             </li>
                             @if(empty(Auth::id()))
                             <li class="nav-item">
@@ -70,7 +70,7 @@
                         </div>
                         <li><a class="drop-item" href="{{route('account.index')}}">Profile and settings</a></li>
                         <li><a class="drop-item" href="{{route('mylearning.index')}}">My learning </a></li>
-                        <li><a class="drop-item" href="{{route('mycart')}}">My cart</a></li>
+                        <li><a class="drop-item" href="{{route('cart.index')}}">My cart</a></li>
                         <li class="dropdown-divider my-2 mx-n2"></li>
                         <li><a class="drop-item" href="{{route('messages.index')}}">Messages</a></li>
                         <li><a class="drop-item" href="{{route('purchase_history.index')}}">Purchase History</a></li>

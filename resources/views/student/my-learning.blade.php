@@ -229,7 +229,7 @@
                                         Exercises to Build Creative Confidence</h4>
                                     <p class="font-16 text-dgray font-regular">Bhms Instruvtor Team</p>
                                     <div class="mt-20 d-flex align-items-center">
-                                        <a class="me-3 theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                        <a class="me-3 theme-btn" href="">Add to Cart</a>
                                         <a class="wish-coures active" href="javascript:void(0);">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22.607" height="20.401" viewBox="0 0 22.607 20.401">
                                                 <path id="Path_51914" data-name="Path 51914" d="M9.667,8A5.785,5.785,0,0,0,4,13.9c0,5.9,6.7,11.257,10.3,12.5,3.606-1.247,10.3-6.608,10.3-12.5A5.785,5.785,0,0,0,18.94,8,5.6,5.6,0,0,0,14.3,10.505,5.6,5.6,0,0,0,9.667,8Z" transform="translate(-3 -7)" fill="none" stroke="#b5bbc7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -249,7 +249,7 @@
                                         Exercises to Build Creative Confidence</h4>
                                     <p class="font-16 text-dgray font-regular">Bhms Instruvtor Team</p>
                                     <div class="mt-20 d-flex align-items-center">
-                                       <a class="me-3 theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                       <a class="me-3 theme-btn" href="">Add to Cart</a>
                                         <a class="wish-coures active" href="javascript:void(0);">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22.607" height="20.401" viewBox="0 0 22.607 20.401">
                                                 <path id="Path_51914" data-name="Path 51914" d="M9.667,8A5.785,5.785,0,0,0,4,13.9c0,5.9,6.7,11.257,10.3,12.5,3.606-1.247,10.3-6.608,10.3-12.5A5.785,5.785,0,0,0,18.94,8,5.6,5.6,0,0,0,14.3,10.505,5.6,5.6,0,0,0,9.667,8Z" transform="translate(-3 -7)" fill="none" stroke="#b5bbc7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -269,7 +269,7 @@
                                         Exercises to Build Creative Confidence</h4>
                                     <p class="font-16 text-dgray font-regular">Bhms Instruvtor Team</p>
                                     <div class="mt-20 d-flex align-items-center">
-                                       <a class="me-3 theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                       <a class="me-3 theme-btn" href="">Add to Cart</a>
                                         <a class="wish-coures active" href="javascript:void(0);">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22.607" height="20.401" viewBox="0 0 22.607 20.401">
                                                 <path id="Path_51914" data-name="Path 51914" d="M9.667,8A5.785,5.785,0,0,0,4,13.9c0,5.9,6.7,11.257,10.3,12.5,3.606-1.247,10.3-6.608,10.3-12.5A5.785,5.785,0,0,0,18.94,8,5.6,5.6,0,0,0,14.3,10.505,5.6,5.6,0,0,0,9.667,8Z" transform="translate(-3 -7)" fill="none" stroke="#b5bbc7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -289,7 +289,7 @@
                                         Exercises to Build Creative Confidence</h4>
                                     <p class="font-16 text-dgray font-regular">Bhms Instruvtor Team</p>
                                     <div class="mt-20 d-flex align-items-center">
-                                       <a class="me-3 theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                       <a class="me-3 theme-btn" href="">Add to Cart</a>
                                         <a class="wish-coures active" href="javascript:void(0);">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22.607" height="20.401" viewBox="0 0 22.607 20.401">
                                                 <path id="Path_51914" data-name="Path 51914" d="M9.667,8A5.785,5.785,0,0,0,4,13.9c0,5.9,6.7,11.257,10.3,12.5,3.606-1.247,10.3-6.608,10.3-12.5A5.785,5.785,0,0,0,18.94,8,5.6,5.6,0,0,0,14.3,10.505,5.6,5.6,0,0,0,9.667,8Z" transform="translate(-3 -7)" fill="none" stroke="#b5bbc7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -309,7 +309,7 @@
                                         Exercises to Build Creative Confidence</h4>
                                     <p class="font-16 text-dgray font-regular">Bhms Instruvtor Team</p>
                                     <div class="mt-20 d-flex align-items-center">
-                                       <a class="me-3 theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                       <a class="me-3 theme-btn" href="">Add to Cart</a>
                                         <a class="wish-coures active" href="javascript:void(0);">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22.607" height="20.401" viewBox="0 0 22.607 20.401">
                                                 <path id="Path_51914" data-name="Path 51914" d="M9.667,8A5.785,5.785,0,0,0,4,13.9c0,5.9,6.7,11.257,10.3,12.5,3.606-1.247,10.3-6.608,10.3-12.5A5.785,5.785,0,0,0,18.94,8,5.6,5.6,0,0,0,14.3,10.505,5.6,5.6,0,0,0,9.667,8Z" transform="translate(-3 -7)" fill="none" stroke="#b5bbc7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -329,7 +329,7 @@
                                         Exercises to Build Creative Confidence</h4>
                                     <p class="font-16 text-dgray font-regular">Bhms Instruvtor Team</p>
                                     <div class="mt-20 d-flex align-items-center">
-                                       <a class="me-3 theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                       <a class="me-3 theme-btn" href="">Add to Cart</a>
                                         <a class="wish-coures active" href="javascript:void(0);">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22.607" height="20.401" viewBox="0 0 22.607 20.401">
                                                 <path id="Path_51914" data-name="Path 51914" d="M9.667,8A5.785,5.785,0,0,0,4,13.9c0,5.9,6.7,11.257,10.3,12.5,3.606-1.247,10.3-6.608,10.3-12.5A5.785,5.785,0,0,0,18.94,8,5.6,5.6,0,0,0,14.3,10.505,5.6,5.6,0,0,0,9.667,8Z" transform="translate(-3 -7)" fill="none" stroke="#b5bbc7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -349,7 +349,7 @@
                                         Exercises to Build Creative Confidence</h4>
                                     <p class="font-16 text-dgray font-regular">Bhms Instruvtor Team</p>
                                     <div class="mt-20 d-flex align-items-center">
-                                       <a class="me-3 theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                       <a class="me-3 theme-btn" href="">Add to Cart</a>
                                         <a class="wish-coures active" href="javascript:void(0);">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22.607" height="20.401" viewBox="0 0 22.607 20.401">
                                                 <path id="Path_51914" data-name="Path 51914" d="M9.667,8A5.785,5.785,0,0,0,4,13.9c0,5.9,6.7,11.257,10.3,12.5,3.606-1.247,10.3-6.608,10.3-12.5A5.785,5.785,0,0,0,18.94,8,5.6,5.6,0,0,0,14.3,10.505,5.6,5.6,0,0,0,9.667,8Z" transform="translate(-3 -7)" fill="none" stroke="#b5bbc7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -369,7 +369,7 @@
                                         Exercises to Build Creative Confidence</h4>
                                     <p class="font-16 text-dgray font-regular">Bhms Instruvtor Team</p>
                                     <div class="mt-20 d-flex align-items-center">
-                                       <a class="me-3 theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                       <a class="me-3 theme-btn" href="">Add to Cart</a>
                                         <a class="wish-coures active" href="javascript:void(0);">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22.607" height="20.401" viewBox="0 0 22.607 20.401">
                                                 <path id="Path_51914" data-name="Path 51914" d="M9.667,8A5.785,5.785,0,0,0,4,13.9c0,5.9,6.7,11.257,10.3,12.5,3.606-1.247,10.3-6.608,10.3-12.5A5.785,5.785,0,0,0,18.94,8,5.6,5.6,0,0,0,14.3,10.505,5.6,5.6,0,0,0,9.667,8Z" transform="translate(-3 -7)" fill="none" stroke="#b5bbc7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -389,7 +389,7 @@
                                         Exercises to Build Creative Confidence</h4>
                                     <p class="font-16 text-dgray font-regular">Bhms Instruvtor Team</p>
                                     <div class="mt-20 d-flex align-items-center">
-                                       <a class="me-3 theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                       <a class="me-3 theme-btn" href="">Add to Cart</a>
                                         <a class="wish-coures active" href="javascript:void(0);">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22.607" height="20.401" viewBox="0 0 22.607 20.401">
                                                 <path id="Path_51914" data-name="Path 51914" d="M9.667,8A5.785,5.785,0,0,0,4,13.9c0,5.9,6.7,11.257,10.3,12.5,3.606-1.247,10.3-6.608,10.3-12.5A5.785,5.785,0,0,0,18.94,8,5.6,5.6,0,0,0,14.3,10.505,5.6,5.6,0,0,0,9.667,8Z" transform="translate(-3 -7)" fill="none" stroke="#b5bbc7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -409,7 +409,7 @@
                                         Exercises to Build Creative Confidence</h4>
                                     <p class="font-16 text-dgray font-regular">Bhms Instruvtor Team</p>
                                     <div class="mt-20 d-flex align-items-center">
-                                       <a class="me-3 theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                       <a class="me-3 theme-btn" href="">Add to Cart</a>
                                         <a class="wish-coures active" href="javascript:void(0);">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22.607" height="20.401" viewBox="0 0 22.607 20.401">
                                                 <path id="Path_51914" data-name="Path 51914" d="M9.667,8A5.785,5.785,0,0,0,4,13.9c0,5.9,6.7,11.257,10.3,12.5,3.606-1.247,10.3-6.608,10.3-12.5A5.785,5.785,0,0,0,18.94,8,5.6,5.6,0,0,0,14.3,10.505,5.6,5.6,0,0,0,9.667,8Z" transform="translate(-3 -7)" fill="none" stroke="#b5bbc7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -429,7 +429,7 @@
                                         Exercises to Build Creative Confidence</h4>
                                     <p class="font-16 text-dgray font-regular">Bhms Instruvtor Team</p>
                                     <div class="mt-20 d-flex align-items-center">
-                                       <a class="me-3 theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                       <a class="me-3 theme-btn" href="">Add to Cart</a>
                                         <a class="wish-coures active" href="javascript:void(0);">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22.607" height="20.401" viewBox="0 0 22.607 20.401">
                                                 <path id="Path_51914" data-name="Path 51914" d="M9.667,8A5.785,5.785,0,0,0,4,13.9c0,5.9,6.7,11.257,10.3,12.5,3.606-1.247,10.3-6.608,10.3-12.5A5.785,5.785,0,0,0,18.94,8,5.6,5.6,0,0,0,14.3,10.505,5.6,5.6,0,0,0,9.667,8Z" transform="translate(-3 -7)" fill="none" stroke="#b5bbc7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
@@ -449,7 +449,7 @@
                                         Exercises to Build Creative Confidence</h4>
                                     <p class="font-16 text-dgray font-regular">Bhms Instruvtor Team</p>
                                     <div class="mt-20 d-flex align-items-center">
-                                       <a class="me-3 theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                       <a class="me-3 theme-btn" href="">Add to Cart</a>
                                         <a class="wish-coures active" href="javascript:void(0);">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="22.607" height="20.401" viewBox="0 0 22.607 20.401">
                                                 <path id="Path_51914" data-name="Path 51914" d="M9.667,8A5.785,5.785,0,0,0,4,13.9c0,5.9,6.7,11.257,10.3,12.5,3.606-1.247,10.3-6.608,10.3-12.5A5.785,5.785,0,0,0,18.94,8,5.6,5.6,0,0,0,14.3,10.505,5.6,5.6,0,0,0,9.667,8Z" transform="translate(-3 -7)" fill="none" stroke="#b5bbc7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>

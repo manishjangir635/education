@@ -40,32 +40,28 @@
                     <div class="learn-box">
                        <h4 class="font-26 text-darkblue font-bold">What you'll learn</h4>
                        <ul>
-                          <li>Materia Medica for BHMS exams and viva</li>
-                          <li>Comparison of symtoms from different drugs</li>
-                          <li>How to remember every symptoms in Materia Medica easily</li>
-                          <li>Few clinical tips as well</li>
-                          <li>Materia Medica for MD entrance exam or any competitive exam in Homeopathy</li>
-                          <li>How to study Materia Medica for BHMS and Entrance exams</li>
-                          <li>What to study from Boericke's Materia Medica for exam</li>
+                        @foreach($course_detail->student_learn as $val1)
+                        <li>{{$val1->title}}</li>
+                        @endforeach
                        </ul>
                     </div>
                     <div class="text-area mb-20" data-controller="#readMore1">
                         <div class="course-content">
                             <h5 class="font-20 text-darkblue font-bold mb-3">Requirements</h5>
                             <ul class="cricle-list">
-                                <li>Any Student willing to learn Materia Medica from exam's perspective and also prepare for the MD entrance
-                                    exam from the beginning</li>
-                                <li>Better if you have Allen's Keynotes and Boericke's Materia Medica beside you for quick references</li>
-                                <li>Taking down notes alongside the lectures will immensly help you</li>
+                            @foreach($course_detail->course_requirments as $val2)
+                            <li>{{$val2->title}}</li>
+                            @endforeach
                             </ul>
                             <h5 class="font-20 text-darkblue font-bold mb-3">Description</h5>
                             {!!$course_detail->description!!}
                             
                             <h5 class="font-20 text-darkblue font-bold mb-3 pt-2">Who this course is for:</h5>
                             <ul class="cricle-list list-small">
-                                <li>Students who find studying Materia Medica difficult and less scoring</li>
-                                <li>Ideally students in their BHMS (2nd,3rd, or 4th) who want to prepare Materia Medica for BHMS, AIAPGET,
-                                    UPSC, PSC or any competitive exam in Homoeopathy</li>
+
+                            @foreach($course_detail->course_for as $val3)
+                            <li>{{$val3->title}}</li>
+                            @endforeach
                             </ul>
                         </div>
                     </div>
@@ -77,121 +73,40 @@
                         <a  href="javascript:void(0)" class="expand-btn text-link">Expand all sections</a>
                     </div>
                     <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
-                            <a class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"> Introduction <span>3 lectures • 24 Min</span></a>
+                        
+                    @foreach($course_detail->section_list as $section)
+
+                    <div class="accordion-item">
+                            <a class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"> {{$section->title}} <span>3 lectures • 24 Min</span></a>
                           <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                               <ul class="stud-link">
-                                <li>
+                               
+                              @foreach($section->lecture_list as $lecture)
+                              <li>
                                     <div class="left-cts d-flex align-items-center">
                                         <img src="{{url('/')}}/public/student/images/play.svg" width="35" height="23" alt="img">
-                                        <a href="javascript:void(0);" class="ms-2 rating-link">The study orientation</a>
+                                        <a href="javascript:void(0);" class="ms-2 rating-link">{{$lecture->title}}</a>
                                     </div>
                                     <div class="right-cts">
                                         <a class="me-2 rating-link">Preview</a>
                                         <time class="font-14 text-darkblue font-regular">6:48</time>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="left-cts d-flex align-items-center">
-                                        <img src="{{url('/')}}/public/student/images/play.svg" width="35" height="23" alt="img">
-                                        <span class="ms-2 font-16 text-darkblue font-regular">Types of questions you can expect in BHMS written exams</span>
-                                    </div>
-                                    <div class="right-cts">
-                                        <time class="font-14 text-darkblue font-regular">7:48</time>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="left-cts d-flex align-items-center">
-                                        <img src="{{url('/')}}/public/student/images/play.svg" width="35" height="23" alt="img">
-                                        <span class="ms-2 font-16 text-darkblue font-regular">Few important terminologies</span>
-                                    </div>
-                                    <div class="right-cts">
-                                        <time class="font-14 text-darkblue font-regular">6:48</time>
-                                    </div>
-                                </li>
+                              @endforeach
+                        
+                             
                               </ul>
                             </div>
                           </div>
                         </div>
-                        <div class="accordion-item">
-                            <a class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                The medicines  <span>6 lectures • 24 Min</span>
-                            </a>
-                          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <ul class="stud-link">
-                                    <li>
-                                        <div class="left-cts d-flex align-items-center">
-                                            <img src="{{url('/')}}/public/student/images/play.svg" width="35" height="23" alt="img">
-                                            <a href="javascript:void(0);" class="ms-2 rating-link">The study orientation</a>
-                                        </div>
-                                        <div class="right-cts">
-                                            <a class="me-2 rating-link">Preview</a>
-                                            <time class="font-14 text-darkblue font-regular">6:48</time>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-cts d-flex align-items-center">
-                                            <img src="{{url('/')}}/public/student/images/play.svg" width="35" height="23" alt="img">
-                                            <span class="ms-2 font-16 text-darkblue font-regular">Types of questions you can expect in BHMS written exams</span>
-                                        </div>
-                                        <div class="right-cts">
-                                            <time class="font-14 text-darkblue font-regular">7:48</time>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-cts d-flex align-items-center">
-                                            <img src="{{url('/')}}/public/student/images/play.svg" width="35" height="23" alt="img">
-                                            <span class="ms-2 font-16 text-darkblue font-regular">Few important terminologies</span>
-                                        </div>
-                                        <div class="right-cts">
-                                            <time class="font-14 text-darkblue font-regular">6:48</time>
-                                        </div>
-                                    </li>
-                                  </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="accordion-item">
-                            <a class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Conclusion <span>1 lectures • 1Min</span>
-                            </a>
-                          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <ul class="stud-link">
-                                    <li>
-                                        <div class="left-cts d-flex align-items-center">
-                                            <img src="{{url('/')}}/public/student/images/play.svg" width="35" height="23" alt="img">
-                                            <a href="javascript:void(0);" class="ms-2 rating-link">The study orientation</a>
-                                        </div>
-                                        <div class="right-cts">
-                                            <a class="me-2 rating-link">Preview</a>
-                                            <time class="font-14 text-darkblue font-regular">6:48</time>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-cts d-flex align-items-center">
-                                            <img src="{{url('/')}}/public/student/images/play.svg" width="35" height="23" alt="img">
-                                            <span class="ms-2 font-16 text-darkblue font-regular">Types of questions you can expect in BHMS written exams</span>
-                                        </div>
-                                        <div class="right-cts">
-                                            <time class="font-14 text-darkblue font-regular">7:48</time>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="left-cts d-flex align-items-center">
-                                            <img src="{{url('/')}}/public/student/images/play.svg" width="35" height="23" alt="img">
-                                            <span class="ms-2 font-16 text-darkblue font-regular">Few important terminologies</span>
-                                        </div>
-                                        <div class="right-cts">
-                                            <time class="font-14 text-darkblue font-regular">6:48</time>
-                                        </div>
-                                    </li>
-                                  </ul>
-                            </div>
-                          </div>
-                        </div>
+                       
+                            @endforeach
+
+                 
+
+                
+                   
                     </div>
                     <h5 class="font-20 text-darkblue font-bold mb-2 mt-30">Meet Your Teacher</h5>
                     <div class="meet-teacher">
