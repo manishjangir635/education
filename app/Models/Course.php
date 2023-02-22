@@ -8,7 +8,7 @@ use App\Models\Section;
 use App\Models\User;
 use App\Models\CourseFor;
 use App\Models\CourseRequirments;
-use App\Models\studentLearn;
+use App\Models\StudentLearn;
 
 class Course extends Model
 {   
@@ -16,6 +16,15 @@ class Course extends Model
     protected $table='courses';
 
     public function getImageAttribute($value)
+    {
+        if ($value) {
+            return url('/').'/public/teacher/image/'.$value;
+        } else {
+            return url('/').'/public/teacher/image/default.png';
+        }
+    }
+
+    public function getPreviewVideoAttribute($value)
     {
         if ($value) {
             return url('/').'/public/teacher/image/'.$value;
@@ -49,7 +58,7 @@ class Course extends Model
 
     public function student_learn()
     {
-        return $this->hasMany(studentLearn::class);
+        return $this->hasMany(StudentLearn::class);
     }
 
 }

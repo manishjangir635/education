@@ -14,6 +14,7 @@
                     <div class="row justify-content-center mb-4">
                         <div class="col-sm-12 col-md-8 col-lg-6">
                             <input type="text" name="title" class="form-control" placeholder="e.g. Learn Photoshop CS6 from Scratch">
+                            {!!$errors->first("title", "<span class='text-danger' style='float: left;'>:message</span>")!!}
                         </div>
                     </div>
 
@@ -22,10 +23,12 @@
                     <div class="row justify-content-center text-start">
                         <div class="col-sm-12 col-md-8 col-lg-6">
                             <select id="category" name="category" class="form-control">
+                            <option value="">Choose Category</option>
                             @foreach($categories as $category)
                             <option value="{{$category->id}}">{{$category->title}}</option>
                             @endforeach
                             </select>
+                            {!!$errors->first("category", "<span class='text-danger'>:message</span>")!!}
                         </div>
                         <div class="col-sm-12 text-end mt-3">
                             <button type="submit" class="themeBtn px-md-5">Save</button>

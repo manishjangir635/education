@@ -80,6 +80,8 @@ Route::get('faqs', [HomeController::class, 'faqs'])->name('faqs.index');
 Route::get('about-us', [HomeController::class, 'about_us'])->name('about_us.index');
 
 Route::group(array('prefix' => 'teacher'), function() {
+
+Route::get('/become_teacher', [DashboardController::class, 'become_teacher']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('teacher.dashboard');
 
 

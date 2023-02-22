@@ -18,13 +18,19 @@ class CourseController extends Controller
 
         if ($request->isMethod('post')) {
 
+             
+          $validated = $request->validate([
+            'title'   => 'required',
+            'category'  =>	'required',
+          ]);
+
             $data=$request->all();
             extract($data);
             $course=new Course();
             $course->title=$title;
             $course->category=$category;
             $course->image='default.jpg';
-            $course->user_id=$this->login_user_id;
+            $course->user_id=Auth::id();
             $course->save();
 
             return redirect('teacher/dashboard');
@@ -45,6 +51,14 @@ class CourseController extends Controller
 
 
         if ($request->isMethod('post')) {
+
+          
+          $validated = $request->validate([
+            'title'   => 'required',
+            'subtitle'  =>	'required',
+            'description'   => 'required',
+          ]);
+
 
             $data=$request->all();
             extract($data);
@@ -89,7 +103,10 @@ class CourseController extends Controller
             $course_detail->save();
 
 
-            if(count($course_for)){
+           
+            if(isset($course_for) && count($course_for)){
+
+              CourseFor::where('course_id',$course_detail->id)->delete();
 
               foreach($course_for as $val){
 
@@ -102,7 +119,9 @@ class CourseController extends Controller
 
             }
 
-            if(count($course_requirment)){
+            if(isset($course_requirment) && count($course_requirment)){
+
+              CourseRequirments::where('course_id',$course_detail->id)->delete();
 
               foreach($course_requirment as $val){
 
@@ -115,7 +134,9 @@ class CourseController extends Controller
 
             }
 
-            if(count($student_learn)){
+            if(isset($student_learn) && count($student_learn)){
+
+              StudentLearn::where('course_id',$course_detail->id)->delete();
 
               foreach($student_learn as $val){
 
@@ -141,6 +162,10 @@ class CourseController extends Controller
 
     public function update_course_price(Request $request,$course_id){
 
+      $validated = $request->validate([
+        'price'   => 'required',
+      ]);
+
       $data=$request->all();
       extract($data);
 
@@ -155,6 +180,7 @@ class CourseController extends Controller
 
     public function create_section(Request $request,$course_id){
 
+    
         $data=$request->all();
         extract($data);
 
