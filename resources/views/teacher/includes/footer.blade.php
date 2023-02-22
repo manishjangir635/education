@@ -6,6 +6,7 @@
 	<script src="{{asset('public/teacher/js/ckeditor.js')}}"></script>
 	<script src="{{asset('public/teacher/js/sortable.min.js')}}"></script>
 	<script src="{{asset('public/teacher/js/custom.js')}}"></script>
+
     
 </body>
 

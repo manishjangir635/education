@@ -34,12 +34,18 @@
                             <i class="bi bi-search"></i>
                         </form>
                         <ul class="navbar-nav align-items-center justify-content-end flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link" href="javascript:void(0);">Become a Teacher</a>
+                         @if(Auth::user() && Auth::user()->is_teacher==0)
+                        <li class="nav-item">
+                                <a class="nav-link" href="{{url('/')}}/teacher/become_teacher">Become a Teacher</a>
                             </li>
+
+                        @endif
+
+                        @if(Auth::user())
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('mylearning.index')}}">My Courses</a>
                             </li>
+                        @endif
                             <li class="nav-item">
                                 <a class="cart-btn" href="{{route('cart.index')}}"><i class="bi bi-cart"></i></a>
                             </li>
@@ -77,7 +83,9 @@
                         <li><a class="drop-item" href="{{route('my_redemption_coupons.index')}}">My Redemption
                                 coupons</a></li>
                         <li><a class="drop-item" href="{{route('refer_and_earn.index')}}">Refer and earn</a></li>
+                        @if(Auth::user() && Auth::user()->is_teacher)
                         <li><a class="drop-item" href="{{route('teacher.dashboard')}}">Teacher Dashboard</a>
+                        @endif
                         </li>
                         <li class="dropdown-divider my-2 mx-n2"></li>
                         <li><a class="drop-item" href="{{url('logout')}}">Log out</a></li>

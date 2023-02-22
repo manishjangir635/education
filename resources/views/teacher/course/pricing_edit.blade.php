@@ -25,15 +25,19 @@
 							<div class="col pricecol">
 								<label class="font-16 font-medium text-darkblue me-3" for="">INR</label>
 								<input class="form-control" name="price" placeholder="Enter Amount" value="{{$course_detail->price}}">
+								
 							</div>
+							
 							<div class="col validity">
 								<select id="validity" class="form-control">
 									<option value="v-1" selected>1 Yr</option>
 								</select>
 							</div>
+
 							<div class="col validity">
 								<button type="submit" class="themeBtn2 h-100">Save</button>
 							</div>
+							{!!$errors->first("price", "<span class='text-danger' style='float: left;'>:message</span>")!!}
 						</div>
 					</form>
 				</div>

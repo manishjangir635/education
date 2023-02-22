@@ -28,6 +28,7 @@
 									<div class="textLimit">
 									    <input type="text" class="form-control char" maxlength="60" placeholder="Insert your course title" name="title" value="{{$course_detail->title}}">
 										<span class="counter"></span>
+										{!!$errors->first("title", "<span class='text-danger'>:message</span>")!!}
 								    </div>
 								</div>
 								<div class="mb-3">
@@ -35,12 +36,14 @@
 									<div class="textLimit">
 									   <input type="text" class="form-control char" maxlength="120" placeholder="Insert your course subtitle" name="subtitle" value="{{$course_detail->subtitle}}">
 									   <span class="counter"></span>
+									   {!!$errors->first("subtitle", "<span class='text-danger'>:message</span>")!!}
 									</div>
 								</div>
 								<div class="mb-3">
 									<label class="font-16 font-bold text-darkblue mb-1" for="">Course
 										description</label>
 									<textarea class="form-control" id="editor2" placeholder="Insert your course description" name="description">{{$course_detail->description}}</textarea>
+									{!!$errors->first("description", "<span class='text-danger'>:message</span>")!!}
 								</div>
 								<div class="mt-30">
 									<h3 class="font-20 font-bold text-darkblue">Who is this course for? <a
@@ -54,7 +57,7 @@
 									@foreach($course_detail->course_for as $val1)
 									<li class="item">
 											<div class="input-group textLimit">
-												<input type="text" name="course_for[]" class="form-control char" maxlength="160" placeholder="" value="{{$val1->title}}" required>
+												<input type="text" name="course_for[]" class="form-control char" maxlength="160" placeholder="" value="{{$val1->title}}" >
 												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
 													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
 													<a href="javascript:void(0);" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
@@ -65,19 +68,10 @@
 
 									@endforeach
 
-									<li class="item">
-											<div class="input-group textLimit">
-												<input type="text" name="course_for[]" class="form-control char" maxlength="160" placeholder=""  required>
-												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
-													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
-													<a href="javascript:void(0);" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
-													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a>
-												</span>
-											</div>
-										</li>
+						
 										
-										<div id="fields_wrap"></div>
-										<a class="addmore mt-3" href="javascript:void(0);">+ Add more to your response</a>
+										<div></div>
+										<a class="addmore mt-3" href="javascript:void(0);" name_field="course_for[]">+ Add more to your response</a>
 									</ul>
 								</div>
 								<div class="mt-30">
@@ -90,7 +84,7 @@
 									@foreach($course_detail->course_requirments as $val2)
 										<li class="item">
 											<div class="input-group textLimit">
-												<input type="text" name="course_requirment[]" class="form-control char" maxlength="160" placeholder="" required value="{{$val2->title}}">
+												<input type="text" name="course_requirment[]" class="form-control char" maxlength="160" placeholder=""  value="{{$val2->title}}">
 												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
 													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
 													<a href="javascript:void(0);" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
@@ -100,17 +94,8 @@
 										</li>
 										@endforeach
 
-										<li class="item">
-											<div class="input-group textLimit">
-												<input type="text" name="course_requirment[]" class="form-control char" maxlength="160" placeholder="" required >
-												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
-													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
-													<a href="javascript:void(0);" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
-													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a>
-												</span>
-											</div>
-										</li>
-										<a class="addmore mt-3" href="javascript:void(0);">+ Add more to your response</a>
+										<div></div>
+										<a class="addmore mt-3" href="javascript:void(0);" name_field="course_requirment[]">+ Add more to your response</a>
 									</ul>
 								</div>
 								<div class="mt-30">
@@ -123,7 +108,7 @@
 									@foreach($course_detail->student_learn as $val3)
 										<li class="item">
 											<div class="input-group textLimit">
-												<input type="text" name="student_learn[]" class="form-control char" maxlength="160" placeholder="" required value="{{$val3->title}}">
+												<input type="text" name="student_learn[]" class="form-control char" maxlength="160" placeholder=""  value="{{$val3->title}}">
 												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
 													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
 													<a href="javascript:void(0);" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
@@ -133,24 +118,15 @@
 										</li>
 										@endforeach
 
-										<li class="item">
-											<div class="input-group textLimit">
-												<input type="text" name="student_learn[]" class="form-control char" maxlength="160" placeholder="" required >
-												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
-													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
-													<a href="javascript:void(0);" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
-													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a>
-												</span>
-											</div>
-										</li>
-										<a class="addmore mt-3" href="javascript:void(0);">+ Add more to your response</a>
+										<div></div>
+										<a class="addmore mt-3" href="javascript:void(0);" name_field="student_learn[]">+ Add more to your response</a>
 									</ul>
 								</div>
 								<div class="mt-30 course_image">
 									<h3 class="font-20 font-bold text-darkblue mb-2">Course image</h3>
 									<div class="row">
 										<div class="col-12 col-sm-12 col-lg-4">
-											<div class="previewDiv"><img id="output" src="{{url('/')}}/public/teacher/image/{{$course_detail->image}}"></div>
+											<div class="previewDiv"><img id="output" src="{{$course_detail->image}}"></div>
 										</div>
 										<div class="col-12 col-sm-12 col-lg-8 mt-2 mt-lg-0">
 											<p class="font-16 font-regular text-darkblue">It must meet our <a class="text-skyblue text-decoration-underline">course image quality standards</a> <br>
@@ -158,21 +134,24 @@
 												<div class="position-relative w-75">
                                                     <input id="img-input" type="file" name="image" class="form-control" accept="image/*" onchange="loadFile(event)">
 													<label class="uploadType" for="img-input">Upload File</label>
+												
 											    </div>
 										</div>
 									</div>
 								</div>
+
+
 								<div class="mt-30 course_image">
 									<h3 class="font-20 font-bold text-darkblue mb-2">Course Preview Video</h3>
 									<div class="row">
 										<div class="col-12 col-sm-12 col-lg-4">
-											<div class="previewDiv"><video id="video" srs="{{url('/')}}/public/teacher/image/{{$course_detail->preview_video}}" poster="/mages/blankBg.svg" controls></video></div>
+											<div class="previewDiv"><video id="video" srs="{{$course_detail->preview_video}}"  controls></video></div>
 										</div>
 										<div class="col-12 col-sm-12 col-lg-8 mt-2 mt-lg-0">
 											<p class="font-16 font-regular text-darkblue">It must meet our <a class="text-skyblue text-decoration-underline">course image quality standards</a> <br>
 												(Image guidelines: 750x422 pixels; .jpg, .jpeg,. gif,<br> or .png format)</p>
 										    <div class="position-relative w-75">		
-											    <input id="file-input" type="file" class="form-control" accept="video/*">
+											    <input id="file-input" type="file" class="form-control" accept="video/*" name="preview_video">
 											    <label class="uploadType" for="file-input">Upload File</label>
 										    </div>
 										</div>

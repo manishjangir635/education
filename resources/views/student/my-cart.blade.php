@@ -8,9 +8,10 @@
             <div class="row gy-4">
                 <div class="col-sm-12 col-md-8 col-lg-9">
 
-            
+                @if(session('cart'))
                 @if(count(session('cart')) == 0)
                     <p>No course Added in Cart</p>
+                @endif
                 @endif
                
 

@@ -27,46 +27,17 @@
                 </div>
             </form>
             <div class="class-blocks">
-                <div class="card mb-20">
-                    <div class="d-md-flex">
-                        <div class="thumbBlock p-3">
-                            <img src="{{url('/')}}/public/teacher/images/blankImg.svg" class="img-fluid grayscale h-auto" alt="img">
-                        </div>
-                        <div class="col">
-                            <div class="row g-2 h-100">
-                                <div class="col-sm-10">
-                                    <div class="card-item d-flex flex-column">
-                                        <a href="javascript:void(0);"
-                                            class="font-16 font-black text-darkblue line-clamp">headache doseases of 2nd BHMS</a>
-                                        <div class="d-flex align-items-center py-2 my-auto w-100">
-                                            <h5 class="font-14 font-black text-darkblue me-4 mb-0 flex-shrink-0 offset-lg-3">
-                                                Finish your course</h5>
-                                            <div class="progress bg-lightgrey w-100">
-                                                <div class="progress-bar bg-skyblue" role="progressbar" style="width: 50%">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="mt-auto">
-                                            <p class="font-14 font-bold text-darkblue mt-auto mb-0">Draft</p>
-                                        </div>
-                                        <div class="upper-link"><a href="manage-courses.html">Edit / mange course</a></div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-12 col-lg-2 col-xl-2 align-self-center">
-                                    <div class="card-item">
-                                        <a href="javascript:void(0);" class="themeBtn">Publish course</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
+            @if(count($course_list)==0)
+
+            <h1>You still not uploaded any course. Create your first course now...</h1>
+            @endif
 
                 @foreach($course_list as $course)
                 <div class="card mb-20">
                     <div class="d-md-flex">
                         <div class="thumbBlock">
-                            <img src="{{url('/')}}/public/teacher/image/{{$course->image}}" class="img-fluid w-100" alt="img">
+                            <img src="{{$course->image}}" class="img-fluid w-100" alt="img">
                         </div>
                         <div class="col align-self-center">
                             <div class="row g-2 h-100">

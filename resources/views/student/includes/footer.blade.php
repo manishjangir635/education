@@ -3,12 +3,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-6 text-center text-md-start">
-                    <a href="index.html"><img src="{{url('/')}}/public/student/images/f-logo.svg" alt="logo" width="202" height="86"></a>
+                    <a href="{{url('/')}}"><img src="{{url('/')}}/public/student/images/f-logo.svg" alt="logo" width="202" height="86"></a>
                 </div>
                 <div class="col-sm-12 col-md-6 align-self-end">
                     <ul class="f-link">
                         <li><a href="{{route('about_us.index')}}">About us</a></li>
-                        <li><a href="javascript:void(0);">Become a Teacher</a></li>
+                        <!-- <li><a href="javascript:void(0);">Become a Teacher</a></li> -->
                         <li><a href="mailto:ptba@gmail.com">Help and Support</a></li>
                     </ul>
                 </div>

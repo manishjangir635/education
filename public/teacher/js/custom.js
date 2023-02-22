@@ -108,9 +108,10 @@ $(document).ready(function() {
   var x = 1; //initlal text box count
   $(add_button1).click(function(e) { //on add input button click
       e.preventDefault();
+     
       if (x < max_fields1) { //max input box allowed
           x++; //text box increment
-          $(wrapper1).append('<li class="item"><div class="input-group textLimit"><input type="text" class="form-control char" maxlength="10" placeholder=""><span class="input-group-text h-100 p-0 rounded-0 bg-white border1"><span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span><a href="#" class=""><img src="images/delete.svg" alt="img"></a><a href="#" class="dragBtn border-left1"><img src="images/drag.svg" alt="img"></a></span></div></li>'); //add input box
+          $(this).prev().append('<li class="item"><div class="input-group textLimit"><input type="text" required="true" name="'+$(this).attr('name_field')+'" class="form-control char" maxlength="10" placeholder=""><span class="input-group-text h-100 p-0 rounded-0 bg-white border1"><span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span><a href="#" class=""><img src="images/delete.svg" alt="img"></a><a href="#" class="dragBtn border-left1"><img src="images/drag.svg" alt="img"></a></span></div></li>'); //add input box
       }
   });
 });

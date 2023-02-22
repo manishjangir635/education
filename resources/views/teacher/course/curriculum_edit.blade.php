@@ -78,7 +78,7 @@
 									<div id="collapse{{$lecture_key}}" class="accordion-collapse collapse"
 										data-bs-parent="#accordionExample">
 										<div class="accordion-body p-3 pt-0">
-											<iframe src="https://player.vimeo.com/video/{{$lecture->video}}" style="width: 100%" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+											<iframe src="https://player.vimeo.com/video/{{$lecture->video}}?autoplay=1" style="width: 100%" height="360" frameborder="0" allow="autoplay; fullscreen"  allowfullscreen></iframe>
 										</div>
 									</div>
 								</div>
@@ -96,12 +96,11 @@
 								</div>
 								<div class="collapse mt-20" id="newSubitem{{$section->id}}">
 									<div class="card py-3 px-4 rounded-0 border1">
-									<form action="{{url('/')}}/teacher/course/create/lecture/{{$section->id}}" method="post" enctype="multipart/form-data">
+									<form action="{{url('/')}}/teacher/course/create/lecture/{{$section->id}}" method="post" enctype="multipart/form-data" id="lecture_form">
 											{{csrf_field()}}
 											<div class="row g-3 align-items-center">
 												<div class="col-auto">
-													<label class="font-16 font-medium text-darkblue" for="">New
-														Lecture:</label>
+													<label class="font-16 font-medium text-darkblue" for="">New Lecture:</label>
 												</div>
 												<div class="col">
 													<input type="text" class="form-control" placeholder="Enter a Title" name="title">
@@ -133,12 +132,11 @@
 							</a>
 							<div class="collapse mt-10" id="newSection">
 								<div class="card py-3 px-4 rounded-0 border1">
-									<form action="{{url('/')}}/teacher/course/create/section/{{$course_detail->id}}" method="post">
+									<form action="{{url('/')}}/teacher/course/create/section/{{$course_detail->id}}" method="post" id="section_form">
 									{{csrf_field()}}	
 									<div class="row g-3 align-items-center">
 											<div class="col-auto">
-												<label class="font-16 font-medium text-darkblue" for="">New
-													Section:</label>
+												<label class="font-16 font-medium text-darkblue" for="">New Section:</label>
 											</div>
 											<div class="col">
 												<input type="text" class="form-control" placeholder="Enter a Title" name="title">
@@ -160,6 +158,30 @@
 			</div>
 		</div>
 
+
+
+<script>
+
+$( "#section_form" ).validate({
+  rules: {
+    title: {
+      required: true,
+    }
+  }
+});
+
+$( "#lecture_form" ).validate({
+  rules: {
+    title: {
+      required: true,
+    },
+
+	video: {
+      required: true,
+    }
+  }
+});
+</script>
 
 
 		@endsection
