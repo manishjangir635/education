@@ -14,6 +14,10 @@ header {
     color:  #eb3434;
 }
 
+.video-loader{
+      display: none; 
+     width: 3%;
+}
 
 
 header .notification {
@@ -983,7 +987,7 @@ main .innerMenu ~ .content{
     filter: none;
 }
 .addNewsection .add_new{
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 .addNewsection .add_new img{
     filter: brightness(.4);

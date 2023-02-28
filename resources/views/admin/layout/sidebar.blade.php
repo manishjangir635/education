@@ -36,93 +36,59 @@
               <p> Users Management</p>
             </a>
           </li>
+       
+       
+          
+
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-dollar-sign"></i>
-              <p>Pricing Management</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-phone"></i>
-              <p>Contact Management</p>
-            </a>
-          </li>
-          <li class="nav-item {{ in_array($segment1 ,array('email_template','email_template_edit')) ? 'menu-open' : '' }}">
-            <a href="#" class="nav-link {{ in_array($segment1 ,array('email_template','email_template_edit')) ? 'active' : '' }}">
-              <i class="nav-icon fas fa-envelope"></i>
-              <p>Email Notifications
-              <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
                 <a href="{{url('admin/email_template')}}" class="nav-link {{ in_array($segment1 ,array('email_template','email_template_edit')) ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Email Template</p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Email Log</p>
-                </a>
-              </li>
-            </ul>
           </li>
+
           <li class="nav-item">
-            <a href="{{url('admin/cms-manager')}}" class="nav-link {{ in_array($segment1 ,array('cms')) ? 'active' : '' }}">
+                <a href="{{url('admin/video/index')}}" class="nav-link {{ in_array($segment1 ,array('video')) ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Video Managment</p>
+                </a>
+          </li>
+
+          <li class="nav-item">
+                <a href="{{url('admin/slider/index')}}" class="nav-link {{ in_array($segment1 ,array('slider')) ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Slider</p>
+                </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{url('admin/cms-manager')}}" class="nav-link {{ in_array($segment1 ,array('cms-manager')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-file"></i>
               <p> Cms Management</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-file"></i>
-              <p>
-                Page Management
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Tables</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>DataTables</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>jsGrid</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-envelope"></i>
-              <p>Enquiry</p>
+
+
+           <li class="nav-item">
+           <a href="{{url('admin/testimonials')}}" class="nav-link {{ in_array($segment1 ,array('testimonials')) ? 'active' : '' }}">
+              <i class="nav-icon fas fa-users"></i>
+              <p>Testimonials</p>
             </a>
           </li>
-          <li class="nav-item">
+
+
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fas fa-dollar-sign"></i>
               <p>Payment Management</p>
             </a>
-          </li>
-          <li class="nav-item">
+          </li>  -->
+          <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-cogs"></i>
               <p>Setting</p>
             </a>
-          </li>
+          </li> -->
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

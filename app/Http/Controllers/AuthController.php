@@ -79,7 +79,7 @@ class AuthController extends Controller
 
     public function auth(Request $request){
         $validated = $request->validate([
-            'email'  =>	'required|email:rfc,dns',
+            'email'  =>	'required|email',
             'password'   => 'required|min:6|max:12',
         ]);
         $auth = array(
@@ -92,7 +92,7 @@ class AuthController extends Controller
             if($userDetail->is_active == 1){
                 if(Auth::attempt($auth)){ 
                     Auth::login($userDetail);
-                    return redirect('/my-learning')->with('success','Successfully Login');
+                    return redirect('/')->with('success','Successfully Login');
          
                  }else{
                      return redirect()->back()->with('error','Email or Password is incorrect');

@@ -45,11 +45,18 @@ return [
 
     'connections' => [
 
+        // 'main' => [
+        //     'client_id' => env('VIMEO_CLIENT', '1aa22b83a7b4c17b9ad314b6d33efe1607c27523'),
+        //     'client_secret' => env('VIMEO_SECRET', 'janKACYl8YONDNpONMD5UlTY4RyFRwcd8Vli1zADWQ5MX7CFJkVLPcdVSBnTHhNUmfhrJPUkacWUv5vJvilA+6wkYl46TSRSgdfd1I0kWkzq1ATJs6oDGGcCmekDkRpn'),
+        //     'access_token' => env('VIMEO_ACCESS', '7c7632732b4a058938b2e6e501ea44c7'),
+        // ],
+
         'main' => [
-            'client_id' => env('VIMEO_CLIENT', '1aa22b83a7b4c17b9ad314b6d33efe1607c27523'),
-            'client_secret' => env('VIMEO_SECRET', 'janKACYl8YONDNpONMD5UlTY4RyFRwcd8Vli1zADWQ5MX7CFJkVLPcdVSBnTHhNUmfhrJPUkacWUv5vJvilA+6wkYl46TSRSgdfd1I0kWkzq1ATJs6oDGGcCmekDkRpn'),
-            'access_token' => env('VIMEO_ACCESS', '7c7632732b4a058938b2e6e501ea44c7'),
+            'client_id' => env('VIMEO_CLIENT', '51c0567ce32ffb5a62ce8b1133f8625a7e5bac57'),
+            'client_secret' => env('VIMEO_SECRET', 'PzBDW2EPVBGx91EPUE33D7tdBo+vtbWU28Tdq6DHubT9e8zrIxLYnDkPZyePi+1GWWsJC2vLQ/d73guXlrfTjgMpTH9Q2gq7BjA38y1zZ0apEg2bx/RPJvZ74yCTG7ym'),
+            'access_token' => env('VIMEO_ACCESS', 'acae598df851eb96297208f8e826713d'),
         ],
+
 
         'alternative' => [
             'client_id' => env('VIMEO_ALT_CLIENT', 'your-alt-client-id'),

@@ -3,6 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BHMS Academy</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link type="text/css" href="{{assets('student/css/bootstrap-icons.css')}}" rel="stylesheet">
     <link type="text/css" href="{{assets('student/css/bootstrap.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{assets('student/css/swiper-bundle.min.css')}}">
@@ -11,6 +12,9 @@
     <link type="text/css" href="{{assets('student/css/style.css')}}" rel="stylesheet">
     <link type="text/css" href="{{assets('student/css/responsive.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{assets('student/css/toastr.css')}}">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 
 </head>
 

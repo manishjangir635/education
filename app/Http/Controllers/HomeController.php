@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AboutUs;
+use App\Models\Testimonial;
 use App\Models\Course;
+use App\Models\User;
+use App\Models\Slider;
 use App\Models\Cmspage;
 use Illuminate\Http\Request;
 
@@ -14,17 +18,17 @@ class HomeController extends Controller
 
         $top_course_list=Course::with(['user'])->take(12)->get();
 
-        return view('index',compact('course_list','top_course_list'));
+        $sliders= Slider::take(10)->get();
+
+        $teachers=User::where('is_teacher',1)->where('user_role_id',2)->take(10)->get();
+
+        return view('index',compact('course_list','top_course_list','sliders','teachers'));
     }
     public function my_cart(){
 
         return view('student.my-cart');
     }
-    public function my_learning(){
-
-        return view('student.my-learning');
-    }
-
+ 
     public function shopping_cart(){
 
         return view('student.shopping-cart');
@@ -53,15 +57,11 @@ class HomeController extends Controller
         return view('student.refer-and-earn');
     }
 
-    public function course_play(){
-
-        return view('student.course-play');
-    }
-
+  
   
 
     public function teacher_detail(){
-        return view('student.teacher-detail');
+        return view('student/teacher-detail');
     }
 
     public function terms(){
@@ -77,7 +77,11 @@ class HomeController extends Controller
     }
 
     public function about_us(){
-        return view('cms.about-us');
+        $about_us_data=AboutUs::where('slug','about-us')->first();
+        
+        $testimonials=Testimonial::get();
+
+        return view('cms/about-us',compact('about_us_data','testimonials'));
     }
 
 

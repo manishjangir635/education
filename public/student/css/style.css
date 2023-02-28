@@ -9,6 +9,11 @@ header {
     border-bottom: 1px solid var(--bg-darkgrey);
 }
 
+#carouselExampleControls{
+    background: black;
+}
+
+
 header .navbar-nav .nav-item {
     margin-right: 20px;
 }
