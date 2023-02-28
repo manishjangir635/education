@@ -4,15 +4,13 @@
     <section class="banner">
         <div class="banner">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="{{url('/')}}/public/student/images/slide1.jpg" alt="banner" width="100%" height="650">
+                
+            @foreach($sliders as $slider)
+            <div class="swiper-slide">
+                    <img src="{{$slider->image}}" alt="banner" width="100%" height="650">
                 </div>
-                <div class="swiper-slide">
-                    <img src="{{url('/')}}/public/student/images/slide1.jpg" alt="banner" width="100%" height="650">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{{url('/')}}/public/student/images/slide1.jpg" alt="banner" width="100%" height="650">
-                </div>
+            @endforeach    
+              
             </div>
             <div class="slide-btns">
                 <div class="swiper-button-prev"></div>
@@ -346,84 +344,24 @@
         </div>
         <div class="teacher mt-30">
             <div class="swiper-wrapper">
+               
+                @foreach($teachers as $teacher)
                 <div class="swiper-slide">
                     <div class="teacher-block">
                         <a href="{{route('teacher_detail.index')}}">
                             <div class="teacher-thumb">
-                                <img src="{{url('/')}}/public/student/images/teacher/teacher1.jpg" alt="teacher" width="100%" height="200">
+                                <img src="{{$teacher->image}}" alt="teacher" width="100%" height="200">
                             </div>
                             <div class="teacher-detail text-center">
-                                <h4 class="font-18 text-darkblue font-bold">Jessica Hische</h4>
+                                <h4 class="font-18 text-darkblue font-bold">{{$teacher->name}}</h4>
                                 <p class="font-16 text-dgray font-regular mb-0">Ph.D; MT(ASCP); MB (ASCP)</p>
                             </div>
                         </a>
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="teacher-block">
-                        <a href="{{route('teacher_detail.index')}}">
-                            <div class="teacher-thumb">
-                                <img src="{{url('/')}}/public/student/images/teacher/teacher2.jpg" alt="teacher" width="100%" height="200">
-                            </div>
-                            <div class="teacher-detail text-center">
-                                <h4 class="font-18 text-darkblue font-bold">Humaira Asim</h4>
-                                <p class="font-16 text-dgray font-regular mb-0">Science/ Biology/ Chemistry Expert</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="teacher-block">
-                        <a href="{{route('teacher_detail.index')}}">
-                            <div class="teacher-thumb">
-                                <img src="{{url('/')}}/public/student/images/teacher/teacher3.jpg" alt="teacher" width="100%" height="200">
-                            </div>
-                            <div class="teacher-detail text-center">
-                                <h4 class="font-18 text-darkblue font-bold">Dr. Reece Wartenberg</h4>
-                                <p class="font-16 text-dgray font-regular mb-0">Teacher, Researcher & Entrepreneur</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="teacher-block">
-                        <a href="{{route('teacher_detail.index')}}">
-                            <div class="teacher-thumb">
-                                <img src="{{url('/')}}/public/student/images/teacher/teacher4.jpg" alt="teacher" width="100%" height="200">
-                            </div>
-                            <div class="teacher-detail text-center">
-                                <h4 class="font-18 text-darkblue font-bold">Elizabeth Heck</h4>
-                                <p class="font-16 text-dgray font-regular mb-0">Top Qualified Herbalism Instructor</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="teacher-block">
-                        <a href="{{route('teacher_detail.index')}}">
-                            <div class="teacher-thumb">
-                                <img src="{{url('/')}}/public/student/images/teacher/teacher5.jpg" alt="teacher" width="100%" height="200">
-                            </div>
-                            <div class="teacher-detail text-center">
-                                <h4 class="font-18 text-darkblue font-bold">Jessica Hische</h4>
-                                <p class="font-16 text-dgray font-regular mb-0">Ph.D; MT(ASCP); MB (ASCP)</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="teacher-block">
-                        <a href="{{route('teacher_detail.index')}}">
-                            <div class="teacher-thumb">
-                                <img src="{{url('/')}}/public/student/images/teacher/teacher3.jpg" alt="teacher" width="100%" height="200">
-                            </div>
-                            <div class="teacher-detail text-center">
-                                <h4 class="font-18 text-darkblue font-bold">Jessica Hische</h4>
-                                <p class="font-16 text-dgray font-regular mb-0">Ph.D; MT(ASCP); MB (ASCP)</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                @endforeach
+
+
             </div>
             <div class="slide-btns">
                 <div class="swiper-button-prev"></div>

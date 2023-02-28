@@ -38,7 +38,7 @@
                         <div class="row gy-4">
                             <div class="col-sm-12 col-md-6 col-lg-4">
                                 <div class="course-block">
-                                    <a href="{{route('courses_detail.index')}}">
+                                    <a href="">
                                         <div class="ratio ratio-16x9 course-thumb">
                                             <iframe src="https://www.youtube.com/embed/iGcNOabh0kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </div>
@@ -61,7 +61,7 @@
                                             <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
                                                 <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
                                                         class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                                <a class="theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                                <a class="theme-btn" href="">Add to Cart</a>
                                             </div>
                                         </div>
                                     </a>
@@ -69,7 +69,7 @@
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-4">
                                 <div class="course-block">
-                                    <a href="{{route('courses_detail.index')}}">
+                                    <a href="">
                                         <div class="ratio ratio-16x9 course-thumb">
                                             <iframe src="https://www.youtube.com/embed/iGcNOabh0kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </div>
@@ -92,7 +92,7 @@
                                             <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
                                                 <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
                                                         class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                                <a class="theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                                <a class="theme-btn" href="">Add to Cart</a>
                                             </div>
                                         </div>
                                     </a>
@@ -100,7 +100,7 @@
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-4">
                                 <div class="course-block">
-                                    <a href="{{route('courses_detail.index')}}">
+                                    <a href="">
                                         <div class="ratio ratio-16x9 course-thumb">
                                             <iframe src="https://www.youtube.com/embed/iGcNOabh0kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </div>
@@ -123,7 +123,7 @@
                                             <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
                                                 <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
                                                         class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                                <a class="theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                                <a class="theme-btn" href="">Add to Cart</a>
                                             </div>
                                         </div>
                                     </a>
@@ -131,7 +131,7 @@
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-4">
                                 <div class="course-block">
-                                    <a href="{{route('courses_detail.index')}}">
+                                    <a href="">
                                         <div class="ratio ratio-16x9 course-thumb">
                                             <iframe src="https://www.youtube.com/embed/iGcNOabh0kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </div>
@@ -154,7 +154,7 @@
                                             <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
                                                 <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
                                                         class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                                <a class="theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                                <a class="theme-btn" href="">Add to Cart</a>
                                             </div>
                                         </div>
                                     </a>
@@ -162,7 +162,7 @@
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-4">
                                 <div class="course-block">
-                                    <a href="{{route('courses_detail.index')}}">
+                                    <a href="">
                                         <div class="ratio ratio-16x9 course-thumb">
                                             <iframe src="https://www.youtube.com/embed/iGcNOabh0kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </div>
@@ -185,7 +185,7 @@
                                             <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
                                                 <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
                                                         class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                                <a class="theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                                <a class="theme-btn" href="">Add to Cart</a>
                                             </div>
                                         </div>
                                     </a>
@@ -193,7 +193,7 @@
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-4">
                                 <div class="course-block">
-                                    <a href="{{route('courses_detail.index')}}">
+                                    <a href="">
                                         <div class="ratio ratio-16x9 course-thumb">
                                             <iframe src="https://www.youtube.com/embed/iGcNOabh0kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </div>
@@ -216,7 +216,7 @@
                                             <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
                                                 <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
                                                         class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                                <a class="theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                                <a class="theme-btn" href="">Add to Cart</a>
                                             </div>
                                         </div>
                                     </a>
@@ -224,7 +224,7 @@
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-4">
                                 <div class="course-block">
-                                    <a href="{{route('courses_detail.index')}}">
+                                    <a href="">
                                         <div class="ratio ratio-16x9 course-thumb">
                                             <iframe src="https://www.youtube.com/embed/iGcNOabh0kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </div>
@@ -247,7 +247,7 @@
                                             <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
                                                 <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
                                                         class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                                <a class="theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                                <a class="theme-btn" href="">Add to Cart</a>
                                             </div>
                                         </div>
                                     </a>
@@ -255,7 +255,7 @@
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-4">
                                 <div class="course-block">
-                                    <a href="{{route('courses_detail.index')}}">
+                                    <a href="">
                                         <div class="ratio ratio-16x9 course-thumb">
                                             <iframe src="https://www.youtube.com/embed/iGcNOabh0kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </div>
@@ -278,7 +278,7 @@
                                             <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
                                                 <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
                                                         class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                                <a class="theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                                <a class="theme-btn" href="">Add to Cart</a>
                                             </div>
                                         </div>
                                     </a>
@@ -286,7 +286,7 @@
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-4">
                                 <div class="course-block">
-                                    <a href="{{route('courses_detail.index')}}">
+                                    <a href="">
                                         <div class="ratio ratio-16x9 course-thumb">
                                             <iframe src="https://www.youtube.com/embed/iGcNOabh0kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </div>
@@ -309,7 +309,7 @@
                                             <div class="mt-20 d-md-flex align-items-md-center justify-content-md-between">
                                                 <h5 class="font-16 text-darkblue font-bold mb-3 mb-md-0">₹449 <del
                                                         class="font-16 text-dgray font-regular">₹3,399</del></h5>
-                                                <a class="theme-btn" href="{{route('mycart')}}">Add to Cart</a>
+                                                <a class="theme-btn" href="">Add to Cart</a>
                                             </div>
                                         </div>
                                     </a>

@@ -35,17 +35,17 @@
                     @csrf
                 <div class="form-group">
                   <label>Title<span class="requireRed"> * </span></label>
-                  <input class="form-control" type="text" name="title_en" placeholder="Enter title" value="{{$record->title_en}}">
-                  {!!$errors->first("title_en", "<span class='text-danger'>:message</span>")!!}
+                  <input class="form-control" type="text" name="title" placeholder="Enter title" value="{{$record->title}}">
+                  {!!$errors->first("title", "<span class='text-danger'>:message</span>")!!}
                 </div>
                 <div class="form-group">
-                <label>Description<span class="requireRed"> * </span></label>
-                <textarea name="content_en" class="form-control">{{$record->content_en}}</textarea>
+                <label>Description<span class="requireRed"> </span></label>
+                <textarea name="description" class="form-control">{{$record->description}}</textarea>
                 </div>
                 <!-- /.form-group -->
                 <div class="form-group">
-                  <label>Meta Description<span class="requireRed"> * </span></label>
-                  <textarea name="meta_description_en" class="form-control">{{$record->meta_description_en}}</textarea>
+                  <label>Content<span class="requireRed"> </span></label>
+                  <textarea name="content" class="form-control">{{$record->content}}</textarea>
                 </div>
                 <!-- /.form-group -->
                 <button class="btn btn-primary" type="submit">Save</button>

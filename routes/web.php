@@ -12,9 +12,10 @@ use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\EmailTemplateController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\TestimonialController;
+use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\CmsController;
-
-
+use App\Http\Controllers\Admin\VideoController;
 
 use App\Http\Controllers\Teacher\DashboardController;
 use App\Http\Controllers\Teacher\CourseController;
@@ -41,17 +42,20 @@ Route::get('/cart/remove/{course_id}', [CartController::class, 'remove']);
 
 
 Route::group(array('middleware' => 'App\Http\Middleware\StudentNotIn'), function () {
-	Route::get('my-learning', [HomeController::class, 'my_learning'])->name('mylearning.index');
+	Route::get('my-learning', [StudentCourseController::class, 'my_learning'])->name('mylearning.index');
+	Route::get('course-play/{course_id}', [StudentCourseController::class, 'course_play'])->name('course_play.index');
+	Route::post('start_lecture', [StudentCourseController::class, 'start_lecture']);
+	Route::get('delete_lecture/{id}', [StudentCourseController::class, 'delete_lecture']);
+	Route::get('delete_section/{id}', [StudentCourseController::class, 'delete_section']);
 	Route::get('logout', [AuthController::class, 'logout']);
-
 });
+
 Route::get('shopping-cart', [HomeController::class, 'shopping_cart'])->name('shopping_cart.index');
 Route::get('profile', [HomeController::class, 'account'])->name('account.index');
 Route::get('messages', [HomeController::class, 'messages'])->name('messages.index');
 Route::get('purchase-history', [HomeController::class, 'purchase_history'])->name('purchase_history.index');
 Route::get('my-redemption-coupons', [HomeController::class, 'my_redemption_coupons'])->name('my_redemption_coupons.index');
 Route::get('refer-and-earn', [HomeController::class, 'refer_and_earn'])->name('refer_and_earn.index');
-Route::get('course-play', [HomeController::class, 'course_play'])->name('course_play.index');
 Route::get('courses', [StudentCourseController::class, 'course'])->name('course.index');
 Route::get('courses-detail/{id}', [StudentCourseController::class, 'courses_detail'])->name('courses_detail.index');
 Route::get('teacher-detail', [HomeController::class, 'teacher_detail'])->name('teacher_detail.index');
@@ -67,8 +71,6 @@ Route::group(array('middleware' => 'App\Http\Middleware\StudentIn'), function ()
 	Route::post('sendResetLink', [AuthController::class, 'sendResetLink'])->name('/sendResetLink');
 	Route::get('resetPassword/{string}', [AuthController::class, 'resetPassword']);
 	Route::post('newPassword', [AuthController::class, 'newPassword']);
-
-
 });
 
 
@@ -92,7 +94,7 @@ Route::post('/course/edit/{type}/{id}', [CourseController::class, 'edit']);
 
 Route::post('/course/update/price/{id}', [CourseController::class, 'update_course_price']);
 Route::post('/course/create/section/{course_id}', [CourseController::class, 'create_section']);
-Route::post('/course/create/lecture/{section_id}', [CourseController::class, 'create_lecture']);
+Route::post('/course/create/lecture/{section_id}/{course_id}', [CourseController::class, 'create_lecture']);
 
 Route::get('profile', [ProfileController::class, 'index'])->name('teacher_profile.index');
 Route::get('profile/edit', [ProfileController::class, 'edit'])->name('teacher_profile.edit');
@@ -142,11 +144,31 @@ Route::group(array('prefix' => 'admin'), function() {
         Route::get('cms-manager', [CmsController::class, 'index'])->name('cms-manager');
         Route::get('cms-manager/edit-cms/{id}', [CmsController::class, 'edit'])->name('edit_cms_page');
         Route::post('cms-manager/update-cms/{id}', [CmsController::class, 'update'])->name('update_cms_page');
+		Route::get('cms-manager/edit-about-us-cms/{id}', [CmsController::class, 'edit_about_us'])->name('edit_about_us_page');
+        Route::post('cms-manager/update-about-us-cms/{id}', [CmsController::class, 'update_about_us'])->name('update_about_us_page');
+
+		Route::get('testimonials', [TestimonialController::class, 'index']);
+		Route::get('testimonials/create', [TestimonialController::class, 'add'])->name('add_testimonial');
+		Route::post('testimonials/save', [TestimonialController::class, 'save'])->name('save_testimonial');
+		Route::get('testimonials/edit/{id}', [TestimonialController::class, 'edit'])->name('edit_testimonial');
+		Route::post('testimonials/update/{id}', [TestimonialController::class, 'update'])->name('update_testimonial');
+		Route::get('testimonials/delete/{id}', [TestimonialController::class, 'delete'])->name('delete_testimonial');
 
 
+		Route::get('slider/index', [SliderController::class, 'index']);
+		Route::get('slider/create', [SliderController::class, 'add'])->name('add_slider');
+		Route::post('slider/save', [SliderController::class, 'save'])->name('save_slider');
+		Route::get('slider/edit/{id}', [SliderController::class, 'edit'])->name('edit_slider');
+		Route::post('slider/update/{id}', [SliderController::class, 'update'])->name('update_slider');
+		Route::get('slider/delete/{id}', [SliderController::class, 'delete'])->name('delete_slider');
 
-		// Route::get('cms-manager/add-cms', [CmsController::class, 'add'])->name('admin.add_cms');
-		// Route::post('cms/save', [CmsController::class, 'save']);
+		
+
+		Route::get('video/index', [VideoController::class, 'index']);
+
+		Route::get('video/approve/{id}', [VideoController::class, 'approve'])->name('approve_video');
+		Route::get('video/reject/{id}', [VideoController::class, 'reject'])->name('reject_video');
+
 
     });
 });

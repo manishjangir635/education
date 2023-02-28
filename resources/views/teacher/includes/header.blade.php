@@ -12,9 +12,11 @@
     <link type="text/css" href="{{url('/')}}/public/teacher/css/reset.css" rel="stylesheet">
     <link type="text/css" href="{{url('/')}}/public/teacher/css/style.css" rel="stylesheet">
     <link type="text/css" href="{{url('/')}}/public/teacher/css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{assets('student/css/toastr.css')}}">
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    
 </head>
 
 <body>
@@ -43,14 +45,18 @@
                                     <span class="font-14 text-darkblue font-regular">khantaha12@gmail.com</span>
                                 </div>
                             </div>
+                            <li><a class="drop-item" href="{{url('/')}}/teacher/dashboard">Dashboard</a></li>
                             <li><a class="drop-item" href="{{route('teacher_profile.index')}}">Public profile</a></li>
                             <li><a class="drop-item" href="{{route('teacher_profile.edit')}}">Profile and Settings</a></li>
                             <li><a class="drop-item" href="{{route('teacher_payment.index')}}">Payment</a></li>
                             <li><a class="drop-item" href="{{route('revenue_report.index')}}">Revenue report</a></li>
-                            <li><a class="drop-item" href="javascript:void(0);">Log out</a></li>
+                            <li><a class="drop-item" href="{{url('/')}}/logout">Log out</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+
+
+    

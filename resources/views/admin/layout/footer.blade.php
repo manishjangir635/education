@@ -160,8 +160,10 @@ async
 		});
 	}
 
-    // var content_en = CKEDITOR.replace('content_en', {extraAllowedContent: 'div',height: 100});
-    var meta_description_en = CKEDITOR.replace('meta_description_en', {extraAllowedContent: 'div',height: 300});
+    // var description = CKEDITOR.replace('description', {extraAllowedContent: 'div',height: 100});
+    var content = CKEDITOR.replace('content', {extraAllowedContent: 'div',height: 300});
+	var content = CKEDITOR.replace('vision', {extraAllowedContent: 'div',height: 300});
+	var content = CKEDITOR.replace('mission', {extraAllowedContent: 'div',height: 300});
 
 
 </script>

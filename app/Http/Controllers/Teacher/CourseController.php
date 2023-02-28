@@ -149,10 +149,9 @@ class CourseController extends Controller
 
             }
 
-            return redirect()->back()->with('success','Course updated successfully');
+            return redirect()->back()->with('success','All changes saved');
         }else{
-
-            return view('teacher/course/'.$type.'_edit',compact('course_detail'));
+          return view('teacher/course/'.$type.'_edit',compact('course_detail'));
         }
 
 
@@ -173,7 +172,7 @@ class CourseController extends Controller
       $course->price=$price;
       $course->save();
 
-      return redirect()->back();
+      return redirect()->back()->with('success','All changes saved');;
     }
 
 
@@ -189,13 +188,14 @@ class CourseController extends Controller
         $section->title=$title;
         $section->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('success','All changes saved');
 
     }
 
 
-    public function create_lecture(Request $request,$section_id){
+    public function create_lecture(Request $request,$section_id,$course_id){
 
+     
         $data=$request->all();
         extract($data);
 
@@ -210,15 +210,21 @@ class CourseController extends Controller
               'name' =>  $title,
               'description' => 'No Description'
             ]);
-            $Lecture->video=explode('videos/', $uri)[1];
+
+            $video_id=explode('videos/', $uri)[1];
+            $Lecture->video=$video_id;
+           
+
           }
         }
 
         $Lecture->section_id=$section_id;
+        $Lecture->user_id=Auth::id();
+        $Lecture->course_id=$course_id;
         $Lecture->title=$title;
         $Lecture->save();
 
-        return redirect()->back();
+        echo 'success';
 
     }
 

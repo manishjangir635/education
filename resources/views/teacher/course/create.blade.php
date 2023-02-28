@@ -5,7 +5,7 @@
             <div class="p-lg-5">
             <div class="border-block text-center">
                 <div class="text-end">
-                    <a class="backBtn d-inline-flex align-items-center" href="index.html"><i class="bi bi-arrow-left"></i> <span class="font-medium ms-2">Back</span></a>
+                    <a class="backBtn d-inline-flex align-items-center" href="{{url('/')}}/teacher/dashboard"><i class="bi bi-arrow-left"></i> <span class="font-medium ms-2">Back</span></a>
                 </div>
                 <h1 class="playfair font-32 text-darkblue">How about a working title?</h1>
                 <p class="font-16 font-medium text-darkblue mb-4">it's ok if you can't think of a good title now. You can change it later</p>

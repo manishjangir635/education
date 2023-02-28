@@ -1,27 +1,15 @@
 @extends('student.layouts.master')
 @section('content')
 
+
+<?php 
+$course_id= $course_detail->id;
+?>
 <div class="courseplay">
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="false">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="ratio ratio-21x9">
-                <iframe src="https://www.youtube.com/embed/iGcNOabh0kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="ratio ratio-21x9">
-                <iframe src="https://www.youtube.com/embed/iGcNOabh0kU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <i class="bi bi-chevron-left"></i>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <i class="bi bi-chevron-right"></i>
-        </button>
-      </div>
+  
+</div>
+
+
       <a class="side-toggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="{{url('/')}}/public/student/images/angle-left.svg" alt="img" class="me-2"> Course Content</a>
 
     <div class="offcanvas side-content offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasRight">
@@ -30,38 +18,34 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-                <a class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"> <span>Section 1: Introduction <small class="d-block font-regular">5 / 7 I 43min</small></span></a>
+            
+        @foreach($course_detail->section_list as $key => $section)
+       
+
+        <div class="accordion-item">
+                <a class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"> <span>Section {{$key+1}}: {{$section->title}} <small class="d-block font-regular">{{count($section->lecture_list)}} I {{get_time($section->total_duration)}}</small></span></a>
               <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                     <div class="filter-courses">
                         <ul>
-                            <li><input class="form-check-input" type="checkbox"> <span>1.Introduction <small class="font-14 font-regular text-dgray d-block"><img src="{{url('/')}}/public/student/images/play2.svg" alt="img" class="me-1"> 4 min</small></span></li>
-                            <li><input class="form-check-input" type="checkbox"> <span>1.Introduction <small class="font-14 font-regular text-dgray d-block"><img src="{{url('/')}}/public/student/images/play2.svg" alt="img" class="me-1"> 4 min</small></span></li>
-                            <li><input class="form-check-input" type="checkbox"> <span>1.Introduction <small class="font-14 font-regular text-dgray d-block"><img src="{{url('/')}}/public/student/images/play2.svg" alt="img" class="me-1"> 4 min</small></span></li>
-                            <li><input class="form-check-input" type="checkbox"> <span>1.Introduction <small class="font-14 font-regular text-dgray d-block"><img src="{{url('/')}}/public/student/images/play2.svg" alt="img" class="me-1"> 4 min</small></span></li>
+
+                        @foreach($section->lecture_list as $lecture_key=> $lecture)
+                            <li class="pick_lecture lecture_{{$lecture->id}}" id="{{$lecture->id}}"><input class="form-check-input" type="checkbox"> <span>{{$lecture_key+1}}.{{$lecture->title}} <small class="font-14 font-regular text-dgray d-block"><img src="{{url('/')}}/public/student/images/play2.svg" alt="img" class="me-1"> {{get_time($lecture->duration)}}</small></span></li>
+                        @endforeach
+
                         </ul>
                     </div>
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
-                <a class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    <span>Section 2: Introduction <small class="d-block font-regular">5 / 7 I 43min</small></span>
-                </a>
-              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <div class="filter-courses">
-                        <ul>
-                            <li><input class="form-check-input" type="checkbox"> <span>1.Introduction <small class="font-14 font-regular text-dgray d-block"><img src="{{url('/')}}/public/student/images/play2.svg" alt="img" class="me-1"> 4 min</small></span></li>
-                            <li><input class="form-check-input" type="checkbox"> <span>1.Introduction <small class="font-14 font-regular text-dgray d-block"><img src="{{url('/')}}/public/student/images/play2.svg" alt="img" class="me-1"> 4 min</small></span></li>
-                            <li><input class="form-check-input" type="checkbox"> <span>1.Introduction <small class="font-14 font-regular text-dgray d-block"><img src="{{url('/')}}/public/student/images/play2.svg" alt="img" class="me-1"> 4 min</small></span></li>
-                            <li><input class="form-check-input" type="checkbox"> <span>1.Introduction <small class="font-14 font-regular text-dgray d-block"><img src="{{url('/')}}/public/student/images/play2.svg" alt="img" class="me-1"> 4 min</small></span></li>
-                        </ul>
-                    </div>
-                </div>
-              </div>
-            </div>
+
+           
+            @endforeach
+
+
+           
+
+
         </div>
     </div>
 </div>
@@ -71,8 +55,8 @@
         <div class="container">
             <div class="row gy-4">
                 <div class="col-sm-12">
-                    <h1 class="font-20 text-darkblue font-bold mb-3">Part-time BHMS Academy - Materia Medica for BHMS and AIAPGET</h1>
-                    <p class="mw-50 font-16 text-darkblue font-regular">Materia Medica for BHMS (written and oral) plus for MD entrance exam, and various competitive exams in Homeopathy</p>
+                    <h1 class="font-20 text-darkblue font-bold mb-3">{{$course_detail->title}}</h1>
+                    <p class="mw-50 font-16 text-darkblue font-regular">{{$course_detail->subtitle}}</p>
                     <h5 class="font-16 text-darkblue font-medium my-3">4.5
                         <span class="text-yellow d-inline-flex">
                             <i class="bi bi-star-fill ms-1"></i>
@@ -84,16 +68,15 @@
                         <span class="ms-1 font-regular">(26 ratings) 134 students</span>
                     </h5>
                     <h5 class="font-20 text-darkblue font-bold mb-3 mt-30">Description</h5>
-                    <p class="font-16 text-darkblue font-regular">Welcome to the <strong>Part-Time BHMS Academy</strong>.</p>
-                    <p class="font-16 text-darkblue font-regular">Materia Medica has always been a difficult subject to score especially in competitive exams. Unlike other subjects, it cannot be completed in entirety in few months or even a year because even after the best of preparation, the symptoms start vanishing from the mind within few weeks. It requires constant and repeated hammering. Still, though, almost 20-25% of the questions in the exams get asked from this one subject, because of its importance in homoeopathy, hence this subject cannot be neglected.</p>
-                    <p class="font-16 text-darkblue font-regular">With an endeavour to make this subject easy and scoring, I have decided to launch my course Part-Time BHMS Academy. The course aims to teach Materia medica to the students right from the beginning, while the students are in their BHMS (2nd, 3rd, 4th year, final year or internship), to <strong>prepare them for BHMS exams (written/viva), taking each individual drug at a time, and alongside, also prepare them for the MD entrance exams and other competitive exams in homoeopathy</strong>. Thereby building a strong foundation of Materia Medica right from the very start.</p>
+                   {!! $course_detail->description !!}
+                    
                     <h5 class="font-20 text-darkblue font-bold mb-2 mt-30">Meet Your Teacher</h5>
                     <div class="meet-teacher">
                         <div class="teach-left text-center">
-                            <div class="teacher-pik"><img src="{{url('/')}}/public/student/images/profile-img.png" alt="img" width="140" height="140"></div>
+                            <div class="teacher-pik"><img src="{{$course_detail->user->image}}" alt="img" width="140" height="140"></div>
                         </div>
                         <div class="teach-right align-self-center">
-                            <div class="font-18 font-medium text-darkblue mb-1">Taha khan</div>
+                            <div class="font-18 font-medium text-darkblue mb-1">{{$course_detail->user->name}}</div>
                             <div class="font-16 font-regular text-dgray">Doctor</div>
                         </div>
                     </div>
@@ -282,4 +265,89 @@
             </div>
         </div>
     </section>
+
+<?php 
+
+function get_time($seconds)
+    {
+        if ($seconds) {
+            
+            $hours = floor($seconds / 3600);
+            $minutes = floor(($seconds % 3600) / 60);
+            
+            $duration = "";
+            if ($hours > 0) {
+                $duration .= "$hours hour(s) ";
+            }
+            if ($minutes > 0) {
+                $duration .= "$minutes minute(s)";
+            }
+            if ($hours == 0 && $minutes == 0) {
+                $duration .= "$seconds second(s)";
+            }
+            
+            return $duration;
+            
+        } else {
+            return $seconds;
+        }
+    }
+
+?>
+
+
+    <script>
+
+    $(document).ready(function(){
+
+    $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+    });
+
+      var first_lecture_id=$('.pick_lecture').attr('id');
+
+     pick_lecture( first_lecture_id);
+
+
+     $('body').on('click', '.pick_lecture', function() {
+        var lecture_id=$(this).attr('id');
+        pick_lecture(lecture_id);
+    });
+
+   
+
+     function pick_lecture(lecture_id){
+
+
+        $.ajax({
+      url: '{{url("/")}}/start_lecture',
+      type: 'POST',
+      data: {
+        course_id:{{$course_id}},
+        lecture_id:lecture_id
+      },
+      success: function(response) {
+        $('.lecture_'+lecture_id).find('.form-check-input').prop('checked', true);
+        $('.lecture_'+lecture_id).addClass('active');
+       $('.courseplay').html(response);
+      },
+      error: function(error) {
+        console.log(error);
+      }
+    });
+
+     }   
+
+
+
+
+
+    });
+
+
+    </script>
+
+
 @endsection

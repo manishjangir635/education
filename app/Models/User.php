@@ -41,4 +41,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+
+    
+    public function getImageAttribute($value)
+    {
+        if ($value) {
+            return url('/').'/public/image/'.$value;
+        } else {
+            return url('/').'/public/image/default_user.png';
+        }
+    }
+
 }

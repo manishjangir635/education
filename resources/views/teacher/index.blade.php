@@ -47,7 +47,7 @@
                                             class="font-16 font-black text-darkblue line-clamp">{{$course->title}}</a>
                                         <div class="mt-2 mt-lg-4">
                                             <a class="themeBtn2 btnsmall text-uppercase">Live</a><small
-                                                class="ms-3 font-14 text-darkblue font-regular">₹16,999</small>
+                                                class="ms-3 font-14 text-darkblue font-regular">₹{{$course->price}}</small>
                                         </div>
                                         <div class="upper-link"><a href="{{url('/')}}/teacher/course/edit/detail/{{$course->id}}">Edit / mange course</a></div>
                                     </div>
