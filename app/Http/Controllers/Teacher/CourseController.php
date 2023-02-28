@@ -195,6 +195,7 @@ class CourseController extends Controller
 
     public function create_lecture(Request $request,$section_id,$course_id){
 
+     
         $data=$request->all();
         extract($data);
 
@@ -223,7 +224,7 @@ class CourseController extends Controller
         $Lecture->title=$title;
         $Lecture->save();
 
-        return redirect()->back()->with('success','All changes saved');
+        echo 'success';
 
     }
 

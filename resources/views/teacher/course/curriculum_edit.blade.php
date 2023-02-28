@@ -43,9 +43,9 @@
 									<a href="{{url('/')}}/delete_section/{{$section->id}}" onclick="return confirm('Are you sure you want to delete this item?');" class="ms-3"><img src="{{url('/')}}/public/teacher/images/delete.svg"
 											alt="img"></a>
 								</span>
-								<span class="action_btn ms-auto">
-									<a href="javascript:void(0);"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a>
-								</span>
+                               <span class="action_btn ms-auto">
+									<!-- <a href="javascript:void(0);"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a> -->
+								</span> 
 							</div>
 							<div class="accordion wrapper2" id="accordionExample">
 
@@ -76,7 +76,7 @@
 										@endif
 										
 											<span class="action_btn">
-												<a href="javascript:void(0);"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a>
+												<!-- <a href="javascript:void(0);"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a> -->
 											</span>
 										</div>
 									</div>
@@ -123,7 +123,12 @@
 												<input  type="file" name="video" class="form-control">
 												</div>
 												<div class="col-12 mt-20 text-end">
-												<img src="{{url('/')}}/public/teacher/images/video-loader.gif" class="video-loader"/>
+												<div class="progress" style="display: none;">
+                                                 <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+												</div>
+
+												<div  style="display: none; margin-bottom: 7px;" class="optimise">Please wait...</div>
+												
 													<button class="btn p-0 me-3 borderBtn border-0 rounded-0 font-14"
 														type="submit">Cancel</button>
 													<button class="themeBtn2" type="submit">Add Lecture</button>
@@ -186,13 +191,51 @@ $( "#section_form" ).validate({
 });
 
 
-$('.lecture_form').each(function() {  
-    $(this).validate({        
-       
-	submitHandler: function(form) {
+$('.lecture_form').each(function() { 
 
-$('.video-loader').show();
-form.submit();
+    var self=$(this);
+    
+	$(this).validate({        
+       
+	submitHandler: function(form,event) {
+		event.preventDefault();
+		var formData = new FormData(form);
+        $.ajax({
+          url: self.attr('action'),
+          type: "POST",
+          data: formData,
+          contentType: false,
+          processData: false,
+		  xhr: function() {
+        var xhr = new XMLHttpRequest();
+
+			xhr.upload.addEventListener('progress', function(e) {
+			if (e.lengthComputable) {
+				console.log(e.lengthComputable,e.loaded,e.total);
+				var percent = Math.round((e.loaded / e.total) * 100);
+				$('.progress').show();
+                $('.progress-bar').width(percent + '%');
+                $('.progress-bar').text(percent + '%');
+
+				if(percent==100){
+					$('.optimise').show();
+				}
+			}
+			});
+
+			return xhr;
+		},
+          success: function(response) {
+			toastr.success("Video uploaded successfully");
+
+			setTimeout(function(){ location.reload(true); }, 1000);
+            
+          },
+          error: function(error) {
+            console.log(error);
+          }
+        });
+
 },
 
 
@@ -208,6 +251,11 @@ form.submit();
 
     });
 });
+
+
+
+
+
 
 </script>
 

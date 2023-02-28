@@ -1044,3 +1044,21 @@ main .innerMenu ~ .content{
 .allCoursesSel .bv_ul_inner li {
     padding: 10px 10px;
 }
+
+
+
+  .progress {
+    position: relative;
+    height: 20px;
+    margin-bottom: 7px;
+  }
+
+  .progress-bar {
+    background-color: #337ab7;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    width: 0%;
+  }
+

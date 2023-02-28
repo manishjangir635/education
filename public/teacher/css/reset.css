@@ -554,6 +554,7 @@ body {
 
 .text-darkblue {
     color: var(--text-darkblue);
+    padding-right: 8px;
 }
 
 .text-gray {
@@ -832,3 +833,5 @@ html ::-webkit-scrollbar-thumb, .left-menu ::-webkit-scrollbar-thumb {
 html ::-webkit-scrollbar-track, html ::-webkit-scrollbar-thumb {
     border-radius: 0px;
 }
+
+

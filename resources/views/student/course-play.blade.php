@@ -312,7 +312,7 @@ function get_time($seconds)
 
 
      $('body').on('click', '.pick_lecture', function() {
-        var lecture_id=$(this).attr('lecture_id');
+        var lecture_id=$(this).attr('id');
         pick_lecture(lecture_id);
     });
 
@@ -330,6 +330,7 @@ function get_time($seconds)
       },
       success: function(response) {
         $('.lecture_'+lecture_id).find('.form-check-input').prop('checked', true);
+        $('.lecture_'+lecture_id).addClass('active');
        $('.courseplay').html(response);
       },
       error: function(error) {

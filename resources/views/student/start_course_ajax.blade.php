@@ -7,9 +7,9 @@
           </div>
 
         </div>
-        <button class="carousel-control-prev pick_lecture" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" lecture_id="{{$prevId}}">
+        <button class="carousel-control-prev pick_lecture" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" id="{{$prevId}}">
             <i class="bi bi-chevron-left " ></i>
         </button>
-        <button class="carousel-control-next pick_lecture" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" lecture_id="{{$nextId}}">
+        <button class="carousel-control-next pick_lecture" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" id="{{$nextId}}">
             <i class="bi bi-chevron-right"></i>
         </button>
