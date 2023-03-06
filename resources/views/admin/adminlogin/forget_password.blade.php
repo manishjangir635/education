@@ -13,7 +13,7 @@
 
          <div class="clearfix"></div>
          <input type="submit" value="Submit">
-			<a class="btn bg-olive btn-block"  href="{{ url('/admin')}}">Cancel</a>
+			<a class="btn bg-olive btn-block"  href="{{ url('/admin/login')}}">Cancel</a>
 
       </form>
    </div>

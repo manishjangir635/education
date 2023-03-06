@@ -30,11 +30,11 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
-                <form action="{{route('save_slider')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('save_slider')}}" method="post" enctype="multipart/form-data" id="slider_form">
                     @csrf
             
                  <div class="form-group">
-                  <label>Image</label>
+                  <label>Image</label> ( Note:: Image size should be 1920px * 650px )
                   <input class="form-control" type="file" name="image" >
                   {!!$errors->first("image", "<span class='text-danger'>:message</span>")!!}
                 </div>
@@ -60,4 +60,12 @@
     </section>
     <!-- /.content -->
   </div>
+
+  
+<script>
+
+
+
+
 @include('admin.layout.footer')
+

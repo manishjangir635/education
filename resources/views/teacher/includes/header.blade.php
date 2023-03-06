@@ -23,7 +23,7 @@
     <header>
         <div class="container-fluid">
             <div class="d-flex align-items-center">
-                <a href="{{route('index')}}" class="ms-3"><img src="{{url('/')}}/public/teacher/images/logo.svg" width="135" height="60" alt="Logo"></a>
+                <a href="{{route('index')}}" class="ms-3"><img src="{{Auth::user()->image}}" width="135" height="60" alt="Logo"></a>
                 <div class="ms-auto d-flex align-items-center">
                     <a href="javaceript:void(0);" class="position-relative me-4">
                         <img src="{{url('/')}}/public/teacher/images/notification.svg" width="30" height="30" alt="notification">
@@ -38,11 +38,11 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end fade-up" aria-labelledby="dropdownUser">
                             <div class="d-flex mt-2 mb-3">
-                                <img src="{{url('/')}}/public/teacher/images/userImg.jpg" alt="User" width="60" height="60"
+                                <img src="{{Auth::user()->image}}" alt="User" width="60" height="60"
                                     class="rounded-circle flex-shrink-0">
                                 <div class="ms-3">
-                                    <h5 class="mb-1 font-16 text-skyblue font-medium">Taha Khan</h5>
-                                    <span class="font-14 text-darkblue font-regular">khantaha12@gmail.com</span>
+                                    <h5 class="mb-1 font-16 text-skyblue font-medium">{{Auth::user()->name}}</h5>
+                                    <span class="font-14 text-darkblue font-regular">{{Auth::user()->email}}</span>
                                 </div>
                             </div>
                             <li><a class="drop-item" href="{{url('/')}}/teacher/dashboard">Dashboard</a></li>

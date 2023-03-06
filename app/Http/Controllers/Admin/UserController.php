@@ -9,11 +9,26 @@ use Hash,Session;
 
 class UserController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
+
+        $data=$request->all();
+        extract($data);
+
         $all_data=User::where('user_role_id','!=',1);
+        
+        if(isset($name)){
+            $all_data=$all_data->where('name', 'like', '%' .$name. '%');
+        }
 
+        if(isset($role) && $role=='teacher'){
+            $all_data=$all_data->where('is_teacher',1);
+        }
 
-        $all_data = $all_data->orderBy('id', 'desc')->paginate(config('global.pagination_records'));
+        if(isset($role) && $role=='student'){
+            $all_data=$all_data->where('is_student',1);
+        }
+        
+        $all_data=$all_data->orderBy('id', 'desc')->paginate(config('global.pagination_records'));
         return view('admin/users/index',compact('all_data'));
     }
     public function add(){
@@ -25,29 +40,21 @@ class UserController extends Controller
         
         $validated = $request->validate([
             'name' 		=>	'required',
-			'shop_name'	=>	'required',
 			'email'     =>	'required',
-            'phone' 	=>	'required',
-			'role'	    =>	'required',
-			'location'	    =>	'required',
 			'password'  =>	'required',
 			'confirm_password'  =>	'required|same:password',
         ]);
 
         $user = new User;
-        $user->name = $request->name;
         $user->username = $request->name;
-        $user->shop_name = $request->shop_name;
-        $user->user_role_id = $request->role;
+        $user->name = $request->name;
+        $user->user_role_id = 2;
+        $user->is_teacher = $request->is_teacher;
         $user->email = $request->email;
-        $user->mobile_number = $request->phone;
-        $user->address = $request->location;
-        $user->country = $request->country;
-        $user->state = $request->state;
-        $user->city = $request->city;
-        $user->pincode = $request->zipcode;
-        $user->latitude = $request->lat;
-        $user->longitude = $request->lng;
+        $user->is_active = 1;
+        $user->is_email_verified = 1;
+        
+        
         $user->password = Hash::make($request->password);
         $insert = $user->save();
         if($insert){
@@ -57,4 +64,45 @@ class UserController extends Controller
             return redirect()->back()->with('error', trans('Something went wrong.'));
         }
     }
+
+
+
+    public function edit(Request $request,$id){
+        $user = User::find($id); 
+        return view('admin/users/edit',compact('user'));
+       
+    }
+
+
+
+    public function update(Request $request,$id){
+
+
+        $validated = $request->validate([
+            'name' 		=>	'required',
+        ]);
+
+
+
+        $user = User::find($id); 
+        $user->name = $request->name;
+        $user->is_teacher = $request->is_teacher;
+        $user->is_active = $request->is_active;
+        $user->save();
+
+        Session::flash('success', trans('User updated successfully.')); 
+        return redirect('/admin/users');
+    }
+
+
+    public function delete(Request $request,$id){
+        $user = User::find($id); // assuming the user with ID 1 exists
+        $user->delete();
+
+        Session::flash('success', trans('User deleted successfully.')); 
+        return redirect('/admin/users');
+    }
+
+
+
 }

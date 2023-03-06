@@ -45,7 +45,7 @@
                   {!!$errors->first("subject", "<span class='text-danger'>:message</span>")!!}
                 </div>
                 <!-- /.form-group -->
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label>Constant</label>
                     <select class="form-control constant" name="constant">
                         <option value=""> Select Option </option>
@@ -54,10 +54,10 @@
                         @endforeach
                     </select>
                     {!!$errors->first("constant", "<span class='text-danger'>:message</span>")!!}
-                </div>
-                <div class="">
+                </div> -->
+                <!-- <div class="">
 					        <a onclick = "return InsertHtml()" href="javascript:void(0)" class="btn  btn-success no-ajax pull-right"><i class="icon-white "></i>{{  trans("Insert Variable") }} </a>
-                </div>
+                </div> -->
                 <div class="form-group">
                   <label>Email Body</label>
                   <textarea class="form-control" id="body" name="body">{{$singleData->body}}</textarea>

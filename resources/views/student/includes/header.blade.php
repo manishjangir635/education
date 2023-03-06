@@ -67,11 +67,11 @@
                 @if(Auth::id())
                 <div class="dropdown nav-item">
                     <a href="javaceript:void(0);" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="{{url('/')}}/public/student/images/userImg.jpg" alt="User" width="50" height="50" class="rounded-circle">
+                        <img src="{{Auth::user()->image}}" alt="User" width="50" height="50" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end fade-up" aria-labelledby="dropdownUser">
                         <div class="d-flex mt-2 mb-3">
-                            <img src="{{url('/')}}/public/student/images/userImg.jpg" alt="User" width="50" height="50"
+                            <img src="{{Auth::user()->image}}" alt="User" width="50" height="50"
                                 class="rounded-circle flex-shrink-0">
                             <div class="ms-3">
                                 <h5 class="mb-1 font-16 text-skyblue font-medium">{{Auth::user()->name}}</h5>

@@ -28,6 +28,7 @@ class CourseController extends Controller
             extract($data);
             $course=new Course();
             $course->title=$title;
+            $course->subtitle='.';
             $course->category=$category;
             $course->image='default.jpg';
             $course->user_id=Auth::id();
@@ -46,7 +47,12 @@ class CourseController extends Controller
     public function edit(Request $request , $type, $id){
 
 
+      $validated = $request->validate([
+        'image'   => 'dimensions:max_width=750,max_height=422',
+      ]);
 
+ 
+      
         $course_detail=Course::with(['section_list','course_for','course_requirments','student_learn'])->find($id);
 
 
@@ -55,8 +61,6 @@ class CourseController extends Controller
           
           $validated = $request->validate([
             'title'   => 'required',
-            'subtitle'  =>	'required',
-            'description'   => 'required',
           ]);
 
 
@@ -80,22 +84,28 @@ class CourseController extends Controller
               }
             }
 
-            if ($request->file())
+    
+
+            if ($request->file()) 
             {
-              $file = $request->file('preview_video');
+              $file = $request->file('preview_video');                   
               if ($file)
-              {
-                if(file_exists(public_path() .'public/teacher/image/'.$course_detail->preview_video))
-                {
-                    @unlink(public_path() .'public/teacher/image/'.$course_detail->preview_video);
-                }
-                $destinationPath = 'public/teacher/image/';
-                $extension = $request->file('preview_video')->getClientOriginalExtension();
-                $filename = rand(11111, 99999) . '.' . $extension;
-                $file->move($destinationPath, $filename);
-                $course_detail->preview_video=$filename;
+              {  
+                $uri = Vimeo::upload($file,[
+                  'name' =>  'Preview Video',
+                  'description' => 'No Description'
+                ]);
+    
+                $video_id=explode('videos/', $uri)[1];
+                $course_detail->preview_video=$video_id;
+
+            
+               
               }
             }
+
+
+
 
             $course_detail->title=$title;
             $course_detail->subtitle=$subtitle;
@@ -159,6 +169,25 @@ class CourseController extends Controller
 
 
 
+    public function delete_extra_field(Request $request,$type,$id){
+
+     
+
+      if($type=='course_for'){   
+        CourseFor::where('id',$id)->delete();
+      }
+      else if($type=='course_requirment'){
+        CourseRequirments::where('id',$id)->delete();
+      }
+      else if($type=='student_learn'){
+        StudentLearn::where('id',$id)->delete();
+      }
+
+      return redirect()->back()->with('success','Field deleted successfully');
+    }
+
+
+
     public function update_course_price(Request $request,$course_id){
 
       $validated = $request->validate([
@@ -213,6 +242,8 @@ class CourseController extends Controller
 
             $video_id=explode('videos/', $uri)[1];
             $Lecture->video=$video_id;
+
+          
            
 
           }

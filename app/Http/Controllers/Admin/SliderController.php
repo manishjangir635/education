@@ -21,7 +21,7 @@ class SliderController extends Controller
     {
         
         $validated = $request->validate([
-            'image' 		=>	'required',
+            'image' 		=>	'required | dimensions:width=1920,height=650',
 			'name'	=>	'required',
         ]);
 
@@ -62,9 +62,11 @@ class SliderController extends Controller
     public function update(Request $request,$id)
     {
         $validated = $request->validate([
+            'image' 		=>	'required | dimensions:width=1920,height=650',
             'name' 		=>	'required',
         ]);
        
+      
         $slider = Slider::find($id);
         $slider->name = $request->name;
        

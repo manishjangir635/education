@@ -19,7 +19,7 @@ $course_id= $course_detail->id;
         </div>
         <div class="accordion" id="accordionExample">
             
-        @foreach($course_detail->section_list as $key => $section)
+        @foreach($course_detail->student_section_list as $key => $section)
        
 
         <div class="accordion-item">
@@ -29,7 +29,7 @@ $course_id= $course_detail->id;
                     <div class="filter-courses">
                         <ul>
 
-                        @foreach($section->lecture_list as $lecture_key=> $lecture)
+                        @foreach($section->student_lecture_list as $lecture_key=> $lecture)
                             <li class="pick_lecture lecture_{{$lecture->id}}" id="{{$lecture->id}}"><input class="form-check-input" type="checkbox"> <span>{{$lecture_key+1}}.{{$lecture->title}} <small class="font-14 font-regular text-dgray d-block"><img src="{{url('/')}}/public/student/images/play2.svg" alt="img" class="me-1"> {{get_time($lecture->duration)}}</small></span></li>
                         @endforeach
 

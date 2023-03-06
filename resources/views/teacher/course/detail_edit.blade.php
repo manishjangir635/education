@@ -19,7 +19,7 @@
 					</div>
 				</div>
 				<div class="p-4 mb-100">
-					<form action="{{url('/')}}/teacher/course/edit/detail/{{$course_detail->id}}" method="post" enctype="multipart/form-data">
+					<form action="{{url('/')}}/teacher/course/edit/detail/{{$course_detail->id}}" method="post" enctype="multipart/form-data" id="detail_edit">
 						{{csrf_field()}}
 						<div class="row gy-3">
 							<div class="col-sm-12">
@@ -53,6 +53,21 @@
 										Write a clear description of the intended learners for your course who will find your course <br>content valuable. This will help you attract the right learners to your course.
 									</p>
 									<ul class="more-fields wrapper1">
+
+									@if(count($course_detail->course_for)==0)
+
+									<li class="item">
+											<div class="input-group textLimit">
+												<input type="text" name="course_for[]" class="form-control char" maxlength="160" placeholder=""  >
+												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
+													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
+													<a href="#" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
+													<!-- <a href="javascript:void(0);" class="dragBtn border-left1"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a> -->
+												</span>
+											</div>
+										</li>
+
+									@endif
 										
 									@foreach($course_detail->course_for as $val1)
 									<li class="item">
@@ -60,8 +75,8 @@
 												<input type="text" name="course_for[]" class="form-control char" maxlength="160" placeholder="" value="{{$val1->title}}" >
 												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
 													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
-													<a href="javascript:void(0);" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
-													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a>
+													<a href="{{url('/')}}/teacher/delete_extra_field/course_for/{{$val1->id}}" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
+													<!-- <a href="javascript:void(0);" class="dragBtn border-left1"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a> -->
 												</span>
 											</div>
 										</li>
@@ -81,14 +96,32 @@
 									<p class="mb-0 font-16 font-regular text-darkblue">List the required skills, experience, tools or equipment learners <br>should have prior to taking your course.
 									</p>
 									<ul class="more-fields wrapper2">
+
+
+									@if(count($course_detail->course_requirments)==0)
+
+									<li class="item">
+											<div class="input-group textLimit">
+												<input type="text" name="course_requirment[]" class="form-control char" maxlength="160" placeholder=""  >
+												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
+													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
+													<a href="#" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
+													<!-- <a href="javascript:void(0);" class="dragBtn border-left1"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a> -->
+												</span>
+											</div>
+										</li>
+
+									@endif
+
+
 									@foreach($course_detail->course_requirments as $val2)
 										<li class="item">
 											<div class="input-group textLimit">
 												<input type="text" name="course_requirment[]" class="form-control char" maxlength="160" placeholder=""  value="{{$val2->title}}">
 												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
 													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
-													<a href="javascript:void(0);" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
-													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a>
+													<a href="{{url('/')}}/teacher/delete_extra_field/course_requirment/{{$val2->id}}" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
+													<!-- <a href="javascript:void(0);" class="dragBtn border-left1"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a> -->
 												</span>
 											</div>
 										</li>
@@ -105,14 +138,30 @@
 									<p class="mb-0 font-16 font-regular text-darkblue">You must enter at least 4 learning objectives or outcomes that learners can expect to <br>achieve after completing your course.
 									</p>
 									<ul class="more-fields wrapper3">
+
+									@if(count($course_detail->student_learn)==0)
+
+									<li class="item">
+											<div class="input-group textLimit">
+												<input type="text" name="student_learn[]" class="form-control char" maxlength="160" placeholder=""  >
+												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
+													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
+													<a href="#" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
+													<!-- <a href="javascript:void(0);" class="dragBtn border-left1"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a> -->
+												</span>
+											</div>
+										</li>
+
+									@endif
+
 									@foreach($course_detail->student_learn as $val3)
 										<li class="item">
 											<div class="input-group textLimit">
 												<input type="text" name="student_learn[]" class="form-control char" maxlength="160" placeholder=""  value="{{$val3->title}}">
 												<span class="input-group-text h-100 p-0 rounded-0 bg-white border1">
 													<span class="counter position-static border-top-0 border-bottom-0 border-start-0"></span>
-													<a href="javascript:void(0);" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
-													<a href="javascript:void(0);" class="dragBtn border-left1"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a>
+													<a href="{{url('/')}}/teacher/delete_extra_field/student_learn/{{$val3->id}}" class=""><img src="{{url('/')}}/public/teacher/images/delete.svg" alt="img"></a>
+													<!-- <a href="javascript:void(0);" class="dragBtn border-left1"><img src="{{url('/')}}/public/teacher/images/drag.svg" alt="img"></a> -->
 												</span>
 											</div>
 										</li>
@@ -134,7 +183,7 @@
 												<div class="position-relative w-75">
                                                     <input id="img-input" type="file" name="image" class="form-control" accept="image/*" onchange="loadFile(event)">
 													<label class="uploadType" for="img-input">Upload File</label>
-												
+												    {!!$errors->first("image", "<span class='text-danger'>:message</span>")!!}
 											    </div>
 										</div>
 									</div>
@@ -145,13 +194,13 @@
 									<h3 class="font-20 font-bold text-darkblue mb-2">Course Preview Video</h3>
 									<div class="row">
 										<div class="col-12 col-sm-12 col-lg-4">
-											<div class="previewDiv"><video id="video" srs="{{$course_detail->preview_video}}"  controls></video></div>
+											<div class="previewDiv">
+											<iframe src="https://player.vimeo.com/video/{{$course_detail->preview_video}}" style="width: 100%" height="170" frameborder="0" allow="autoplay; fullscreen"  allowfullscreen></iframe>	</div>
 										</div>
 										<div class="col-12 col-sm-12 col-lg-8 mt-2 mt-lg-0">
-											<p class="font-16 font-regular text-darkblue">It must meet our <a class="text-skyblue text-decoration-underline">course image quality standards</a> <br>
-												(Image guidelines: 750x422 pixels; .jpg, .jpeg,. gif,<br> or .png format)</p>
+											<p class="font-16 font-regular text-darkblue">Upload Course Preview Video Here <br> (Video guidelines: .mp4,.mkv format)</p>
 										    <div class="position-relative w-75">		
-											    <input id="file-input" type="file" class="form-control" accept="video/*" name="preview_video">
+											    <input  type="file" class="form-control"  name="preview_video" id="preview_video_field">
 											    <label class="uploadType" for="file-input">Upload File</label>
 										    </div>
 										</div>
@@ -165,4 +214,57 @@
 				</div>
 			</div>
 		</div>
+
+
+		<script>
+
+
+jQuery.validator.addMethod("video_extension", function (value, element, param) {
+                param = typeof param === "string" ? param.replace(/,/g, '|') : "mp4|mkv";
+                return this.optional(element) || value.match(new RegExp(".(" + param + ")$", "i"));
+            }, "Please enter a value with a valid extension.");
+
+
+			jQuery.validator.addMethod("preview_video_size", function (value, element, param) {
+				var file_size = $('#preview_video_field')[0].files[0].size;
+				if(file_size>2097152) {
+					return false;
+				} 
+				return true;
+            },"File size is greater than 2MB");
+
+
+
+
+    
+	$("#detail_edit").validate({        
+       
+		rules: {
+			preview_video: {
+				video_extension: "mp4|mkv",
+				preview_video_size: true,
+		
+			},
+
+		},
+
+		messages: {  // <-- you must declare messages inside of "messages" option
+			preview_video: {
+				video_extension: "only .mp4 or .mkv allowed",
+				preview_video_size: 'File size is greater than 2MB',
+				
+			},
+    }
+	
+			
+		
+
+    });
+
+
+
+
+</script>
+
+
 @endsection

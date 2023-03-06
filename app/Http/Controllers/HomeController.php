@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Slider;
 use App\Models\Cmspage;
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -33,9 +34,46 @@ class HomeController extends Controller
 
         return view('student.shopping-cart');
     }
-    public function account(){
+    public function edit_profile(Request $request){
 
-        return view('student.account');
+        
+        $user_detail=User::find(Auth::id());
+        
+        if ($request->isMethod('post')) {
+
+            $validated = $request->validate([
+                'name'   => 'required',
+              ]);
+
+          
+            $data=$request->all();
+            extract($data);
+
+           
+            $user_detail->name=$name;
+            if ($request->file())
+            {
+              $file = $request->file('image');
+              if ($file)
+              {
+                
+                $destinationPath = 'public/image/';
+                $extension = $request->file('image')->getClientOriginalExtension();
+                $filename = rand(11111, 99999) . '.' . $extension;
+                $file->move($destinationPath, $filename);
+                $user_detail->image=$filename;
+              }
+            }
+
+            $user_detail->save();
+
+            return redirect()->back()->with('success','Profile updated successfully');
+
+        }
+        else{
+            return view('student/account',compact('user_detail'));
+        }
+      
     }
 
     public function messages(){

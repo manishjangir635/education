@@ -26,6 +26,11 @@ class Section extends Model
         return $this->hasMany(Lecture::class);
     }
 
+    public function student_lecture_list()
+    {
+        return $this->hasMany(Lecture::class)->where('status',1);
+    }
+
 
     public static function boot() {
         parent::boot();

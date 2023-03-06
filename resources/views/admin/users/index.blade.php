@@ -23,32 +23,42 @@
  
          <div class="row">
             <div class="col-12">
-                <form action="{{url('admin/email_template')}}" method="get">
+
+            <form action="{{url('admin/users')}}" method="get">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="row">                        
                                 <div class="col-3">
                                     <div class="form-group">
-                                        <label>Name:</label>
-                                        <input type="text" name="name" placeholder="Enter Name">
+                                        <label>Name</label>
+                                        <input type="text" name="name" placeholder="Enter Name" value="{{request()->get('name')}}">
                                     </div>
                                 </div>
+
+
                                 <div class="col-3">
                                     <div class="form-group">
-                                        <label>Subject:</label>
-                                        <input type="text" name="subject" placeholder="Enter Subject">
+                                        <label>Role </label>
+                                        <select name="role" style="padding: 4px;">
+                                        <option value="">Select Role</option>
+                                        <option  @if(request()->get('role')=='teacher') selected @endif value="teacher">Teacher</option>
+                                        <option @if(request()->get('role')=='student') selected @endif value="student">Student</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-2 d-flex justify-content-center align-items-center">
+                              
+
+                              
+                                <div class="col-2  align-items-center">
                                     <div class="form-group ">
-                                        <input type="submit" class="btn btn-primary" value="Search">
-                                        <a href="{{url('admin/email_template')}}" class="btn btn-primary"> Clear Search</a>
+                                        <input type="submit" class="btn btn-primary" value="Filter">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </form>
+                
                <div class="card">
                     <div class="card-header">
                         <div class="card-tools">
@@ -63,10 +73,8 @@
                         <thead>
                            <tr>
                               <th>Sr.</th>
-                              <th>Name</th>
-                              <th>Shop Name</th>
+                              <th>Name</th>        
                               <th>Email</th>
-                              <th>Mobile No</th>
                               <th>Role</th>
                               <th>Created</th>
                               <th>Action</th>
@@ -85,18 +93,18 @@
                            <tr>
                                 <td>{{$i}}</td>
                                 <td>{{$data['name']}}</td>
-                                <td>{{$data['shop_name']}}</td>
                                 <td>{{$data['email']}}</td>
-                                <td>{{$data['mobile_number']}}</td>
-                                <td>@if($data['user_role_id'] == 2)
-                                        Restaurant
-                                    @elseif($data['user_role_id'] == 3)
-                                        Retailer
+                                <td>@if($data['is_teacher'] == 1)
+                                        Teacher
                                     @endif
+
+                                    @if($data['is_student'] == 1)
+                                        Student
+                                     @endif   
                                 </td>
                                 <td>{{$data['created_at']}}</td>
-                                <td><a title="Edit" href="{{url('admin/email_template_edit/'.$data['id'])}}" class="btn btn-primary"><span class="fas fa-edit"></span></a>
-                                <a href="{{route('/email_template_delete',$data['id'])}}" data-delete="delete" class="delete_any_item btn btn-danger" title="Delete" data-confirm="Are you sure?"><span class="fas fa-trash-alt"></span></a>
+                                <td><a title="Edit" href="{{url('/')}}/admin/edit_user/{{$data['id']}}" class="btn btn-primary"><span class="fas fa-edit"></span></a>
+                                <a href="{{url('/')}}/admin/delete_user/{{$data['id']}}" data-delete="delete" class="delete_any_item btn btn-danger" title="Delete" data-confirm="Are you sure?"><span class="fas fa-trash-alt"></span></a>
                                 </td>
                            </tr>
 

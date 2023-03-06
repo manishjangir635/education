@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="form-group">
-                <label>Content<span class="requireRed"></span></label>
+                <label>About PTBA<span class="requireRed"></span></label>
                 <textarea name="content" class="form-control">{{$record->content}}</textarea>
                 </div>
 
