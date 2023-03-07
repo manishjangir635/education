@@ -51,7 +51,8 @@ Route::group(array('middleware' => 'App\Http\Middleware\StudentNotIn'), function
 });
 
 Route::get('shopping-cart', [HomeController::class, 'shopping_cart'])->name('shopping_cart.index');
-Route::get('profile', [HomeController::class, 'account'])->name('account.index');
+Route::get('edit_profile', [HomeController::class, 'edit_profile'])->name('account.index');
+Route::post('edit_profile', [HomeController::class, 'edit_profile']);
 Route::get('messages', [HomeController::class, 'messages'])->name('messages.index');
 Route::get('purchase-history', [HomeController::class, 'purchase_history'])->name('purchase_history.index');
 Route::get('my-redemption-coupons', [HomeController::class, 'my_redemption_coupons'])->name('my_redemption_coupons.index');
@@ -81,7 +82,7 @@ Route::get('privacy-policy', [HomeController::class, 'privacy_policy'])->name('p
 Route::get('faqs', [HomeController::class, 'faqs'])->name('faqs.index');
 Route::get('about-us', [HomeController::class, 'about_us'])->name('about_us.index');
 
-Route::group(array('prefix' => 'teacher'), function() {
+Route::group(array('middleware' => 'App\Http\Middleware\StudentNotIn','prefix' => 'teacher'), function() {
 
 Route::get('/become_teacher', [DashboardController::class, 'become_teacher']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('teacher.dashboard');
@@ -98,6 +99,8 @@ Route::post('/course/create/lecture/{section_id}/{course_id}', [CourseController
 
 Route::get('profile', [ProfileController::class, 'index'])->name('teacher_profile.index');
 Route::get('profile/edit', [ProfileController::class, 'edit'])->name('teacher_profile.edit');
+
+Route::get('delete_extra_field/{type}/{id}', [CourseController::class, 'delete_extra_field']);
 
 
 Route::get('payment', [TeacherController::class, 'payment'])->name('teacher_payment.index');
@@ -116,7 +119,7 @@ Route::get('reviews', [TeacherController::class, 'reviews'])->name('teacher_revi
 
 Route::group(array('prefix' => 'admin'), function() {
 	Route::group(array('middleware' => 'App\Http\Middleware\GuestAdmin', 'namespace' => 'admin'), function () {
-        Route::get('/', [AdminLoginController::class, 'login']);
+        Route::get('/login', [AdminLoginController::class, 'login']);
         Route::post('loginAuth', [AdminLoginController::class, 'loginAuth'])->name('/loginAuth');
         Route::get('fogetPassword', [AdminLoginController::class, 'fogetPassword']);
         Route::post('sendPassword', [AdminLoginController::class, 'sendPassword'])->name('/sendPassword');
@@ -126,7 +129,7 @@ Route::group(array('prefix' => 'admin'), function() {
     });
 
 	Route::group(array('middleware' => ['App\Http\Middleware\AuthAdmin'], 'namespace' => 'admin'), function () {
-        Route::get('dashboard', [AdminDashboardController::class, 'dashboard']);
+        Route::get('dashboard', [AdminDashboardController::class, 'dashboard'])->name('/admin_dashboard');
         Route::get('changePassword', [AdminDashboardController::class, 'changePassword']);
         Route::post('saveChangePassword', [AdminDashboardController::class, 'saveChangePassword']);
 		Route::get('logout', [AdminLoginController::class, 'logout']);
@@ -140,6 +143,9 @@ Route::group(array('prefix' => 'admin'), function() {
 		Route::get('users', [UserController::class, 'index']);
 		Route::get('add_users', [UserController::class, 'add'])->name('/add_users');
 		Route::post('save_users', [UserController::class, 'save'])->name('/save_users');
+		Route::get('delete_user/{id}', [UserController::class, 'delete']);
+		Route::get('edit_user/{id}', [UserController::class, 'edit']);
+		Route::post('update_user/{id}', [UserController::class, 'update'])->name('/update_user');;
 
         Route::get('cms-manager', [CmsController::class, 'index'])->name('cms-manager');
         Route::get('cms-manager/edit-cms/{id}', [CmsController::class, 'edit'])->name('edit_cms_page');

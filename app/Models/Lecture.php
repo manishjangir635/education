@@ -9,7 +9,7 @@ class Lecture extends Model
 {   
     
     protected $table='lectures';
-    public $timestamps = false;
+   
 
  
     public function user_data()

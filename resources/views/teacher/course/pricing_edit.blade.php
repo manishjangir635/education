@@ -15,6 +15,7 @@
 			<div class="ui-block">
 				<div class="p-4 border-bottom1 d-sm-flex align-items-center justify-content-between">
 					<h1 class="playfair font-24 font-bold text-darkblue mb-2 mb-sm-0">Pricing</h1>
+					<a class="backBtn d-flex align-items-center" href="{{url('/')}}/teacher/dashboard"><i class="bi bi-arrow-left"></i> <span class="font-medium ms-2">Back</span></a>
 				</div>
 				<div class="p-4 mb-100">
 					<h3 class="font-14 font-bold text-darkblue">Course Price</h3>

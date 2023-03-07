@@ -92,7 +92,7 @@ class AuthController extends Controller
             if($userDetail->is_active == 1){
                 if(Auth::attempt($auth)){ 
                     Auth::login($userDetail);
-                    return redirect('/')->with('success','Successfully Login');
+                    return redirect('/')->with('success','Successfully logged in');
          
                  }else{
                      return redirect()->back()->with('error','Email or Password is incorrect');

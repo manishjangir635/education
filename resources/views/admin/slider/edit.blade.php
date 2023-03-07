@@ -35,8 +35,9 @@
 
                     <img src="{{$slider->image}}" width="200"/>
                 <div class="form-group">
-                  <label>Image</label>
+                  <label>Image</label>  ( Note:: Image size should be 1920px * 650px )
                   <input class="form-control" type="file" name="image">
+                  {!!$errors->first("image", "<span class='text-danger'>:message</span>")!!}
                 </div>
     
             

@@ -17,7 +17,7 @@ class GuestAdmin
      */
     public function handle($request, Closure $next) {
        
-        if(!empty(Auth::user()) && (Auth::user()->user_role_id  ==1)){
+        if(!empty(Auth::user()) && (Auth::user()->user_role_id  == 1)){
 			return Redirect::to('/admin/dashboard');
         }
         return $next($request);

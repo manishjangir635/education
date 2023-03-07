@@ -1,6 +1,6 @@
 <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">POS</a>.</strong>
+    <strong>Copyright &copy; 2014-2021 <a href="#">PTBA</a>.</strong>
     All rights reserved.
     <!-- <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 3.2.0
@@ -18,6 +18,10 @@
 
 <!-- jQuery -->
 <script src="{{assets('admin/plugins/jquery/jquery.min.js')}}"></script>
+
+
+
+
 <!-- jQuery UI 1.11.4 -->
 <script src="{{assets('admin/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->

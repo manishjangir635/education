@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function index(){
-        $course_list=Course::where('user_id',Auth::id())->get();
+        $course_list=Course::where('user_id',Auth::id())->orderBy('id','desc')->get();
         return view('teacher/index',compact('course_list'));
     }
 

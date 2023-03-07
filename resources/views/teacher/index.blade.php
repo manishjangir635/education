@@ -28,9 +28,10 @@
             </form>
             <div class="class-blocks">
                
+            <?php $course_list=[];?>
             @if(count($course_list)==0)
 
-            <h1>You still not uploaded any course. Create your first course now...</h1>
+            <h4 style="text-align:center;" class="text-skyblue">Sorry..No course found.</h3> 
             @endif
 
                 @foreach($course_list as $course)
@@ -54,7 +55,7 @@
                                 </div>
                                 <div class="col-sm-12 col-md-8 col-lg-5 col-xl-4">
                                     <div class="row g-2">
-                                        <div class="col-6">
+                                        <!-- <div class="col-6">
                                             <div class="card-item">
                                             <div class="mb-3">
                                                 <h5 class="font-16 font-black text-darkblue mb-0 mb-lg-2">₹0.00</h5>
@@ -67,8 +68,8 @@
                                             </div>
                                             <div class="upper-link"><a href="revenue-report.html">See performance</a></div>
                                             </div>
-                                        </div>
-                                        <div class="col-6">
+                                        </div> -->
+                                        <!-- <div class="col-6">
                                             <div class="card-item">
                                             <div class="mb-3">
                                                 <h5 class="font-16 font-black text-darkblue mb-0 mb-lg-2">₹0.00</h5>
@@ -81,11 +82,11 @@
                                             </div>
                                             <div class="upper-link"><a href="students.html">See students</a></div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-4 col-lg-2 col-xl-2">
-                                    <div class="card-item d-flex flex-column align-items-start justify-content-center">
+                                    <!-- <div class="card-item d-flex flex-column align-items-start justify-content-center">
                                     <h5 class="font-16 font-black text-darkblue mb-1">4.0
                                         <span class="text-yellow d-inline-flex">
                                             <i class="bi bi-star-fill ms-1"></i>
@@ -99,7 +100,7 @@
                                         <small class="font-14 text-darkblue font-regular">Course rating</small>
                                     </div>
                                     <div class="upper-link"><a href="reviews.html">See reviews</a></div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="col-sm-12 col-md-12 col-lg-2 col-xl-2 align-self-center">
                                     <div class="card-item">

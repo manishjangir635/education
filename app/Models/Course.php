@@ -24,19 +24,17 @@ class Course extends Model
         }
     }
 
-    public function getPreviewVideoAttribute($value)
-    {
-        if ($value) {
-            return url('/').'/public/teacher/image/'.$value;
-        } else {
-            return url('/').'/public/teacher/image/default.png';
-        }
-    }
+  
 
   
     public function section_list()
     {
         return $this->hasMany(Section::class)->with('lecture_list');
+    }
+
+    public function student_section_list()
+    {
+        return $this->hasMany(Section::class)->with('student_lecture_list');
     }
 
     public function user()

@@ -5,15 +5,29 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Models\Lecture;
+use App\Models\User;
 use Hash,Session;
 use Vimeo\Laravel\Facades\Vimeo;
 
 class VideoController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
    
-        $videos=Lecture::with(['user_data','course_data'])->where('status',0)->orderBy('id', 'desc')->paginate(config('global.pagination_records'));
-        return view('admin/video/index',compact('videos'));
+
+        $data=$request->all();
+        extract($data);
+        $author_list= User::where('user_role_id',2)->where('is_active',1)->where('is_teacher',1)->get();
+        $videos=Lecture::with(['user_data','course_data']);
+        if(isset($name)){
+            $videos=$videos->where('title', 'like', '%' .$name. '%');
+        }
+
+        if(isset($author_id)){
+            $videos=$videos->where('user_id',$author_id);
+        }
+
+        $videos=$videos->orderBy('id', 'desc')->paginate(100);
+        return view('admin/video/index',compact('videos','author_list'));
     }
 
  

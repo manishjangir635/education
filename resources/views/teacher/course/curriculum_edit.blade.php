@@ -16,8 +16,9 @@
 
 		<div class="content">
 			<div class="ui-block">
-				<div class="p-4 border-bottom1">
+				<div class="p-4 border-bottom1 d-flex justify-content-between">
 					<h1 class="playfair font-24 font-bold text-darkblue mb-2 mb-sm-0">Curriculum</h1>
+					<a class="backBtn d-flex align-items-center" href="{{url('/')}}/teacher/dashboard"><i class="bi bi-arrow-left"></i> <span class="font-medium ms-2">Back</span></a>
 				</div>
 				<div class="p-4 mb-100">
 					<div class="d-flex align-items-start rounded-0 p-3 border1 mb-30 alert alert-dismissible fade show">
@@ -26,7 +27,19 @@
 							lectures, course sections, assignments, and more. Click a +
 							<br class="d-none d-lg-block">icon on the left to get started.
 						</p>
+
+
 						<a class="themeBtn2 ms-auto" href="javascript:void(0);" data-bs-dismiss="alert">Dismiss</a>
+					</div>
+
+					<div class="d-flex align-items-start rounded-0 p-3 border1 mb-30 alert alert-dismissible fade show">
+						<i class="font-18 bi bi-info-circle-fill me-2"></i>
+						<p class="mb-0 font-16 font-medium text-darkblue">Do not navigates away from this page until the upload is completed
+							
+						</p>
+
+
+					
 					</div>
 
 					<div class="curriculmSection wrapper1">
@@ -81,18 +94,24 @@
 										</div>
 									</div>
 
-									
+									<?php
+									$uri='/videos/'.$lecture->video;
+									$response = Vimeo::request($uri);
+									$status=$response['body']['upload']['status'];
+									?>
 									<div id="collapse_{{$course_detail->id}}_{{$section_key}}_{{$lecture_key}}" class="accordion-collapse collapse"
 										data-bs-parent="#accordionExample">
 										<div class="accordion-body p-3 pt-0">
+
 										@if($lecture->status==1)
-										<iframe src="https://player.vimeo.com/video/{{$lecture->video}}?autoplay=1" style="width: 100%" height="360" frameborder="0" allow="autoplay; fullscreen"  allowfullscreen></iframe>
+										<iframe src="https://player.vimeo.com/video/{{$lecture->video}}?autoplay=1" style="width: 100%" height="360" frameborder="0" allow="autoplay; fullscreen"  allowfullscreen></iframe>	
 										@elseif($lecture->status==2)
-										<span class="font-16 font-regular text-darkblue me-5" style="color:red;">Your Video is Rejected by Admin</span>
+										<span class="font-16 font-regular text-darkblue me-5" style="color:red;">Rejected by admin</span>
 										@else
-										<span class="font-16 font-regular text-darkblue me-5" style="color:orange;">Video under review.Please wait untill admin verify your video</span>
+										<span class="font-16 font-regular text-darkblue me-5" style="color:orange;">Pending for Admin approval</span>
 										@endif
-											
+
+										
 										</div>
 									</div>
 								</div>
@@ -127,10 +146,10 @@
                                                  <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
 												</div>
 
-												<div  style="display: none; margin-bottom: 7px;" class="optimise">Please wait...</div>
+												<div  style="display: none; margin-bottom: 7px;" class="optimise">Please wait and do not logout or navigate away from this page while we optimise your video</div>
 												
-													<button class="btn p-0 me-3 borderBtn border-0 rounded-0 font-14"
-														type="submit">Cancel</button>
+													<a href="{{  Request::url() }}" class="btn p-0 me-3 borderBtn border-0 rounded-0 font-14"
+														>Cancel</a>
 													<button class="themeBtn2" type="submit">Add Lecture</button>
 													
 												</div>
@@ -162,8 +181,8 @@
 												<input type="text" class="form-control" placeholder="Enter a Title" name="title">
 											</div>
 											<div class="col-12 mt-20 text-end">
-												<button class="btn p-0 me-3 borderBtn border-0 rounded-0 font-14"
-													type="submit">Cancel</button>
+												<a href="{{  Request::url() }}"class="btn p-0 me-3 borderBtn border-0 rounded-0 font-14"
+													type="submit">Cancel</a>
 												<button class="themeBtn2" type="submit">Add Section</button>
 											</div>
 										</div>

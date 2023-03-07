@@ -9,12 +9,13 @@ use App\Models\EmailAction;
 use App\Models\EmailTemplate;
 
 use validate,Auth,Session,Hash;
-class AdminLoginController extends Controller
+class AdminController extends Controller
 {
     public function login(){
-        return view('admin/adminlogin/login');
-    }
 
+       
+        return view('admin.adminlogin.login');
+    }
     public function loginAuth(Request $request){
         $auth = array(
             'email' => $request->email,
@@ -41,20 +42,19 @@ class AdminLoginController extends Controller
     public function logout(){
 		Auth::logout();
 		Session::flash('flash_notice', 'You are now logged out!');
-		return redirect('/admin/login')->with('message', 'You are now logged out!');
+		return redirect('/admin')->with('message', 'You are now logged out!');
     }
 
     public function fogetPassword(){
-		return View('admin/adminlogin/forget_password');
+		return View('admin.adminlogin.forget_password');
     }
 
-  
     public function sendPassword(Request $request){
         $validated = $request->validate([
             'email' 		=>	'required|email',
         ]);
         $email = $request->email;
-		$userDetail	=	User::where('email',$email)->where('is_active',1)->where('user_role_id',1)->first();
+		$userDetail	=	User::where('email',$email)->where('is_active',1)->first();
         if(!empty($userDetail)){
             $forgot_password_validate_string	= 	md5($userDetail->email.time().time());
             User::where('email',$email)->update(array('forgot_password_validate_string'=>$forgot_password_validate_string));
@@ -78,22 +78,21 @@ class AdminLoginController extends Controller
             // pre($messageBody);
             sendMail($email,$full_name,$subject,$messageBody,$settingsEmail);
             Session::flash('success', trans('An email has been sent to your inbox. To reset your password please follow the steps mentioned in the email.')); 
-			return redirect('/admin/login');						
+			return redirect('/admin');						
 
         }else{
             return redirect()->back()->with('error', trans('Credential is not found.'));
 
         }
     }
-  
 
     public function resetPassword($validate_string=null){
 		if($validate_string!="" && $validate_string!=null){
-			$userDetail	=	User::where('is_active','1')->where('user_role_id',1)->where('forgot_password_validate_string',$validate_string)->first();
+			$userDetail	=	User::where('is_active','1')->where('forgot_password_validate_string',$validate_string)->first();
 			if(!empty($userDetail)){
 				return view('admin.adminlogin.reset_password' ,compact('validate_string'));
 			}else{
-				return redirect('/admin/login')
+				return redirect('/admin')
 						->with('error', trans('Sorry, you are using wrong link.'));
 			}
 			
@@ -115,7 +114,7 @@ class AdminLoginController extends Controller
             $update = $user->save();
             if($update){
                 Session::flash('success', trans('Thank you for resetting your password. Please login to access your account.')); 
-                return redirect('/admin/login');
+                return redirect('/admin');
             }
         }else{
             return redirect()->back()->with('error', trans('Sorry, you are using wrong link.'));
@@ -123,6 +122,5 @@ class AdminLoginController extends Controller
 
 
     }
-   
 
 }

@@ -134,7 +134,7 @@
                                  ?>
                             </span>
                         </div>
-                        <p class="font-14 text-darkblue font-regular">{{$testimonial->content}}</p>
+                        <p class="font-14 text-darkblue font-regular">{!!$testimonial->content!!}</p>
                     </div>
                 </div>
 

@@ -875,6 +875,7 @@ main .innerMenu ~ .content{
 .course_image .previewDiv{
     background: var(--bg-lightgrey);
     border: 1px solid var(--bg-darkgrey);
+    height: 200px;
 }
 .course_image .previewDiv img{
     width: 100%;
@@ -1062,3 +1063,11 @@ main .innerMenu ~ .content{
     width: 0%;
   }
 
+
+  .thumbBlock img{
+    min-height: 100%;
+}
+
+.uploadType {
+    height: 50px !important;
+}

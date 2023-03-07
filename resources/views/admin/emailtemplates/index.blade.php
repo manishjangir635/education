@@ -42,7 +42,7 @@
                                 <div class="col-2 d-flex justify-content-center align-items-center">
                                     <div class="form-group ">
                                         <input type="submit" class="btn btn-primary" value="Search">
-                                        <a href="{{url('admin/email_template')}}" class="btn btn-primary"> Clear Search</a>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -50,13 +50,7 @@
                     </div>
                 </form>
                <div class="card">
-                    <div class="card-header">
-                        <div class="card-tools">
-                            <div class="input-group input-group-sm" style="width: 175px;">
-                                <a href="{{route('/email_template_add')}}" class="btn btn-success"> Add Email Template</a>
-                            </div>
-                        </div>
-                    </div>
+                   
                   <!-- /.card-header -->
                   <div class="card-body table-responsive p-0">
                      <table class="table table-hover text-nowrap">
@@ -85,7 +79,7 @@
                               <td>{{$data['subject']}}</td>
                               <td>{{$data['created_at']}}</td>
                               <td><a title="Edit" href="{{url('admin/email_template_edit/'.$data['id'])}}" class="btn btn-primary"><span class="fas fa-edit"></span></a>
-                              <a href="{{route('/email_template_delete',$data['id'])}}" data-delete="delete" class="delete_any_item btn btn-danger" title="Delete" data-confirm="Are you sure?"><span class="fas fa-trash-alt"></span></a>
+                              <!-- <a href="{{route('/email_template_delete',$data['id'])}}" data-delete="delete" class="delete_any_item btn btn-danger" title="Delete" data-confirm="Are you sure?"><span class="fas fa-trash-alt"></span></a> -->
                               </td>
                            </tr>
 
